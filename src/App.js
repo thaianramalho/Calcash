@@ -1,12 +1,11 @@
 import './App.css';
 import React from 'react';
-import Cabecalho from './Cabecalhos/Cabecalho';
+import Cabecalho from './componentes/Cabecalhos/Cabecalho';
 
 function App() {
   return (
-
-   
     <Cabecalho></Cabecalho>
+
   );
 }
 
