@@ -3,8 +3,9 @@ import React from 'react';
 
 function Inicio(){
     return(
-        <h1><p>Calc</p></h1>
-
+        <div>
+         <img src='/img/background1.png' className='Background'/>
+      </div>
     )
 }
 

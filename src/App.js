@@ -7,7 +7,7 @@ function App() {
   return (
     <>
 
-    <Cabecalho></Cabecalho>
+    {/* <Cabecalho></Cabecalho> */}
     
     <Inicio></Inicio>
 
