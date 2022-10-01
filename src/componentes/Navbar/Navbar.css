@@ -1,38 +1,69 @@
+*{
+  padding: 0;
+  box-sizing: none;
+}
+
+
 .Navbar {    
     font-size: 30px;
     font-weight: 700;
     line-height: 30px;
     font-style: normal;
-    height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background: #F1F7FC;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.12);
     font-family: 'Josefin Sans';
     text-decoration: none;
   }
   
-  .Navbar > .nav-logo {
+  .Navbar  .nav-logo {
     font-weight: 700;
-    font-size: 30px;
+    font-size: 35px;
     margin: 30px;
     color: #5850FE;
   }
+
+  .Navbar .nav-logo .cash {
+    font-weight: 700;
+    font-size: 30px;
+    color: #38AE59;
+  }
+
+  .Navbar  .nav-items{
+    margin-right: 50px;
+  }
   
-  .Navbar > .nav-items > a {
+  .Navbar  .nav-items a {
     color: #5850FE;
     font-size: 16px;
     text-decoration: none;
     margin: 30px;
     position: relative;
     opacity: 0.9;
+    transition: .3s;
+  }
+
+  .Navbar  .nav-items a:hover{
+    color: #38AE59;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.074);
+  }
+
+  .Navbar  .nav-items a span:hover{
+    color: #5850FE;
+  }
+
+  .Navbar  .nav-items a span{
+    color: #38AE59;
+    transition: .3s;
   }
   
-  .Navbar > .nav-items > a:hover {
+  .Navbar .nav-items a:hover {
     opacity: 1;
   }
   
-  .Navbar > .nav-items > a::before {
+  .Navbar  .nav-items  a::before {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -42,16 +73,16 @@
     transition: all 0.45s;
   }
   
-  .Navbar > .nav-items > a:hover::before {
+  .Navbar  .nav-items  a:hover::before {
     width: 100%;
   }
   
-  .Navbar > .nav-toggle {
+  .Navbar .nav-toggle {
     display: none;
   }
   
   @media (max-width: 700px) {
-    .Navbar > .nav-items {
+    .Navbar  .nav-items {
       position: absolute;
       top: 60px;
       display: flex;
@@ -64,15 +95,15 @@
       transition: all .45s;
     }
   
-    .Navbar > .nav-items > a::before {
+    .Navbar  .nav-items  a::before {
         background: transparent;
     }
   
-    .Navbar > .nav-items.open {
+    .Navbar  .nav-items.open {
         transform: translateX(0);
     }
   
-    .Navbar > .nav-toggle {
+    .Navbar  .nav-toggle {
       display: flex;
       width: 50px;
       height: 50px;
@@ -81,7 +112,7 @@
       cursor: pointer;
     }
   
-    .nav-toggle > .bar {
+    .nav-toggle  .bar {
       position: relative;
       width: 32px;
       height: 2px;
@@ -89,8 +120,8 @@
       transition: all 0.45s ease-in-out;
     }
   
-    .nav-toggle > .bar::before,
-    .nav-toggle > .bar::after {
+    .nav-toggle  .bar::before,
+    .nav-toggle  .bar::after {
       content: "";
       position: absolute;
       height: 2px;
@@ -99,28 +130,28 @@
       transition: all 0.45s ease-in-out;
     }
   
-    .nav-toggle > .bar::before {
+    .nav-toggle  .bar::before {
       width: 25px;
       transform: translateY(-8px);
       right: 0;
     }
   
-    .nav-toggle > .bar::after {
+    .nav-toggle  .bar::after {
       width: 32px;
       transform: translateY(8px);
     }
   
-    .nav-toggle.open > .bar {
+    .nav-toggle.open  .bar {
         transform: translateX(-40px);
         background: transparent;
     }
   
-    .nav-toggle.open > .bar::before {
+    .nav-toggle.open  .bar::before {
         width: 32px;
         transform: rotate(45deg) translate(26px, -26px);
     }
   
-    .nav-toggle.open > .bar::after {
+    .nav-toggle.open  .bar::after {
       transform: rotate(-45deg) translate(26px, 26px);
     }
   
