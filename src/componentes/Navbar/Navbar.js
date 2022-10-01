@@ -1,19 +1,23 @@
-import React from 'react';
-import './Navbar.css';
+import React, { useState } from "react";
+import "./Navbar.css";
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="Navbar">
+      <span className="nav-logo">Calcash</span>
+      <div className={`nav-items ${isOpen && "open"}`}>
+        <a href="/inicio">INICIO</a>
+        <a href="/ferramentas">FERRAMENTAS</a>
+        <a href="/contato">CONTATO</a>
+      </div>
+      <div
+        className={`nav-toggle ${isOpen && "open"}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className="bar"></div>
+      </div>
+    </div>
+  );
+};
 
-export default function Navbar() {
-    return <nav className="navbar">
-        <a href="/" className="tituloSite">Calcash</a>
-        <ul>
-            <li>
-                <a href="/"><span className='navbar'>Inicio</span></a>
-            </li>
-            <li>
-                <a href="/"><span className='navbar'>Ferramentas</span></a>
-            </li>
-            <li>
-                <a href="/"><span className='navbar'>Contato</span></a>
-            </li>
-        </ul>
-    </nav>
-}
+export default Navbar;
