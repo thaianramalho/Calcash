@@ -2,10 +2,10 @@
     width: 100%;
 }
 
-p{
+/* p{
     display: flex;
     flex-wrap: wrap;
-}
+} */
 
 #principal{
     flex: 1;
@@ -20,8 +20,8 @@ p{
     margin-left: 10%;
     position: relative;
     justify-content: space-between;
-    display: content;
-    width: 400px;
+    /* display: content; */
+    width: 450px;
     
 }
 
@@ -40,22 +40,19 @@ p{
 
 #textoComum{
     font-family: 'Public Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 20px;
-text-align: justify;
-margin-left: 10%;
-margin-top: -100px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: justify;
+    margin-left: 10%;
+    margin-top: -100px;
 
 color: #898989;
 
 }
 
-#desenhosvg{
+/* #desenhosvg{
     align-items: flex-end;
-    margin-top: -400px;
-    margin-right: auto;
-    /* background-image: url('/public/img/DesenhoSVG.png');
-    background-position: bottom; */
-}
+    margin-top: -100px;
+} */
