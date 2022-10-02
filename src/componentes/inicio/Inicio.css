@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+#principal{
+    flex: 1;
+}
+
 #title{
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -43,5 +47,5 @@ color: #898989;
 }
 
 #desenhosvg{
-    background-position: right;
+    align-items: flex-end;
 }
