@@ -2,6 +2,11 @@
     width: 100%;
 }
 
+p{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #principal{
     flex: 1;
 }
@@ -16,6 +21,7 @@
     position: relative;
     justify-content: space-between;
     display: content;
+    width: 400px;
     
 }
 
@@ -48,4 +54,8 @@ color: #898989;
 
 #desenhosvg{
     align-items: flex-end;
+    margin-top: -400px;
+    margin-right: auto;
+    /* background-image: url('/public/img/DesenhoSVG.png');
+    background-position: bottom; */
 }
