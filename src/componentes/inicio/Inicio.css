@@ -21,8 +21,15 @@
     position: relative;
     justify-content: space-between;
     /* display: content; */
-    width: 450px;
+    width: 550px;
     
+}
+
+#calculator,
+#sack{
+    font-size: 94px;
+    padding-bottom: 13px;
+    margin-left: -20px;
 }
 
 #green{
@@ -52,7 +59,14 @@ color: #898989;
 
 }
 
-/* #desenhosvg{
-    align-items: flex-end;
-    margin-top: -100px;
-} */
+ #desenhosvg{
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   z-index: -1;
+} 
+
+#desenhosvg svg{
+    z-index: -1;
+}
