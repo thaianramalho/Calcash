@@ -6,14 +6,12 @@
     font-family: 'Josefin Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 100px;
-    line-height: 131px;
+    font-size: 131px;
+    line-height: 120px;
     margin-left: 10%;
-    margin-top: 10%;
     position: relative;
     justify-content: space-between;
     display: content;
-    line-height: 20px;
     
 }
 
@@ -23,4 +21,23 @@
 
 #blue{
     color: #5850FE;
+}
+
+#miniIcone{
+    width: auto;
+    
+}
+
+#textoComum{
+    font-family: 'Public Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 20px;
+text-align: justify;
+margin-left: 10%;
+margin-top: -100px;
+
+color: #898989;
+
 }
