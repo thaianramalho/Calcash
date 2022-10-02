@@ -1,3 +1,26 @@
 .Background{
     width: 100%;
 }
+
+#title{
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 131px;
+    margin-left: 10%;
+    margin-top: 10%;
+    position: relative;
+    justify-content: space-between;
+    display: content;
+    line-height: 20px;
+    
+}
+
+#green{
+    color: #38AE59;
+}
+
+#blue{
+    color: #5850FE;
+}

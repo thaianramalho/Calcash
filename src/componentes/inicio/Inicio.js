@@ -3,8 +3,9 @@ import React from 'react';
 
 function Inicio(){
     return(
-        <div>
-         
+        <div id='title'>
+         <h1 id='blue'>Calc</h1>
+         <h1 id='green'>Cash</h1>
       </div>
     )
 }

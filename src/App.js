@@ -9,7 +9,7 @@ function App() {
 
     <Navbar></Navbar>
     
-    {/* <Inicio></Inicio> */}
+    <Inicio></Inicio>
 
     </>
   );
