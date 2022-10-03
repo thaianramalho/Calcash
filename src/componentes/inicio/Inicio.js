@@ -22,9 +22,9 @@ function Inicio(){
           <p>Possuímos ferramentas que irão facilitar seu dia a dia nos<br></br> cálculos de lucro por venda em sua Loja Virtual do<br></br> <span id='green'>Mercado Livre, Shopee, B2W, entre outros!</span></p>
           </div>
           <div id='desenhosvg'>
-          <svg width="1367" height="688" viewBox="0 0 1367 688" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 687.5L1021.5 519.494L1366.5 0V687.5H821.5H0Z" fill="#5850FE"/>
-</svg>
+          <svg width="6811" height="3426" viewBox="0 0 6811 3426" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.72168 3428.4L5093.47 2590.8L6813.49 0.830322V3428.4H4096.36H0.72168Z" fill="#5850FE"/>
+          </svg>
           </div>
       </div>
     )
