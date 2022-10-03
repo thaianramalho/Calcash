@@ -1,6 +1,6 @@
 *{
   padding: 0;
-  box-sizing: none;
+  box-sizing: border-box;
 }
 
 
@@ -9,6 +9,8 @@
     font-weight: 700;
     line-height: 30px;
     font-style: normal;
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -32,14 +34,15 @@
   }
 
   .Navbar  .nav-items{
-    margin-right: 50px;
+    margin-right: 60px;
   }
   
   .Navbar  .nav-items a {
     color: #5850FE;
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     margin: 30px;
+    margin-right: 90px;
     position: relative;
     opacity: 0.9;
     transition: .3s;
