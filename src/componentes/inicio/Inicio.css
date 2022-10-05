@@ -109,13 +109,13 @@ color: #898989;
 
  #desenhosvg{
    position: absolute;
-   left: 0;
+   
    right: 0;
-   top: -1250px;
+   bottom: 0px;
    z-index: -3;
 } 
 
 #desenhosvg svg{
     z-index: -3;
-    max-width: 100%;
+    
 }
