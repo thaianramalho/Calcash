@@ -109,9 +109,8 @@ color: #898989;
 
  #desenhosvg{
    position: absolute;
-   
    right: 0;
-   bottom: 0px;
+   bottom: -3px;
    z-index: -3;
 } 
 
