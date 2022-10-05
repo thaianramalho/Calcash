@@ -1,6 +1,4 @@
-.Background{
-    
-}
+
 
 body{
     overflow-x: hidden;
@@ -17,7 +15,7 @@ body{
     display: flex;
     align-items: center;
     text-align: justify;
-}
+} 
 
 .textos{
     display: flex;
@@ -181,6 +179,109 @@ color: #898989;
 
 
 @media (max-width:1155px){
+
+    #principal{
+        
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .textos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        padding-bottom: 50px;
+        margin: 0 50px;
+    }
+    
+    #blue{
+        margin:90px 0;
+    }
+    
+    #title{
+        
+        font-family: 'Josefin Sans';
+        font-style: normal;
+        font-size: 100px;
+        line-height: 150px;
+        margin-left: 20%;
+        width: 550px;
+        text-align: center;
+    }
+    
+    #textoComum{
+        width: 780px;
+    }
+    
+    #textoComum p{
+        line-height: 30px;
+        font-size: 23px;
+        margin-left: 10%;
+    
+    }
+    
+    
+    #calculator,
+    #sack{
+        font-size: 100px;
+        padding-bottom: 13px;
+        margin-left: -20px;
+    }
+    
+    #green{
+        color: #38AE59;
+    }
+    
+    #blue{
+        color: #5850FE;
+    }
+    
+    #miniIcone{
+        width: auto;
+        
+    }
+    
+    #textoComum{
+        font-family: 'Public Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: justify;
+        margin-left: 10%;
+        margin-top: -100px;
+    
+    color: #898989;
+    
+    }
+    
+    .calcu{
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+    }
+    
+    .calcu img{
+        width: 500px;
+        position: absolute;
+        bottom: -460px; right: 300px;
+    }
+    
+    .calcu-som{
+        width: 100%;
+        z-index: -4;
+    }
+    
+    .calcu-som img{
+    
+        width: 500px;
+        position: absolute;
+        bottom: -460px; right: 350px;
+    }
+
 
 
 
