@@ -9,6 +9,7 @@
 
 #principal{
     min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     text-align: justify;
@@ -83,6 +84,8 @@ color: #898989;
 .calcu{
     width: 100%;
     z-index: -1;
+    position: absolute;
+    bottom: 0;
 }
 
 .calcu img{
@@ -103,18 +106,19 @@ color: #898989;
     bottom: 0; right: 350px;
 }
 
-
-
-
-
  #desenhosvg{
    position: absolute;
-   right: 0;
-   bottom: -3px;
+   right: -100px;
+   top: 0px;
    z-index: -3;
+   height: 100vh;
+   
+   
 } 
 
 #desenhosvg svg{
     z-index: -3;
+    height: 100vh;
+    
     
 }
