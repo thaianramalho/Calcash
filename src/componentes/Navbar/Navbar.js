@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { faBars} from '@fortawesome/free-solid-svg-icons';
+
+
+let barra = <FontAwesomeIcon id='faBars' icon={faBars} />;
+
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
