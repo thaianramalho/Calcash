@@ -21,10 +21,10 @@ function Inicio(){
               <br></br>
               <span id='green'>Cash <FontAwesomeIcon id='sack' icon={faSackDollar}/></span>
               </p>
-                    </div>
-                    <div id='textoComum'>
-            <p>Possuímos ferramentas que irão facilitar seu dia a dia nos cálculos de lucro por venda em sua Loja Virtual do <span id='green'>Mercado Livre, Shopee, B2W, entre outros!</span></p>
             </div>
+                <div id='textoComum'>
+            <p>Possuímos ferramentas que irão facilitar seu dia a dia nos cálculos de lucro por venda em sua Loja Virtual do <span id='green'>Mercado Livre, Shopee, B2W, entre outros!</span></p>
+                </div>
           </div>
 
           <div className='calcu-som'>

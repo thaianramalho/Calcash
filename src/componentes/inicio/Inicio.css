@@ -38,10 +38,13 @@
     width: 550px;
 }
 
+#textoComum{
+    width: 780px;
+}
+
 #textoComum p{
     line-height: 30px;
-    font-size: 25px;
-    width: 660px;
+    font-size: 23px;
     margin-left: 10%;
 
 }
@@ -119,6 +122,62 @@ color: #898989;
     position: absolute;
    bottom: 0; right: 0;
     
+}
+
+
+@media (max-width:1550px){
+   
+    #title{
+        font-size: 110px;
+    }
+
+    #calculator,
+#sack{
+    font-size: 75px;
+}
+
+#textoComum{
     
+    width: 550px;
+}
+
+#textoComum p{
+    font-size: 20px;
     
 }
+
+
+
+
+.calcu img{
+    width: 500px;
+    position: absolute;
+    bottom: -7px; right: 150px;
+}
+
+.calcu-som{
+    width: 100%;
+    z-index: -4;
+}
+
+.calcu-som img{
+
+    width: 500px;
+    position: absolute;
+    bottom: 0; right: 150px;
+}
+
+
+
+
+}
+
+
+@media (max-width:1160px){
+
+    
+
+
+}
+
+
