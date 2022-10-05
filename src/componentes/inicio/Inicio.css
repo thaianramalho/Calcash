@@ -2,6 +2,10 @@
     
 }
 
+body{
+    overflow-x: hidden;
+}
+
 /* p{
     display: flex;
     flex-wrap: wrap;
