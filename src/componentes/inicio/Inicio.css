@@ -306,7 +306,7 @@ color: #898989;
 
     #principal{
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         margin: 0;
         padding: 0;
     }
@@ -327,12 +327,14 @@ color: #898989;
     #title{
         display: flex;
         justify-content: center;
+        align-items: flex-start;
         font-family: 'Josefin Sans';
         font-style: normal;
         font-size: 90px;
         line-height: 85px;
         margin-left: 0;
-        margin-top: -25%;
+        margin-top: 0;
+        padding-top: 5%;
         width: 550px;
         text-align: center;
     }
@@ -340,7 +342,7 @@ color: #898989;
     #textoComum{
         width: 310px;
         display: flex;
-        justify-content: center;
+        justify-content: center;align-items: flex-start;
         text-align: justify;
         margin: 0;
         margin-top: -80px;
@@ -362,6 +364,32 @@ color: #898989;
         font-size: 59px;
         padding-bottom: 7px;
         margin-left: -6px;
+    }
+
+    .calcu{
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .calcu img{
+        width: 500px;
+        position: absolute;
+        bottom: -460px; right: 300px;
+    }
+    
+    .calcu-som{
+        width: 100%;
+        z-index: -4;
+    }
+    
+    .calcu-som img{
+    
+        width: 500px;
+        position: absolute;
+        bottom: -460px; right: 350px;
     }
 
 
