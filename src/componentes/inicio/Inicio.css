@@ -136,6 +136,8 @@ color: #898989;
     #calculator,
 #sack{
     font-size: 75px;
+    padding-bottom: 9px;
+    margin-left: -20px;
 }
 
 #textoComum{
@@ -181,9 +183,7 @@ color: #898989;
 @media (max-width:1155px){
 
     #principal{
-        
-        justify-content: center;
-        align-items: center;
+        display: block;
         margin: 0;
         padding: 0;
     }
@@ -192,57 +192,44 @@ color: #898989;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: justify;
+        text-align: center;
         padding-bottom: 50px;
         margin: 0 50px;
     }
     
-    #blue{
-        margin:90px 0;
-    }
     
     #title{
-        
-        font-family: 'Josefin Sans';
-        font-style: normal;
         font-size: 100px;
-        line-height: 150px;
-        margin-left: 20%;
+        margin-left: 0%;
+        margin-top: 5%;
         width: 550px;
         text-align: center;
     }
     
     #textoComum{
-        width: 780px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 490px;
+        margin: 0;
     }
     
     #textoComum p{
         line-height: 30px;
-        font-size: 23px;
-        margin-left: 10%;
+        font-size: 21px;
+        margin: 0 0 0 -45px;
+        padding: 0;
     
     }
     
     
     #calculator,
     #sack{
-        font-size: 100px;
-        padding-bottom: 13px;
+        font-size: 75px;
+        padding-bottom: 9px;
         margin-left: -20px;
     }
     
-    #green{
-        color: #38AE59;
-    }
-    
-    #blue{
-        color: #5850FE;
-    }
-    
-    #miniIcone{
-        width: auto;
-        
-    }
     
     #textoComum{
         font-family: 'Public Sans';
@@ -253,33 +240,41 @@ color: #898989;
         text-align: justify;
         margin-left: 10%;
         margin-top: -100px;
-    
-    color: #898989;
+        color: #898989;
     
     }
     
     .calcu{
-        width: 100%;
         z-index: -1;
         position: absolute;
+        display: flex;
+        justify-content: center;
+        margin-left: 75px;
+
     }
     
     .calcu img{
         width: 500px;
-        position: absolute;
-        bottom: -460px; right: 300px;
+        position: static; 
+        margin:0 auto ;
+        margin-bottom: -450px;
     }
     
     .calcu-som{
-        width: 100%;
         z-index: -4;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 5px;
     }
     
     .calcu-som img{
     
         width: 500px;
-        position: absolute;
-        bottom: -460px; right: 350px;
+        position: static; 
+        margin:0 auto ;
+        margin-bottom: -450px;
     }
 
 
