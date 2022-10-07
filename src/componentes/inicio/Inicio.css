@@ -15,6 +15,7 @@ body{
     display: flex;
     align-items: center;
     text-align: justify;
+    background-image: url('/public/img/DesenhoSVG.png');
 } 
 
 .textos{
@@ -124,7 +125,7 @@ color: #898989;
    width: 100vw;
    height: 100%;
    z-index: -3;
-   background-image: url('/public/svgs/Rectangle\ 7.svg');
+   background-image: url('/public/img/DesenhoSVG.png');
 } 
 
 #desenhosvg svg{
@@ -137,6 +138,7 @@ color: #898989;
 
 @media (max-width:1550px){
    
+    
     #title{
         font-size: 110px;
     }
@@ -394,9 +396,9 @@ color: #898989;
         position: absolute;
         bottom: 0; right: 0;
         width: 100vw;
-        height: 100%;
+        height: 100vh;
         z-index: -3;
-        background-image: url('/public/svgs/svg-mbile.svg');
+        background-image: url('/public/svgs/mobile2.svg');
      } 
      
 
