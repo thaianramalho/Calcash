@@ -15,7 +15,6 @@ body{
     display: flex;
     align-items: center;
     text-align: justify;
-    background-image: url('/public/img/DesenhoSVG.png');
 } 
 
 .textos{
@@ -395,10 +394,13 @@ color: #898989;
     #desenhosvg{
         position: absolute;
         bottom: 0; right: 0;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         z-index: -3;
-        background-image: url('/public/svgs/mobile2.svg');
+        background-image: url('/svgs/mobile2.svg');
+        background-position: center;
+        background-repeat: none;
+        background-size: cover;
      } 
      
 
