@@ -32,7 +32,7 @@ function Inicio(){
           </div>
 
           <div className='calcu'>
-            <img src='/img/calc.png'/>
+            <img src='/img/TESTE1.png'/>
           </div>
 
           
