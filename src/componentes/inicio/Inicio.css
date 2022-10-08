@@ -254,6 +254,7 @@ posicao calc  */
 
     .calcu-som img{
         width: 280px; 
+        bottom: -47px; right: 280px;
 }
 
     #title{
@@ -286,7 +287,13 @@ posicao calc  */
         display: block;
         margin: 0;
         padding: 0;
-        height: 100vh;
+        height: auto;
+        background-image: url('/svgs/svgTransparente.svg');
+        background-position: none;
+        background-size: auto;
+        background-repeat: none;
+        background-size:cover;
+        z-index: -3;
     }
     
     .textos{
@@ -347,26 +354,25 @@ posicao calc  */
     
     .calcu{
     
-        z-index: -1;
+        z-index: 1;
         position: absolute;
         right: 0;
         bottom: 0;
         padding-top: 10%;
+        background-color: #5850FE;
         
     }
     
     .calcu img{
-    
         margin-top: 5%;
         width: 320px;
         transform: skew(15deg);
         padding-top: 5%;
         position: absolute;
-        bottom: -7px; right: 300px;
+        bottom: -500px; right: 370px;
     }
     
     .calcu-som{
-        z-index: -1;
         position: absolute;
         right: 0;
         bottom: 0;
@@ -386,14 +392,12 @@ posicao calc  */
 
     #desenhosvg{
         position: absolute;
-        bottom: none; right: 0;
+        bottom: -400px; right: 0;
         width: 100vw;
         height: 100vh;
         z-index: -3;
-        background-image: url('/svgs/testemaior.svg');
-        background-position: center;
-        background-repeat: none;
-        background-size: cover;
+        background-image: none;
+        
      } 
     
     
