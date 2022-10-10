@@ -355,17 +355,20 @@ posicao calc  */
     .calcu{
     
         z-index: 1;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        position: relative;
+        right: 0;
+        bottom: 0;
+        padding-top: 10%;
         
     }
     
     .calcu img{
+        margin-top: 5%;
         width: 320px;
         transform: skew(15deg);
-        
-       
+        padding-top: 5%;
+        position: absolute;
+        bottom: -500px; right: 370px;
     }
     
     .calcu-som{
