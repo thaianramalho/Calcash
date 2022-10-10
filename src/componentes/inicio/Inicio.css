@@ -288,11 +288,11 @@ posicao calc  */
         margin: 0;
         padding: 0;
         height: auto;
-        background-image: url('/svgs/svgTransparente.svg');
+        /* background-image: url('/svgs/svgTransparente.svg');
         background-position: none;
         background-size: auto;
         background-repeat: none;
-        background-size:cover;
+        background-size:cover; */
         z-index: -3;
     }
     
@@ -355,21 +355,17 @@ posicao calc  */
     .calcu{
     
         z-index: 1;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        padding-top: 10%;
-        background-color: #5850FE;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
         
     }
     
     .calcu img{
-        margin-top: 5%;
         width: 320px;
         transform: skew(15deg);
-        padding-top: 5%;
-        position: absolute;
-        bottom: -500px; right: 370px;
+        
+       
     }
     
     .calcu-som{
@@ -392,17 +388,30 @@ posicao calc  */
 
     #desenhosvg{
         position: absolute;
-        bottom: -400px; right: 0;
+        bottom: -500px; right: 0;
         width: 100vw;
         height: 100vh;
         z-index: -3;
-        background-image: none;
+        /* background-image: none; */
+        background-image: url('/svgs/svgTransparente.svg');
+        background-position: 0% 0%;
+        background-size: auto;
+        background-size:cover;
         
      } 
     
     
 
 }
+
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+
+
+
 
 /* mobile */
 /* mobile */
@@ -515,7 +524,7 @@ posicao calc  */
         width: 100%;
         height: 110vh;
         z-index: -3;
-        background-image: url('/svgs/mobile2.svg');
+        background-image: url('/svgs/mobileMenor.svg');
         background-position: center;
         background-repeat: none;
         background-size: cover;
