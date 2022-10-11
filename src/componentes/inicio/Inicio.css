@@ -93,17 +93,17 @@ color: #898989;
     right: 0;
     bottom: 0;
     padding-top: 10%;
-    
+    width: 100%;
+    height: 100%;
 }
 
 .calcu img{
-
-    margin-top: 5%;
     width: 320px;
+    margin-top: 5%;
     transform: skew(15deg);
     padding-top: 5%;
     position: absolute;
-    bottom: -7px; right: 300px;
+    bottom: 0; right: 300px;
 }
 
 .calcu-som{
@@ -112,17 +112,18 @@ color: #898989;
     right: 0;
     bottom: 0;
     padding-top: 10%;
-        z-index: -4;
+    z-index: -4;
 }
 
 .calcu-som img{
-    margin-top: 5%;
     width: 320px;
+    margin-top: 5%;
     transform: skew(15deg);
     padding-top: 5%;
     position: absolute;
     bottom: -49px; right: 350px;
-    opacity: 0.02;
+    opacity: 0.05;
+    filter: blur(3px);
 }
 
  #desenhosvg{
@@ -197,17 +198,17 @@ color: #898989;
     right: 0;
     bottom: 0;
     padding-top: 10%;
-    
+    width: 100%;
+    height: 100%;
 }
 
 .calcu img{
 
     margin-top: 5%;
-    width: 320px;
     transform: skew(15deg);
     padding-top: 5%;
     position: absolute;
-    bottom: -7px; right: 300px;
+    bottom: 0; right: 300px;
 }
 
 .calcu-som{
@@ -221,12 +222,12 @@ color: #898989;
 
 .calcu-som img{
     margin-top: 5%;
-    width: 320px;
     transform: skew(15deg);
     padding-top: 5%;
     position: absolute;
     bottom: -49px; right: 350px;
-    opacity: 0.02;
+    opacity: 0.05;
+    filter: blur(3px);
 }
 
 }
@@ -351,24 +352,34 @@ posicao calc  */
         color: #898989;
     
     }
+
+
+    .calculadora-toda{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 0 auto;
+
+    }
+
     
     .calcu{
-    
         z-index: 1;
-        position: relative;
+        position:unset;
         right: 0;
         bottom: 0;
         padding-top: 10%;
-        
     }
     
     .calcu img{
         margin-top: 5%;
-        width: 320px;
+
         transform: skew(15deg);
         padding-top: 5%;
         position: absolute;
-        bottom: -500px; right: 370px;
+        bottom: -350px; right: 300px;
     }
     
     .calcu-som{
@@ -376,7 +387,7 @@ posicao calc  */
         right: 0;
         bottom: 0;
         padding-top: 10%;
-            z-index: -4;
+        z-index: -4;
     }
     
     .calcu-som img{
@@ -391,7 +402,7 @@ posicao calc  */
 
     #desenhosvg{
         position: absolute;
-        bottom: -500px; right: 0;
+        bottom: -350px; right: 0;
         width: 100vw;
         height: 100vh;
         z-index: -3;
@@ -502,8 +513,6 @@ posicao calc  */
 
     
     .calcu img{
-        height: 100%;
-        width: 100%;
         position: absolute;
         bottom: 0px; right: 0px;
     }

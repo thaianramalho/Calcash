@@ -27,12 +27,13 @@ function Inicio(){
                 </div>
           </div>
 
-          <div className='calcu-som'>
-            <img src='/img/jaj-66.jpg'/>
-          </div>
-
-          <div className='calcu'>
-            <img src='/img/cortada-calc.png'/>
+          <div className='calculadora-toda'>
+            <div className='calcu-som'>
+              <img src='/img/sombra-300.png'/>
+            </div>
+            <div className='calcu'>
+              <img src='/img/menorCalc.png'/>
+            </div>
           </div>
 
           
