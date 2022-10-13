@@ -15,6 +15,11 @@ body{
     display: flex;
     align-items: center;
     text-align: justify;
+    background-image: url('/svgs/Rectangle-7.svg');
+   background-position: center bottom;
+   background-repeat: none;
+   background-size: cover;
+   z-index: -100;
 } 
 
 .textos{
@@ -88,7 +93,7 @@ color: #898989;
 
 .calcu{
     
-    z-index: -1;
+    z-index: 2;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -133,10 +138,10 @@ color: #898989;
    width: 100vw;
    height: 100%;
    z-index: -3;
-   background-image: url('/svgs/Rectangle-7.svg');
-   background-position: center;
+   /* background-image: url('/svgs/Rectangle-7.svg');
+   background-position: center bottom;
    background-repeat: none;
-   background-size: cover;
+   background-size: cover; */
 } 
 
 /* #desenhosvg svg{
@@ -144,13 +149,6 @@ color: #898989;
    bottom: 0; right: 0;
     
 } */
-
-
-
-
-
-
-
 
 
 
@@ -188,12 +186,9 @@ color: #898989;
     
 }
 
-
-
-
 .calcu{
     
-    z-index: -1;
+    z-index: 2;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -232,6 +227,38 @@ color: #898989;
 
 }
 
+/* altura da calculadora png */
+/* altura da calculadora png */
+/* altura da calculadora png */
+
+
+@media (max-height:823px){
+
+    .calcu img{
+        width: 300px;
+    }
+
+    
+    .calcu-som img{
+        width: 300px;
+    }
+
+}
+
+
+@media (max-height:770px){
+
+    .calcu img{
+        width: 280px;
+    }
+
+    
+    .calcu-som img{
+        width: 280px;
+    }
+
+}
+
 
 /* 1373
 posicao calc  */
@@ -249,7 +276,7 @@ posicao calc  */
 
     .calcu img{
         width: 280px;
-        bottom: -7px; right: 230px;
+        bottom:0px; right: 230px;
     }
 
 
@@ -289,11 +316,10 @@ posicao calc  */
         margin: 0;
         padding: 0;
         height: auto;
-        /* background-image: url('/svgs/svgTransparente.svg');
-        background-position: none;
+        background-image: url('/svgs/svgTransparente2.svg');
+        background-position: center bottom;
         background-size: auto;
-        background-repeat: none;
-        background-size:cover; */
+        background-size:cover; 
         z-index: -3;
     }
     
@@ -367,8 +393,6 @@ posicao calc  */
     .calcu{
         z-index: 1;
         position: unset;
-        right: 0;
-        bottom: 0px;
         padding-top: 0%;
         display: flex;
         justify-content: center;
@@ -385,21 +409,11 @@ posicao calc  */
     }
     
     .calcu-som{
-        position: absolute;
-        right: 200px;
-        bottom: 0;
-        padding-top: 10%;
-        z-index: -4;
+        display: none;
     }
     
     .calcu-som img{
-        margin-top: 5%;
-        width: 320px;
-        transform: skew(15deg);
-        padding-top: 5%;
-        position: absolute;
-        bottom: -49px; right: 350px;
-        opacity: 0.02;
+        display: none;
     }
 
     #desenhosvg{
@@ -407,11 +421,11 @@ posicao calc  */
         width: 100vw;
         height: 100%;
         z-index: -3;
-        /* background-image: none; */
-        background-image: url('/svgs/svgTransparente.svg');
+         background-image: none; 
+        /* background-image: url('/svgs/svgTransparente.svg');
         background-position: 0% 0%;
         background-size: auto;
-        background-size:cover;
+        background-size:cover; */
         
      } 
     
@@ -443,6 +457,10 @@ posicao calc  */
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        background-image: url('/svgs/mobileMenor.svg');
+        background-position: center bottom;
+        background-size: auto;
+        background-size:cover;
 
         
     }
@@ -476,7 +494,7 @@ posicao calc  */
     }
     
     #textoComum{
-        width: 310px;
+        width: 350px;
         display: flex;
         justify-content: center;align-items: flex-start;
         text-align: justify;
@@ -491,6 +509,9 @@ posicao calc  */
         line-height: 20px;
         font-size: 14px;
         margin-left: 0;
+        background-color: #F1F7FC;
+        border-radius: 5px;
+        padding: 5px;
     
     }
     
@@ -533,21 +554,11 @@ posicao calc  */
     }
     
     .calcu-som{
-        position: absolute;
-        right: 200px;
-        bottom: 0;
-        padding-top: 10%;
-        z-index: -4;
+        display: none;
     }
     
     .calcu-som img{
-        margin-top: 5%;
-        width: 320px;
-        transform: skew(15deg);
-        padding-top: 5%;
-        position: absolute;
-        bottom: -49px; right: 350px;
-        opacity: 0.02;
+        display: none;
     }
 
     #desenhosvg{
@@ -601,7 +612,7 @@ posicao calc  */
         align-items: flex-start;
         font-family: 'Josefin Sans';
         font-style: normal;
-        font-size: 70px;
+        font-size: 80px;
         line-height: 85px;
         margin-left: 0;
         margin-top: 0;
@@ -611,28 +622,28 @@ posicao calc  */
     }
     
     #textoComum{
-        width: 230px;
+        width: 280px;
         display: flex;
         justify-content: center;align-items: flex-start;
         text-align: justify;
         margin: 0;
         margin-top: -75px;
-
-
-        
     }
     
     #textoComum p{
         line-height: 20px;
         font-size: 12px;
         margin-left: 0;
+        background-color: #F1F7FC;
+        border-radius: 5px;
+        padding: 5px;
     
     }
     
     
     #calculator,
     #sack{
-        font-size: 49px;
+        font-size: 59px;
         padding-bottom: 7px;
         margin-left: -6px;
     }
