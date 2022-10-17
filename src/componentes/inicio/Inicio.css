@@ -4,10 +4,6 @@ body{
     overflow-x: hidden;
 }
 
-/* p{
-    display: flex;
-    flex-wrap: wrap;
-} */
 
 #principal{
     min-height: 100vh;
@@ -133,23 +129,12 @@ color: #898989;
 
  #desenhosvg{
    position: absolute;
-   /* bottom: 0;*/
    right: 0; 
    width: 100vw;
    height: 100%;
    z-index: -3;
-   /* background-image: url('/svgs/Rectangle-7.svg');
-   background-position: center bottom;
-   background-repeat: none;
-   background-size: cover; */
+   
 } 
-
-/* #desenhosvg svg{
-    position: absolute;
-   bottom: 0; right: 0;
-    
-} */
-
 
 
 /* 1550px "maior" */
