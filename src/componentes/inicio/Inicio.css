@@ -422,10 +422,7 @@ posicao calc  */
         height: 100%;
         z-index: -3;
          background-image: none; 
-        /* background-image: url('/svgs/svgTransparente.svg');
-        background-position: 0% 0%;
-        background-size: auto;
-        background-size:cover; */
+
         
      } 
     
