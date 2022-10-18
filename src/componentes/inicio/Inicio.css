@@ -244,6 +244,32 @@ color: #898989;
 
 }
 
+@media (max-height:730px){
+
+    .calcu img{
+        width: 240px;
+    }
+
+    
+    .calcu-som img{
+        width: 240px;
+    }
+
+}
+
+@media (max-height:500px){
+
+    .calcu img{
+        width: 140px;
+    }
+
+    
+    .calcu-som img{
+        width: 140px;
+    }
+
+}
+
 
 /* 1373
 posicao calc  */
@@ -260,18 +286,19 @@ posicao calc  */
 @media (max-width:1373px){
 
     .calcu img{
-        width: 280px;
+        width: 220px;
         bottom:0px; right: 230px;
     }
 
 
     .calcu-som img{
-        width: 280px; 
+        width:210px; 
         bottom: 150px; right: 300px;
 }
 
     #title{
     margin-left: 10%;
+    line-height: 110px;
 }
 
     #textoComum{
