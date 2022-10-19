@@ -1,6 +1,7 @@
 body{
     overflow-x: hidden;
     overflow-y: hidden;
+    
 }
 
 #green{
@@ -12,15 +13,9 @@ body{
 }
 
 .ferramentas{
-    height: 80vh;
+    padding-bottom: 5%;
 }
 
-.ferramentas .containerBorda{
-    outline: 3px solid #38AE59;
-    padding: 5% 0 2% 0;
-    margin: 0 7%;
-    border-radius: 20px;
-}
 
 .ferramentas .titulo{
     text-align: center;
@@ -45,6 +40,10 @@ body{
     gap: 3.5rem;
     padding: 50px;
     margin: 0px 80px 0 80px;
+    outline: 3px solid #38AE59;
+    padding: 5% 0 3% 0;
+    margin: 0 10%;
+    border-radius: 20px;
 
 }
 
@@ -79,4 +78,28 @@ body{
  display: grid;
  justify-content: center;
     
+}
+
+
+@media (max-width:660px){
+
+    .ferramentas .container-box .box{
+
+      margin: 0;  
+      justify-content: center;  
+      width: 180px;
+      height: 170px;
+      padding: 0px;
+    }
+
+    .ferramentas .container-box .boxEtexto{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+       }
+
+    .ferramentas .container-box .box .img img{
+        width: 120px;
+    }
+
 }
