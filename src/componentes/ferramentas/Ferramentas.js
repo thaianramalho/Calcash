@@ -18,57 +18,36 @@ function Ferramentas(){
             </div>
 
 
-            <div className='container-box'>
-
-                <div className='boxEtexto'>
-                    <div className='box'>
-                        <div className='bg'></div>
-                    
-                        <div className='img'> <img src='/img/mercadoLivre.png'></img> </div>
-
+            <div  className='containerBorda'>
+                <div className='container-box'>
+                    <div className='boxEtexto'>
+                        <div className='box'>
+                            <div className='bg'></div>
+                
+                            <div className='img'> <img src='/img/mercadoLivre.png'></img> </div>
+                        </div>
+                
+                        <div className='texto'>CALCULADORA <br/> MERCADO LIVRE</div>
                     </div>
-
-                    
-                    <div className='texto'>CALCULADORA <br/> MERCADO LIVRE</div>
-
-
-                </div>
-
-
-
-                <div className='boxEtexto'>
-                    <div className='box'>
-                        <div className='bg'></div>
-                    
-                        <div className='img'> <img src='/img/shoope.png'></img> </div>
-
+                    <div className='boxEtexto'>
+                        <div className='box'>
+                            <div className='bg'></div>
+                
+                            <div className='img'> <img src='/img/shoope.png'></img> </div>
+                        </div>
+                
+                        <div className='texto'>CALCULADORA <br/> SHOPEE</div>
                     </div>
-
-                    
-                    <div className='texto'>CALCULADORA <br/> SHOPEE</div>
-
-
-                </div>
-
-
-
-                <div className='boxEtexto'>
-                    <div className='box'>
-                        <div className='bg'></div>
-                    
-                        <div className='img'> <img src='/img/b2w.png'></img> </div>
-
+                    <div className='boxEtexto'>
+                        <div className='box'>
+                            <div className='bg'></div>
+                
+                            <div className='img'> <img src='/img/b2w.png'></img> </div>
+                        </div>
+                
+                        <div className='texto'>CALCULADORA <br/> B2W</div>
                     </div>
-
-                    
-                    <div className='texto'>CALCULADORA <br/> B2W</div>
-
-
                 </div>
-
-
-
-
             </div>
 
         </div>
