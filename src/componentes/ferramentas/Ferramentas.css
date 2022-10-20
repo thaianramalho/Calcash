@@ -85,7 +85,7 @@ body{
 
     .ferramentas .container-box .box{
 
-      margin: 0;  
+      margin-left: 20%;  
       justify-content: center;  
       width: 180px;
       height: 170px;
@@ -100,6 +100,29 @@ body{
 
     .ferramentas .container-box .box .img img{
         width: 120px;
+    }
+
+}
+
+@media (max-width:425px){
+
+    .ferramentas .container-box .box{
+
+      margin-left: 20%;  
+      justify-content: center;  
+      width: 150px;
+      height: 120px;
+      padding: 0px;
+    }
+
+    .ferramentas .container-box .boxEtexto{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+       }
+
+    .ferramentas .container-box .box .img img{
+        width: 90px;
     }
 
 }
