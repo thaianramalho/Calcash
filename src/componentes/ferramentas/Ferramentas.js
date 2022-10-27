@@ -20,32 +20,45 @@ function Ferramentas(){
 
             <div  className='containerBorda'>
                 <div className='container-box'>
-                    <div className='boxEtexto'>
-                        <div className='box'>
-                            <div className='bg'></div>
-                
-                            <div className='img'> <img src='/img/mercadoLivre.png'></img> </div>
+                    
+                        <div className='boxEtexto'>
+                            <a className='link' href="">
+                                <div className='box'>
+                                    <div className='bg'></div>
+                                    <div className='img'> <img src='/img/mercadoLivre.png'></img> </div>
+                                </div>
+                            </a>
+                            <a className='link' href="">
+                                <div className='texto'>CALCULADORA <br/> MERCADO LIVRE</div>
+                            </a>
                         </div>
-                
-                        <div className='texto'>CALCULADORA <br/> MERCADO LIVRE</div>
-                    </div>
-                    <div className='boxEtexto'>
-                        <div className='box'>
-                            <div className='bg'></div>
-                
-                            <div className='img'> <img src='/img/shoope.png'></img> </div>
+                    
+                    
+                        <div className='boxEtexto'>
+                            <a className='link' href="">
+                                <div className='box'>
+                                    <div className='bg'></div>
+                                    <div className='img'> <img src='/img/shoope.png'></img> </div>
+                                </div>
+                            </a>
+                            <a className='link' href="">
+                                <div className='texto'>CALCULADORA <br/> SHOPEE</div>
+                            </a>
                         </div>
-                
-                        <div className='texto'>CALCULADORA <br/> SHOPEE</div>
-                    </div>
+                    
+
+
                     <div className='boxEtexto'>
-                        <div className='box'>
-                            <div className='bg'></div>
+                        <a className='link' href="#">
+                            <div className='box'>
+                                <div className='bg'></div>
+                                <div className='img'> <img src='/img/b2w.png'></img> </div>
+                            </div>
+                        </a>
                 
-                            <div className='img'> <img src='/img/b2w.png'></img> </div>
-                        </div>
-                
-                        <div className='texto'>CALCULADORA <br/> B2W</div>
+                        <a className='link'  href="">
+                            <div className='texto'>CALCULADORA <br/> B2W</div>
+                        </a>
                     </div>
                 </div>
             </div>

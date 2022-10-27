@@ -59,6 +59,7 @@ body{
   align-items: center;
   flex-direction: column;
   box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.137);
+  transition: 0.2s;
 }
 
 .ferramentas .container-box .texto{
@@ -77,8 +78,21 @@ body{
 .ferramentas .container-box .boxEtexto{
  display: grid;
  justify-content: center;
-    
+ 
 }
+
+.ferramentas .container-box a{
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.ferramentas .container-box a:hover .box{
+    transform: scale(0.95);
+    box-shadow: -1px 2px 8px rgba(0, 0, 0, 0.137);
+
+}
+
+
 
 
 
