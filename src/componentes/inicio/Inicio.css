@@ -16,6 +16,7 @@ body{
    background-repeat: none;
    background-size: cover;
    z-index: -100;
+   transition: 0.2s;
 } 
 
 .textos{
@@ -333,6 +334,7 @@ posicao calc  */
         background-size: auto;
         background-size:cover; 
         z-index: -3;
+        transition: 0.2s;
     }
     
     .textos{
@@ -434,6 +436,7 @@ posicao calc  */
         height: 100%;
         z-index: -3;
          background-image: none; 
+         transition: 0.2s;
 
         
      } 
@@ -470,6 +473,7 @@ posicao calc  */
         background-position: center bottom;
         background-size: auto;
         background-size:cover;
+        transition: 0.2s;
 
         
     }
@@ -580,7 +584,7 @@ posicao calc  */
         background-position: 0% 0%;
         background-size: auto;
         background-size:cover;
-        
+        transition: 0.2s;
      } 
 
 

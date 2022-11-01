@@ -13,7 +13,7 @@ function Ferramentas(){
 
             <div className='titulo'>
                 <h2>
-                    FERRAM<span>ENTAS</span>
+                    Ferram<span>entas</span>
                 </h2>
             </div>
 

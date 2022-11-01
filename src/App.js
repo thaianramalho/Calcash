@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './componentes/Navbar/Navbar';
 import Inicio from './componentes/inicio/Inicio';
 import Ferramentas from './componentes/ferramentas/Ferramentas';
+import Contatos from './componentes/contatos/Contatos';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
     <Inicio></Inicio>
 
     <Ferramentas></Ferramentas>
+
+    <Contatos></Contatos>
 
     </>
   );
