@@ -1,0 +1,15 @@
+*{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.calculadora  .box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(137, 43, 226, 0.355);
+}

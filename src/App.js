@@ -1,24 +1,33 @@
 import './App.css';
 import React from 'react';
-import Navbar from './componentes/Navbar/Navbar';
-import Inicio from './componentes/inicio/Inicio';
-import Ferramentas from './componentes/ferramentas/Ferramentas';
-import Contatos from './componentes/contatos/Contatos';
+
+import Pagina1 from './componentes/pagina-inicial/Pagina1';
+
+
+import { BrowserRouter as Router, Routes, Route } from
+'react-router-dom'
+import Calculadora from './componentes/Calculadora/Calculadora';
 
 function App() {
   return (
     <>
 
-    <Navbar></Navbar>
+    <Calculadora></Calculadora>
+
+{/*     
+    <Router> <Routes>
+
+    <Route path="/" element={<Pagina1 />}></Route>
+    <Route path="/" element={<Pagina1 />}></Route>
     
-    <Inicio></Inicio>
-
-    <Ferramentas></Ferramentas>
-
-    <Contatos></Contatos>
+  
+    </Routes> </Router>
+     */}
+    
 
     </>
   );
 }
 
 export default App;
+
