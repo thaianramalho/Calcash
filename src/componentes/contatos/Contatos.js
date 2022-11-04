@@ -28,9 +28,11 @@ function Contatos(){
                     <div className='texto1'>
                         <h3>Telefone</h3>
                     </div>
-                    <div className='texto2'>
-                        <h2>(32) 99123-3902</h2>
-                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=5532991233902">
+                        <div className='texto2'>
+                            <h2>(32) 99123-3902</h2>
+                        </div>
+                    </a>
                 
                 </div>
 
@@ -45,7 +47,9 @@ function Contatos(){
                         <h3>E-mail</h3>
                     </div>
                     <div className='texto2'>
-                        <h2>contact@thaianramalho.com</h2>
+                        <a href="mailto:contact@thaianramalho.com">
+                            <h2>contact@thaianramalho.com</h2>
+                        </a>
                     </div>
                 
                 </div>
@@ -54,7 +58,7 @@ function Contatos(){
            
                 
                     <div className='fale-conosco'>
-                        <a href="#">
+                        <a href="thaianramalho.com">
                             <button>Fale Conosco</button>
                         </a>
                     </div>

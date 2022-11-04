@@ -119,6 +119,10 @@
     transform: scale(0.97);
 }
 
+.boxes a{
+    text-decoration: none;
+    color: rgb(73, 73, 73);
+}
 
 @media (max-width:1000px){
 
@@ -155,26 +159,28 @@
         margin: 0 5% 50px 5% ;
         margin-bottom: 90px;
         padding: 20px;
-        width: 420px;
-        height:190px;
+        width: 300px;
+        height:130px;
     }
 
 
     .contato .box .icon{
-        font-size: 40px;
+        font-size: 20px;
     }
     
     .contato .box .texto1{
-        font-size: 23px;
+        font-size: 15px;
+        margin-top: -10px;
+        justify-content: flex-start;
     }
     
     .contato .box .texto2{
-        font-size: 17px;
+        font-size: 10px;
         
     }
     
     .contato .fale-conosco button{
-        font-size: 24px;
+        font-size: 13px;
     }
 
 }
