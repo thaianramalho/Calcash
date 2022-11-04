@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
 import './Calculadora.css';
 
  function Calculadora() {
@@ -16,18 +15,27 @@ import './Calculadora.css';
                 <div className='box'>
 
                     <div className='inputs'>
-                        <p>quantidade</p>
-                        <input placeholder='insira o valor'></input>
+                        <p>quantidade:</p>
+                        <div className='inputUnidade'>
+                            <input placeholder='insira o valor'></input>
+                            <span>un</span>
+                        </div>
                     </div>
 
                     <div className='inputs'>
-                        <p>quantidade</p>
-                        <input placeholder='insira o valor'></input>
+                        <p>quantidade:</p>
+                        <div className='inputUnidade'>
+                            <input placeholder='insira o valor'></input>
+                            <span>un</span>
+                        </div>
                     </div>
 
                     <div className='inputs'>
-                        <p>quantidade</p>
-                        <input placeholder='insira o valor'></input>
+                        <p>quantidade:</p>
+                        <div className='inputUnidade'>
+                            <input   placeholder='insira o valor'></input>
+                            <span>un</span>
+                        </div>
                     </div>
 
                     
