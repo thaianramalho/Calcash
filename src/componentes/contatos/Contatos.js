@@ -58,7 +58,7 @@ function Contatos(){
            
                 
                     <div className='fale-conosco'>
-                        <a href="thaianramalho.com">
+                        <a href="https://thaianramalho.com">
                             <button>Fale Conosco</button>
                         </a>
                     </div>

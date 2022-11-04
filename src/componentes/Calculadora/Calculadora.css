@@ -6,10 +6,24 @@
     padding: 0;
 }
 
+.calculadora{
+    margin-top: 90px;
+    min-height: 100% ;
+}
+
 .calculadora  .box{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     background-color: rgba(137, 43, 226, 0.355);
+}
+
+.calculadora  .box .inputs  input{
+    color: aqua;
+    background-color: black;
+}
+
+.calculadora  .box .inputs  input::after{
+  
 }

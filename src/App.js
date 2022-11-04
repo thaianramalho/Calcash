@@ -6,23 +6,25 @@ import Pagina1 from './componentes/pagina-inicial/Pagina1';
 
 import { BrowserRouter as Router, Routes, Route } from
 'react-router-dom'
-import Calculadora from './componentes/Calculadora/Calculadora';
+import Calculadora from './componentes/Calculadora/Calculadora'
+import Navbar from './componentes/Navbar/Navbar';
 
 function App() {
   return (
     <>
 
-    <Calculadora></Calculadora>
+    <Navbar></Navbar>
 
-{/*     
-    <Router> <Routes>
+    <Calculadora></Calculadora> 
 
-    <Route path="/" element={<Pagina1 />}></Route>
+   
+    {/* <Router> <Routes>
+
     <Route path="/" element={<Pagina1 />}></Route>
     
   
-    </Routes> </Router>
-     */}
+    </Routes> </Router> */}
+     
     
 
     </>

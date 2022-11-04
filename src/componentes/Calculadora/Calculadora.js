@@ -1,9 +1,11 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
 import './Calculadora.css';
 
  function Calculadora() {
     return(
         <>
+
 
         <div className='calculadora'>
 
