@@ -5,7 +5,6 @@ import './Calculadora.css';
     return(
         <>
 
-
         <div className='calculadora'>
 
                 <div className='titulo'>
@@ -21,17 +20,17 @@ import './Calculadora.css';
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">un.</span>
                                 </div>
-                                <input type="text" className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" className="form-control quantidade" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                        <div className='inputs'>
-                        <p>Custo:</p>
+                        <p>Custo do anúncio:</p>
                     
                             <div className="input-group mb-3">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" className="form-control produto" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                          <div className='inputs'>
@@ -41,7 +40,7 @@ import './Calculadora.css';
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" className="form-control imposto" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
 
@@ -52,7 +51,7 @@ import './Calculadora.css';
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" className="form-control despesas" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -62,7 +61,7 @@ import './Calculadora.css';
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" className="form-control classico" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                          <div className='inputs'>
@@ -72,7 +71,7 @@ import './Calculadora.css';
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" className="form-control premium" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -82,7 +81,7 @@ import './Calculadora.css';
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" className="form-control frete" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -92,7 +91,7 @@ import './Calculadora.css';
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" className="form-control venda" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                     
