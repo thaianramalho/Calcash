@@ -1,9 +1,16 @@
 *{
-    
+    overflow-x: hidden;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+:root{
+    --azul:#5850FE;
+    --verde:#38AE59;
+    --branco:#F1F7FC;
+  
+  }
 
 .calculadora{
     margin-top: 90px;
@@ -12,70 +19,131 @@
 
 .calculadora  .box{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(16rem, 3fr));
+    grid-template-rows:repeat(auto-fit, minmax(16rem, 5)) ; */
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 5px auto;
     width: 90%;
-    height: 60vh;
     justify-content: center;
     align-items: center;
+    
+}
+
+.calculadora  .boxbox{
+    margin: 5px auto;
+    width: 90%;
     background-color: #DFE2FF;
     outline: 3px solid #5850FE;
     border-radius: 20px;
 }
 
 .calculadora  .box .inputs {
-    margin: 0 20% ;
+    margin: 8% 20% ;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.calculadora  .box .inputs input{
-    border: none;
-    padding: 16px 25px;
-    margin: 6px;
-    border-radius: 7px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.208);
-    
-}
-
-.calculadora  .box .inputs input::placeholder{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    padding-left: 20px;
-}
 
 .calculadora  .box .inputs p{
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(52, 52, 52);
+    font-size: 2rem;
+    font-family: Montserrat, san serif;
     font-weight: 500;
-    text-transform: capitalize;
-    padding: 0 0 5px  12px;
-
+    color: #525252;
+    padding-left: 3%;
 }
 
-.calculadora  .box .inputs .inputUnidade{
-    position: relative;
+.calculadora  .box .inputs input{
+    border-radius: 8px;
+    padding: 8px;      
 }
 
-.calculadora  .box .inputs .inputUnidade span{
-    position: absolute;
-    top: 12px; left: 13px;
-    font-size: 20px;
-    color: rgb(52, 52, 52);
-}
 
-.calculadora  .box .inputs .inputUnidade span::after{
-    content: '';
-    width: 3px;
-    height: 48px;
-    display: block;
-    background-color: #38AE59;
-    position: absolute;
-    top: -6px; left: 26px;
+
+.calculadora  .box .inputs input::placeholder{
+    font-size: 1.5rem;
+    font-family: Montserrat, san serif;
+    font-weight: 400;
+    opacity: 0.4;
     
-    
+}
+
+.calculadora  .box .inputs .input-group-text{
+    background-color: #ffff;
+    font-family: Montserrat, san serif;
+    font-weight: 600;
+    color: #878787;
+    font-size: 2.2rem;
+    border-radius: 8px 0 0 8px;
+    outline: #5850FE;
+    border: 2px solid #38AE59;
     
 
 }
+
+.calculadora  .box .inputs input:focus{
+    border-color: #38AE59;
+
+}
+
+
+.calculadora  .botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 30%;
+    gap: 4%;
+    text-align: center;
+}
+
+.calculadora  .botoes .button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.calculadora  .botoes button{
+    text-align: center;
+    padding: 2% 5% ;
+    font-family: Montserrat, san serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+    box-shadow: -3px 4px  4px  rgba(0, 0, 0, 0.287);
+}
+
+.calculadora  .botoes .btn-primary {
+    background-color: #5850FE;
+}
+
+
+@media (max-width:1024px){
+    .calculadora  .box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:631px){
+    .calculadora  .box{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px  0;  
+    }
+    
+
+
+    .calculadora  .box .inputs {
+        margin: 5% 10% ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
