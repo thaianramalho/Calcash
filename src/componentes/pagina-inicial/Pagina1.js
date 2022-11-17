@@ -2,7 +2,7 @@ import React from 'react';
 
 import Contatos from '../contatos/Contatos';
 import Ferramentas from '../ferramentas/Ferramentas';
-import Inicio from '../Inicio/inicio';
+import Inicio from '../inicio/Inicio';
 
 
 function Pagina1() {
