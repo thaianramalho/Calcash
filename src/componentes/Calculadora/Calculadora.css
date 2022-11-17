@@ -54,6 +54,8 @@
 }
 
 .calculadora  .box .inputs input{
+    font-family: Montserrat, san serif;
+    font-size: 1.6rem;
     border-radius: 8px;
     padding: 8px;      
 }
@@ -92,7 +94,7 @@
     justify-content: center;
     align-items: center;
     padding: 2% 30%;
-    gap: 4%;
+    gap: 9%;
     text-align: center;
 }
 
@@ -110,6 +112,12 @@
     font-weight: 600;
     font-size: 2.4rem;
     box-shadow: -3px 4px  4px  rgba(0, 0, 0, 0.287);
+    transition: 0.2s;
+}
+
+.calculadora  .botoes button:hover{
+    box-shadow: -1px 1px  0px  rgba(0, 0, 0, 0.287);
+    transform: scale(0.97);
 }
 
 .calculadora  .botoes .btn-primary {
@@ -118,13 +126,56 @@
 
 
 @media (max-width:1024px){
+
+    .calculadora  .titulo  h2{
+        font-size: 4rem;
+    }
+
     .calculadora  .box{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+    
+    .calculadora  .box .inputs p{
+        font-size: 1.8rem;
+        
+    }
+
+    .calculadora  .box .inputs input{
+        font-size: 1.3rem;
+    }
+
+    .calculadora  .box .inputs input::placeholder{
+        font-size: 1.3rem;
+        
+    }
+
+    .calculadora  .box .inputs .input-group-text{
+        
+        font-size: 1.7rem;
+    }
+
+    .calculadora  .botoes{
+        padding: 2% 10%;
+        gap: 10%;
+        
+    }
+
+    
+    .calculadora  .botoes button{
+        padding: 2% 5% ;
+        font-size: 1.8rem;
+        
+    }
+    
 }
 
 @media (max-width:631px){
+
+    .calculadora  .titulo  h2{
+        font-size: 3.4rem;
+    }
+
     .calculadora  .box{
         display: grid;
         grid-template-columns: 1fr;
@@ -139,6 +190,42 @@
         flex-direction: column;
         justify-content: center;
     }
+
+    .calculadora  .box .inputs input{
+        font-size: 1.4rem;
+    }
+
+    .calculadora  .box .inputs p{
+        font-size: 1.8rem;
+        
+    }
+
+    .calculadora  .box .inputs input::placeholder{
+        font-size: 1.2rem;
+        
+    }
+
+    .calculadora  .box .inputs .input-group-text{
+        
+        font-size: 1.8rem;
+        
+        
+    
+    }
+
+    .calculadora  .botoes{
+        padding: 2% 10%;
+        gap: 5%;
+        
+    }
+
+    
+    .calculadora  .botoes button{
+        padding: 2% 5% ;
+        font-size: 1.8rem;
+        
+    }
+    
 }
 
 
