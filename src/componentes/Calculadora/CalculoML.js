@@ -1,3 +1,6 @@
+import './Calculadora'
+
+
 var quantidade = document.getElementsByName("quantidade");
 var produto = document.getElementsByName("produto");
 var notaFiscal = document.getElementsByName("imposto");
