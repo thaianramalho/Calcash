@@ -1,15 +1,21 @@
 import React from 'react';
 import './Calculadora.css';
+import { useState } from 'react';
 
-var quantidade = document.getElementById("quantidade");
-var produto = document.getElementById("produto");
-var notaFiscal = document.getElementById("imposto");
-var despesas = document.getElementById("despesas");
-var frete = document.getElementById("frete");
-var classico = document.getElementById("classico");
-var premium = document.getElementById("premium");
-var venda = document.getElementById("venda");
-var custo = quantidade * produto;
+ export default function Calculadora() {
+
+    const [quantidade, setQuantidade] = useState(0.0);
+    const [produto, setProduto] = useState(0.0);
+    const [notaFiscal, setNotaFiscal] = useState(0.0);
+    const [despesas, setDespesas] = useState(0.0);
+    const [frete, setFrete] = useState(0.0);
+    const [classico, setClassico] = useState(0.0);
+    const [premium, setPremium] = useState(0.0);
+    const [venda, setVenda] = useState(0.0);
+    const custo = quantidade * produto;
+    const [totalClassico, setTotalClassico] = useState(0.0);
+    const [totalPremium, setTotalPremium] = useState(0.0);
+
 
 const valorLimiteTaxa = 79;
 const taxaValorSuperior = 0;
@@ -34,16 +40,17 @@ function porcentagem(porcentagem, venda){
     return (porcentagem / 100) * venda;
 }
 
-var calculoclassico = calculoAnuncioClassico(custo, porcentagem(notaFiscal,venda), porcentagem(classico, venda), frete, despesas, venda);
-var totalclassico = (venda - calculoclassico);
+const handleSubmit = () => {
 
-var calculopremium = calculoAnuncioPremium(custo , porcentagem(notaFiscal,venda), porcentagem(premium, venda), frete, despesas, venda);
-var totalpremium = (venda - calculopremium);
+    const calculoclassico = calculoAnuncioClassico(custo, porcentagem(notaFiscal,venda), porcentagem(classico, venda), frete, despesas, venda);
+    setTotalClassico(venda - calculoclassico);
 
-console.log(totalpremium);
-console.log(totalclassico);
+    const calculopremium = calculoAnuncioPremium(custo , porcentagem(notaFiscal,venda), porcentagem(premium, venda), frete, despesas, venda);
+    setTotalPremium(venda - calculopremium);
+    console.log(totalClassico)
+    console.log(totalPremium)
+}
 
- function Calculadora() {
     return(
         <>
 
@@ -62,7 +69,7 @@ console.log(totalclassico);
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">un.</span>
                                 </div>
-                                <input type="text" id='quantidade' className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" id='quantidade' onChange={e=>setQuantidade(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                        <div className='inputs'>
@@ -72,7 +79,7 @@ console.log(totalclassico);
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id='custo' className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" id='custo' onChange={e=>setProduto(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                          <div className='inputs'>
@@ -82,7 +89,7 @@ console.log(totalclassico);
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" id='imposto' className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" id='imposto' onChange={e=>setNotaFiscal(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
 
@@ -93,7 +100,7 @@ console.log(totalclassico);
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id='despesas' className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" id='despesas' onChange={e=>setDespesas(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -103,7 +110,7 @@ console.log(totalclassico);
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" id='classico' className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" id='classico' onChange={e=>setClassico(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                          <div className='inputs'>
@@ -113,7 +120,7 @@ console.log(totalclassico);
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" id='premium' className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" id='premium' onChange={e=>setPremium(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -123,7 +130,7 @@ console.log(totalclassico);
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id='frete' className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" id='frete' onChange={e=>setFrete(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -133,24 +140,22 @@ console.log(totalclassico);
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id='venda' className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="text" id='venda' onChange={e => setVenda(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                     
                     
                     </div>
 
+                </form>
                     <div className='botoes'>
-                            <button type="submit" className="btn btn-primary btn-lg">Calcular</button>
+                            <button type="submit" onClick={handleSubmit} className="btn btn-primary btn-lg">Calcular</button>
                             <button type="reset" className="btn btn-secondary btn-lg">Limpar</button>
                         </div>
-                </form>
        
             
         </div>
 
         </>
     );
- }
-
- export default Calculadora;
+ };
