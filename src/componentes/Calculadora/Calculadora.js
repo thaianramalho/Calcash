@@ -1,6 +1,8 @@
 import React from 'react';
 import './Calculadora.css';
 import { useState } from 'react';
+import Navbar from '../Navbar/Navbar';
+
 
  export default function Calculadora() {
 
@@ -53,6 +55,8 @@ const handleSubmit = () => {
 
     return(
         <>
+
+        <Navbar></Navbar>
 
         <div className='calculadora'>
 

@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 
-import Navbar from './componentes/Navbar/Navbar';
 import Pagina1 from './componentes/pagina-inicial/Pagina1';
+import Calculadora from './componentes/Calculadora/Calculadora';
 
 
 import { BrowserRouter as Router, Switch, Route, Link } from
@@ -16,12 +16,12 @@ function App() {
 
     <Router>
 
-    <Navbar></Navbar>
+    
 
-    {/* <Calculadora></Calculadora>  */}
+    <Calculadora></Calculadora>  
 
    
-   <Pagina1></Pagina1>
+   {/* <Pagina1></Pagina1> */}
     
   
      
