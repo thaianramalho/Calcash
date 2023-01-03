@@ -18,10 +18,10 @@ function App() {
 
     
 
-    <Calculadora></Calculadora>  
+   {/* <Calculadora></Calculadora>   */}
 
    
-   {/* <Pagina1></Pagina1> */}
+   <Pagina1></Pagina1> 
     
   
      

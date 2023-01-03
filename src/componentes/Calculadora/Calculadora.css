@@ -1,5 +1,5 @@
 *{
-    overflow-x: hidden;
+    
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -124,6 +124,12 @@
     background-color: #5850FE;
 }
 
+
+
+
+.calculadora .resultados{
+    display: flex;
+}
 
 @media (max-width:1024px){
 

@@ -151,11 +151,30 @@ const handleSubmit = () => {
                     
                     </div>
 
+                    
+
                 </form>
+
+                <div className='resultados'>
+                            <div className='esquerda'>
+                                <h2>Resultados</h2>
+                                <h3>Lucro Liquido(Clássico)</h3>
+                                <h2 className='lucroLiquido'>123</h2>
+                            </div>
+                            <div className='direita'>
+                                <h2>Resultados</h2>
+                                <h3>Lucro Liquido(Premium)</h3>
+                                <h2 className='lucroLiquido'>123</h2>
+                            </div>
+
+
+                        </div>
                     <div className='botoes'>
                             <button type="submit" onClick={handleSubmit} className="btn btn-primary btn-lg">Calcular</button>
                             <button type="reset" className="btn btn-secondary btn-lg">Limpar</button>
                         </div>
+
+                        
        
             
         </div>
