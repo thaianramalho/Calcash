@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import "./Navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -16,9 +17,10 @@ const Navbar = () => {
       <span className="nav-logo">Cal<span className="cash">cash</span></span>
 
       <div className={`nav-items ${isOpen && "open"}`}>
-        <a href="/inicio">INI<span>CIO</span></a>
-        <a href="/ferramentas">FERRA<span>MENTAS</span></a>
-        <a href="/contato">CONT<span>ATO</span></a>
+        <Link to="/"><a href="/inicio">INI<span>CIO</span></a></Link>
+
+        <Link to="/ferramentas"><a href="/ferramentas">FERRA<span>MENTAS</span></a></Link>
+        <Link to="/contato"><a href="/contato">CONT<span>ATO</span></a></Link>
       </div>
 
       <div

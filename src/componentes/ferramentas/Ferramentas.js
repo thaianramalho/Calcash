@@ -68,4 +68,4 @@ function Ferramentas(){
         )
 }
 
-export default Ferramentas
+export default Ferramentas;

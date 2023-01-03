@@ -69,7 +69,7 @@ const handleSubmit = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">un.</span>
                                 </div>
-                                <input type="text" id='quantidade' onChange={e=>setQuantidade(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='quantidade' onChange={e=>setQuantidade(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                        <div className='inputs'>
@@ -79,7 +79,7 @@ const handleSubmit = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id='custo' onChange={e=>setProduto(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='custo' onChange={e=>setProduto(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                          <div className='inputs'>
@@ -89,7 +89,7 @@ const handleSubmit = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" id='imposto' onChange={e=>setNotaFiscal(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='imposto' onChange={e=>setNotaFiscal(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
 
@@ -100,7 +100,7 @@ const handleSubmit = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id='despesas' onChange={e=>setDespesas(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='despesas' onChange={e=>setDespesas(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -110,7 +110,7 @@ const handleSubmit = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" id='classico' onChange={e=>setClassico(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='classico' onChange={e=>setClassico(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                          <div className='inputs'>
@@ -120,7 +120,7 @@ const handleSubmit = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="text" id='premium' onChange={e=>setPremium(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='premium' onChange={e=>setPremium(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -130,7 +130,7 @@ const handleSubmit = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id='frete' onChange={e=>setFrete(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='frete' onChange={e=>setFrete(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         <div className='inputs'>
@@ -140,7 +140,7 @@ const handleSubmit = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id='venda' onChange={e => setVenda(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='venda' onChange={e => setVenda(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                     
