@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import "./Navbar.css";
+import "./Navbar2.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faBars} from '@fortawesome/free-solid-svg-icons';
@@ -22,11 +22,11 @@ const Navbar = () => {
 
 
       <div className={`nav-items ${isOpen && "open"}`}>
-        <a href="#principal">INI<span>CIO</span></a>
+        <Link to='/'><a href="#principal">INI<span>CIO</span></a></Link>
 
-        <a href="#ferramenta">FERRA<span>MENTAS</span></a>
+        <Link to='/'><a href="#ferramenta">FERRA<span>MENTAS</span></a></Link>
 
-        <a href="#contatos">CONT<span>ATO</span></a>
+        <Link  to='/'><a href="#contatos">CONT<span>ATO</span></a></Link>
       </div>
 
 

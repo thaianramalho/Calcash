@@ -11,7 +11,7 @@ function Contatos(){
 
     return(
 
-        <div className='contato'>
+        <div className='contato' id='contatos'>
             <div className='titulo'>
                 <h2>
                   Cont<span>atos</span>

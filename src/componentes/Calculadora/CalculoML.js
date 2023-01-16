@@ -34,5 +34,5 @@ function porcentagem(porcentagem, venda){
 var calculoclassico = calculoAnuncioClassico(custo, porcentagem(notaFiscal,venda), porcentagem(classico, venda), frete, despesas, venda);
 var totalclassico = (venda - calculoclassico);
 
-var calculopremium = calculoAnuncioPremium(custo , porcentagem(notaFiscal,venda), porcentagem(premium, venda), frete, despesas, venda);
+var calculopremium = calculoAnuncioPremium(custo, porcentagem(notaFiscal,venda), porcentagem(premium, venda), frete, despesas, venda);
 var totalpremium = (venda - calculopremium);

@@ -60,7 +60,7 @@
     align-items: center;
     padding: 20px;
     width: 450px;
-    height: 215px;
+    height: 180px;
     outline: 3px solid #5950fe45;
     border-radius: 15px;
     position: relative;
@@ -74,14 +74,21 @@
 }
 
 .contato .box .texto1{
-    font-size: 28px;
-    margin-top: -50px;
+    margin-top: -10px;
     font-family: 'Public Sans';
     color: rgb(73, 73, 73);
 }
+.contato .box .texto1 h3{
+    font-size: 3rem;
+}
+
+.contato .box .texto2 h2{
+
+    font-size: 2.5rem;
+}
 
 .contato .box .texto2{
-    margin-top: 2px;
+    padding-top: 3rem;
     font-size: 20px;
     font-family: 'Public Sans';
     color: rgb(73, 73, 73);
@@ -150,6 +157,11 @@
     .contato .fale-conosco button{
         font-size: 24px;
     }
+
+    .contato .box .texto1{
+        margin-top: -20px;
+    }
+    
 }
 
 
@@ -161,6 +173,12 @@
         padding: 20px;
         width: 300px;
         height:130px;
+    }
+
+    .contato .boxes {
+        padding: 2% 0 0% 0;
+        grid-gap: 5%;
+        gap: 5%;
     }
 
 
@@ -181,6 +199,18 @@
     
     .contato .fale-conosco button{
         font-size: 13px;
+    }
+
+    .contato .box .texto1{
+        margin-top: -10px;
+    }
+    .contato .box .texto1 h3{
+        font-size: 2.2rem;
+    }
+    
+    .contato .box .texto2 h2{
+    
+        font-size: 2rem;
     }
 
 }

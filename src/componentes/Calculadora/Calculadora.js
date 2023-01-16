@@ -1,7 +1,7 @@
 import React from 'react';
 import './Calculadora.css';
 import { useState } from 'react';
-import Navbar from '../Navbar/Navbar';
+import Navbar2 from '../Navbar2/Navbar2';
 
 
  export default function Calculadora() {
@@ -56,7 +56,7 @@ const handleSubmit = () => {
     return(
         <>
 
-        <Navbar></Navbar>
+        <Navbar2></Navbar2>
 
         <div className='calculadora'>
 
@@ -107,8 +107,9 @@ const handleSubmit = () => {
                                 <input type="number" id='despesas' onChange={e=>setDespesas(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
+                        
                         <div className='inputs'>
-                        <p>Tarifa (Clássico):</p>
+                        <p>Tarifa:</p>
                     
                             <div className="input-group mb-3">
                                 <div className="input-group-prepend">
@@ -117,16 +118,7 @@ const handleSubmit = () => {
                                 <input type="number" id='classico' onChange={e=>setClassico(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
-                         <div className='inputs'>
-                        <p>Tarifa (Premium):</p>
-                    
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text" id="basic-addon1">%</span>
-                                </div>
-                                <input type="number" id='premium' onChange={e=>setPremium(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
-                            </div>
-                        </div>
+                         
                         <div className='inputs'>
                         <p>Valor do frete:</p>
                     
@@ -156,16 +148,22 @@ const handleSubmit = () => {
                 </form>
 
                 <div className='resultados'>
-                            <div className='esquerda'>
-                                <h2>Resultados</h2>
-                                <h3>Lucro Liquido(Clássico)</h3>
-                                <h2 className='lucroLiquido'>123</h2>
+
+                   
+
+                    
+                            <div className='res' id='1'>
+                                
+                                <h3>Preço da venda</h3>
+                                <h2 className='lucroLiquido'>$123</h2>
                             </div>
-                            <div className='direita'>
-                                <h2>Resultados</h2>
-                                <h3>Lucro Liquido(Premium)</h3>
-                                <h2 className='lucroLiquido'>123</h2>
+
+                            <div className='res'>
+                                
+                                <h3>Lucro por venda</h3>
+                                <h2 className='lucroLiquido' id='2'>{}</h2>
                             </div>
+                            
 
 
                         </div>
