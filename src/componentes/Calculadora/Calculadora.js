@@ -6,13 +6,21 @@ import Navbar2 from '../Navbar2/Navbar2';
 
  const Calculadora=()=> {
 
-    const [custo, setCusto] = useState(0.0);
-    const [notaFiscal, setNotaFiscal] = useState(0.0);
-    const [despesas, setDespesas] = useState(0.0);
-    const [frete, setFrete] = useState(0.0);
-    const [tarifa, setTarifa] = useState(0.0);
-    const [margemLucro, setMargemLucro] = useState(0.0);
+    const [custo, setCusto] = useState(0.00);
+    const [notaFiscal, setNotaFiscal] = useState(0.00);
+    const [despesas, setDespesas] = useState(0.00);
+    const [frete, setFrete] = useState(0.00);
+    const [tarifa, setTarifa] = useState(0.00);
+    const [margemLucro, setMargemLucro] = useState(0.00);
+    const [resultado, setResultado] = useState(0.00);
+    const [resultadoLucro, setResultadoLucro] = useState(0.00);
 
+    const calcular=(custo, notaFiscal, despesas, frete, tarifa, margemLucro)=>{
+            var custoTotal = 100 / (100 - (despesas + notaFiscal + tarifa + margemLucro));
+            var precoVenda = (custo + frete) * custoTotal;
+            var lucroPorVenda = (margemLucro / 100) * (precoVenda);
+            return lucroPorVenda
+    }
 
     return(
         <>
@@ -80,6 +88,7 @@ import Navbar2 from '../Navbar2/Navbar2';
                                 <input type="number" id='frete' value={frete} onChange={e=>setFrete(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
+
                         <div className='inputs'>
                         <p>Margem de lucro:</p>
                     
@@ -90,42 +99,25 @@ import Navbar2 from '../Navbar2/Navbar2';
                                 <input type="number" id='margemLucro' value={margemLucro} onChange={e=>setMargemLucro(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
-                    
-                    
                     </div>
-
-                    
-
                 </form>
 
                 <div className='resultados'>
-
-                   
-
-                    
                             <div className='res' id='1'>
-                                
                                 <h3>Preço da venda</h3>
-                                <h2 className='lucroLiquido'>$123</h2>
+                                <h2 className='lucroLiquido'>{resultado}</h2>
                             </div>
 
                             <div className='res'>
-                                
                                 <h3>Lucro por venda</h3>
-                                <h2 className='lucroLiquido' id='2'>{}</h2>
+                                <h2 className='lucroLiquido' id='2'>{resultadoLucro}</h2>
                             </div>
-                            
-
 
                         </div>
                     <div className='botoes'>
-                            <button type="submit" className="btn btn-primary btn-lg">Calcular</button>
+                            <button type="submit" onClick={calcular} className="btn btn-primary btn-lg">Calcular</button>
                             <button type="reset" className="btn btn-secondary btn-lg">Limpar</button>
-                        </div>
-
-                        
-       
-            
+                        </div> 
         </div>
 
         </>
