@@ -1,7 +1,6 @@
 import "./App.css";
 import React from "react";
 // import { ReactDOM } from 'react-dom';
-
 import Pagina1 from "./componentes/pagina-inicial/Pagina1";
 import Calculadora from "./componentes/Calculadora/Calculadora";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
