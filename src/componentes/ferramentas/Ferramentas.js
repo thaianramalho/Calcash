@@ -44,12 +44,14 @@ function Ferramentas(){
                     
                     
                         <div className='boxEtexto'>
-                            <a className='link' href="">
-                                <div className='box'>
-                                    <div className='bg'></div>
-                                    <div className='img'> <img src='/img/shoope.png'></img> </div>
-                                </div>
-                            </a>
+                            <Link  to="/calculadora2">
+                                <a className='link' href="">
+                                    <div className='box'>
+                                        <div className='bg'></div>
+                                        <div className='img'> <img src='/img/shoope.png'></img> </div>
+                                    </div>
+                                </a>
+                            </Link>
                             <a className='link' href="">
                                 <div className='texto'>CALCULADORA <br/> SHOPEE</div>
                             </a>
