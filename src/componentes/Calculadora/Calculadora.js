@@ -4,54 +4,8 @@ import { useState } from 'react';
 import Navbar2 from '../Navbar2/Navbar2';
 
 
- export default function Calculadora() {
+ const Calculadora=()=> {
 
-    const [quantidade, setQuantidade] = useState(0.0);
-    const [produto, setProduto] = useState(0.0);
-    const [notaFiscal, setNotaFiscal] = useState(0.0);
-    const [despesas, setDespesas] = useState(0.0);
-    const [frete, setFrete] = useState(0.0);
-    const [classico, setClassico] = useState(0.0);
-    const [premium, setPremium] = useState(0.0);
-    const [venda, setVenda] = useState(0.0);
-    const custo = quantidade * produto;
-    const [totalClassico, setTotalClassico] = useState(0.0);
-    const [totalPremium, setTotalPremium] = useState(0.0);
-
-
-const valorLimiteTaxa = 79;
-const taxaValorSuperior = 0;
-const taxaValorInferior = 5;
-
-function calculoAnuncioClassico(custo, notaFiscalPorcentagem, classicoPorcentagem, frete, despesas, venda){
-    return custo + notaFiscalPorcentagem + classicoPorcentagem + frete + despesas + validaLimiteDeTaxa(venda);
-}
-
-function calculoAnuncioPremium(custo, notaFiscalPorcentagem, premiumPorcentagem, frete, despesas, venda){
-    return custo + notaFiscalPorcentagem + premiumPorcentagem + frete + despesas + validaLimiteDeTaxa(venda);
-}
-
-function validaLimiteDeTaxa(valorDaVenda){
-    if (valorDaVenda < valorLimiteTaxa){
-        return taxaValorInferior;
-    }
-    return taxaValorSuperior;
-}
-
-function porcentagem(porcentagem, venda){
-    return (porcentagem / 100) * venda;
-}
-
-const handleSubmit = () => {
-
-    const calculoclassico = calculoAnuncioClassico(custo, porcentagem(notaFiscal,venda), porcentagem(classico, venda), frete, despesas, venda);
-    setTotalClassico(venda - calculoclassico);
-
-    const calculopremium = calculoAnuncioPremium(custo , porcentagem(notaFiscal,venda), porcentagem(premium, venda), frete, despesas, venda);
-    setTotalPremium(venda - calculopremium);
-    console.log(totalClassico)
-    console.log(totalPremium)
-}
 
     return(
         <>
@@ -180,3 +134,5 @@ const handleSubmit = () => {
         </>
     );
  };
+
+ export default Calculadora;
