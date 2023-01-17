@@ -6,6 +6,13 @@ import Navbar2 from '../Navbar2/Navbar2';
 
  const Calculadora=()=> {
 
+    const [custo, setCusto] = useState(0.0);
+    const [notaFiscal, setNotaFiscal] = useState(0.0);
+    const [despesas, setDespesas] = useState(0.0);
+    const [frete, setFrete] = useState(0.0);
+    const [tarifa, setTarifa] = useState(0.0);
+    const [margemLucro, setMargemLucro] = useState(0.0);
+
 
     return(
         <>
@@ -20,24 +27,14 @@ import Navbar2 from '../Navbar2/Navbar2';
 
                 <form className='boxbox'>
                     <div className='box'>
-                    
-                    <div className='inputs'>
-                        <p>Quantidade:</p>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text" id="basic-addon1">un.</span>
-                                </div>
-                                <input type="number" id='quantidade' onChange={e=>setQuantidade(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
-                            </div>
-                        </div>
-                       <div className='inputs'>
-                        <p>Custo do anúncio:</p>
+                        <div className='inputs'>
+                            <p>Custo do produto:</p>
                     
                             <div className="input-group mb-3">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="number" id='custo' onChange={e=>setProduto(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='custo' onChange={e=>setCusto(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                          <div className='inputs'>
@@ -56,20 +53,20 @@ import Navbar2 from '../Navbar2/Navbar2';
                     
                             <div className="input-group mb-3">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" id="basic-addon1">R$</span>
+                                    <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
                                 <input type="number" id='despesas' onChange={e=>setDespesas(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                         
                         <div className='inputs'>
-                        <p>Tarifa:</p>
+                        <p>Tarifa do anúncio:</p>
                     
                             <div className="input-group mb-3">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="number" id='classico' onChange={e=>setClassico(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='classico' onChange={e=>setTarifa(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                          
@@ -84,13 +81,13 @@ import Navbar2 from '../Navbar2/Navbar2';
                             </div>
                         </div>
                         <div className='inputs'>
-                        <p>Valor do anúncio:</p>
+                        <p>Margem de lucro:</p>
                     
                             <div className="input-group mb-3">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" id="basic-addon1">R$</span>
+                                    <span className="input-group-text" id="basic-addon1">%</span>
                                 </div>
-                                <input type="number" id='venda' onChange={e => setVenda(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
+                                <input type="number" id='margemLucro' onChange={e => setMargemLucro(e.target.value)} className="form-control" placeholder="Insira o valor" aria-label="Insira o valor" aria-describedby="basic-addon1"/>
                             </div>
                         </div>
                     
@@ -122,7 +119,7 @@ import Navbar2 from '../Navbar2/Navbar2';
 
                         </div>
                     <div className='botoes'>
-                            <button type="submit" onClick={handleSubmit} className="btn btn-primary btn-lg">Calcular</button>
+                            <button type="submit" className="btn btn-primary btn-lg">Calcular</button>
                             <button type="reset" className="btn btn-secondary btn-lg">Limpar</button>
                         </div>
 
