@@ -1,42 +1,35 @@
-body{
-    overflow-x: hidden;
-    overflow-y: hidden;
-    
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-#green{
-    color: #38AE59;
+#green {
+  color: #38ae59;
 }
 
-#blue{
-    color: #5850FE;
+#blue {
+  color: #5850fe;
 }
 
-.ferramentas{
-    padding-bottom: 5%;
+.ferramentas {
+  padding-bottom: 5%;
 }
 
-
-
-
-.ferramentas .container-box{
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
-    gap: 3.5rem;
-    padding: 50px;
-    margin: 0px 80px 0 80px;
-    outline: 3px solid #38AE59;
-    padding: 5% 0 3% 0;
-    margin: 0 10%;
-    border-radius: 20px;
-
+.ferramentas .container-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  gap: 3.5rem;
+  padding: 50px;
+  margin: 0px 80px 0 80px;
+  outline: 3px solid #38ae59;
+  padding: 5% 0 3% 0;
+  margin: 0 10%;
+  border-radius: 20px;
 }
 
-.ferramentas .container-box .box{
-
-    background-image:linear-gradient(#5850FE, #38AE59);
-    border-radius: 20px;
+.ferramentas .container-box .box {
+  background-image: linear-gradient(#5850fe, #38ae59);
+  border-radius: 20px;
   width: 300px;
   height: 230px;
   padding: 20px;
@@ -48,113 +41,81 @@ body{
   transition: 0.2s;
 }
 
-.ferramentas .container-box .texto{
-    font-family: 'Public Sans';
-    font-size: 2.8rem;
-    width: 300px;
-    text-align: center;
-    padding: 20px 0;
-    color: #5850FE;
+.ferramentas .container-box .texto {
+  font-family: "Public Sans";
+  font-size: 2.8rem;
+  width: 300px;
+  text-align: center;
+  padding: 20px 0;
+  color: #5850fe;
 }
 
-.ferramentas .container-box .box .bg{
-    background-color: #38AE59;
+.ferramentas .container-box .box .bg {
+  background-color: #38ae59;
 }
 
-.ferramentas .container-box .boxEtexto{
- display: grid;
- justify-content: center;
- 
+.ferramentas .container-box .boxEtexto {
+  display: grid;
+  justify-content: center;
 }
 
-.ferramentas .container-box a{
-    text-decoration: none;
-    transition: 0.2s;
+.ferramentas .container-box a {
+  text-decoration: none;
+  transition: 0.2s;
 }
 
-.ferramentas .container-box a:hover .box{
-    transform: scale(0.95);
-    box-shadow: -1px 2px 8px rgba(0, 0, 0, 0.137);
-
+.ferramentas .container-box a:hover .box {
+  transform: scale(0.95);
+  box-shadow: -1px 2px 8px rgba(0, 0, 0, 0.137);
 }
 
+@media (max-width: 660px) {
+  .ferramentas .container-box .box {
+    margin-left: 20%;
+    justify-content: center;
+    width: 180px;
+    height: 170px;
+    padding: 0px;
+  }
 
+  .ferramentas .container-box .boxEtexto {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
 
+  .ferramentas .container-box .boxEtexto .texto {
+    font-size: 22px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:660px){
-
-    .ferramentas .container-box .box{
-
-      margin-left: 20%;  
-      justify-content: center;  
-      width: 180px;
-      height: 170px;
-      padding: 0px;
-    }
-
-    .ferramentas .container-box .boxEtexto{
-        display: grid;
-        justify-content: center;
-        align-content: center;
-       }
-
-       .ferramentas .container-box .boxEtexto .texto{
-
-        font-size: 22px;
-       }
-
-    .ferramentas .container-box .box .img img{
-        width: 120px;
-    }
-
-
-
-   
-
+  .ferramentas .container-box .box .img img {
+    width: 120px;
+  }
 }
 
-@media (max-width:425px){
+@media (max-width: 425px) {
+  .ferramentas .container-box .box {
+    margin-left: 25%;
+    justify-content: center;
+    width: 150px;
+    height: 120px;
+    padding: 0px;
+  }
 
-    .ferramentas .container-box .box{
+  .ferramentas .container-box .boxEtexto {
+    justify-content: center;
+    align-content: center;
+  }
 
-      margin-left: 25%;  
-      justify-content: center;  
-      width: 150px;
-      height: 120px;
-      padding: 0px;
-    }
+  .ferramentas .container-box .boxEtexto .texto {
+    font-size: 16px;
+  }
 
-    .ferramentas .container-box .boxEtexto{
-        justify-content: center;
-        align-content: center;
-       }
+  .ferramentas .container-box .box .img img {
+    width: 90px;
+  }
 
-    .ferramentas .container-box .boxEtexto .texto{
-
-        font-size: 16px;
-       }
-       
-
-    .ferramentas .container-box .box .img img{
-        width: 90px;
-    }
-
-
-    .ferramentas .container-box{
-        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    }
-
-   
-
+  .ferramentas .container-box {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
 }

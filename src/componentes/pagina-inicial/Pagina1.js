@@ -1,26 +1,21 @@
-import React from 'react';
+import React from "react";
 // import { Link as LinkR } from 'react-router'
 
-
-import Contatos from '../contatos/Contatos';
-import Ferramentas from '../ferramentas/Ferramentas';
-import Inicio from '../inicio/Inicio';
-import Navbar from '../Navbar/Navbar';
-
-
+import Contatos from "../contatos/Contatos";
+import Ferramentas from "../ferramentas/Ferramentas";
+import Inicio from "../inicio/Inicio";
+import Navbar from "../Navbar/Navbar";
 
 function Pagina1() {
   return (
     <>
+      <Navbar></Navbar>
 
-    <Navbar></Navbar>
+      <Inicio></Inicio>
 
-    <Inicio></Inicio>
+      <Ferramentas></Ferramentas>
 
-    <Ferramentas></Ferramentas>
-
-    <Contatos></Contatos>
-
+      <Contatos></Contatos>
     </>
   );
 }

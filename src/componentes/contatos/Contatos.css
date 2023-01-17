@@ -1,230 +1,191 @@
- 
- body{
-    overflow-x: hidden;
-    overflow-y: hidden;
-    
-}
- 
- 
- 
- .titulo{
-    text-align: center;
-    padding: 30px 0;
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-.titulo h2{
-    font-size: 5rem;
-    font-family: 'Public Sans';
-    color: #5850FE;
+.titulo {
+  text-align: center;
+  padding: 30px 0;
 }
 
- .titulo h2 span{
-    color: #38AE59;
+.titulo h2 {
+  font-size: 5rem;
+  font-family: "Public Sans";
+  color: #5850fe;
 }
 
-
-
-@media (max-width:660px){
-
-    .titulo h2{
-        font-size: 4rem;
-    }
-
+.titulo h2 span {
+  color: #38ae59;
 }
 
-
-@media (max-width:425px){
-
-    .ferramentas .titulo h2{
-        font-size: 3rem;
-    }
-    
-
+@media (max-width: 660px) {
+  .titulo h2 {
+    font-size: 4rem;
+  }
 }
 
-
-.contato .boxes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2% 0 5% 0;
-    gap: 10% ;
-}
-
-
-.contato .box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    width: 450px;
-    height: 180px;
-    outline: 3px solid #5950fe45;
-    border-radius: 15px;
-    position: relative;
-}
-
-.contato .box .icon{
-    position: absolute;
-    left: 7%; top: 7%;
-    font-size: 40px;
-    color: #38AE59;
-}
-
-.contato .box .texto1{
-    margin-top: -10px;
-    font-family: 'Public Sans';
-    color: rgb(73, 73, 73);
-}
-.contato .box .texto1 h3{
+@media (max-width: 425px) {
+  .ferramentas .titulo h2 {
     font-size: 3rem;
+  }
 }
 
-.contato .box .texto2 h2{
-
-    font-size: 2.5rem;
+.contato .boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2% 0 5% 0;
+  gap: 10%;
 }
 
-.contato .box .texto2{
-    padding-top: 3rem;
+.contato .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 450px;
+  height: 180px;
+  outline: 3px solid #5950fe45;
+  border-radius: 15px;
+  position: relative;
+}
+
+.contato .box .icon {
+  position: absolute;
+  left: 7%;
+  top: 7%;
+  font-size: 40px;
+  color: #38ae59;
+}
+
+.contato .box .texto1 {
+  margin-top: -10px;
+  font-family: "Public Sans";
+  color: rgb(73, 73, 73);
+}
+.contato .box .texto1 h3 {
+  font-size: 3rem;
+}
+
+.contato .box .texto2 h2 {
+  font-size: 2.5rem;
+}
+
+.contato .box .texto2 {
+  padding-top: 3rem;
+  font-size: 20px;
+  font-family: "Public Sans";
+  color: rgb(73, 73, 73);
+}
+
+.contato .fale-conosco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1% 0 5% 0;
+}
+
+.contato .fale-conosco button {
+  font-size: 27px;
+  font-family: "Public Sans";
+  color: azure;
+  background-color: #5850fe;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.356);
+  padding: 17px 50px;
+  border-radius: 15px;
+  border: 2px solid#4842ca;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.fale-conosco a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fale-conosco button:hover {
+  background-color: #5850fe;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.295);
+  transform: scale(0.97);
+}
+
+.boxes a {
+  text-decoration: none;
+  color: rgb(73, 73, 73);
+}
+
+@media (max-width: 1000px) {
+  .contato .box {
+    margin-bottom: 90px;
+    padding: 20px;
+    width: 420px;
+    height: 190px;
+  }
+
+  .contato .box .icon {
+    font-size: 40px;
+  }
+
+  .contato .box .texto1 {
+    font-size: 23px;
+  }
+
+  .contato .box .texto2 {
+    font-size: 17px;
+  }
+
+  .contato .fale-conosco button {
+    font-size: 24px;
+  }
+
+  .contato .box .texto1 {
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .contato .box {
+    margin: 0 5% 50px 5%;
+    margin-bottom: 90px;
+    padding: 20px;
+    width: 300px;
+    height: 130px;
+  }
+
+  .contato .boxes {
+    padding: 2% 0 0% 0;
+    grid-gap: 5%;
+    gap: 5%;
+  }
+
+  .contato .box .icon {
     font-size: 20px;
-    font-family: 'Public Sans';
-    color: rgb(73, 73, 73);
+  }
+
+  .contato .box .texto1 {
+    font-size: 15px;
+    margin-top: -10px;
+    justify-content: flex-start;
+  }
+
+  .contato .box .texto2 {
+    font-size: 10px;
+  }
+
+  .contato .fale-conosco button {
+    font-size: 13px;
+  }
+
+  .contato .box .texto1 {
+    margin-top: -10px;
+  }
+  .contato .box .texto1 h3 {
+    font-size: 2.2rem;
+  }
+
+  .contato .box .texto2 h2 {
+    font-size: 2rem;
+  }
 }
-
-.contato .fale-conosco{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1% 0 5% 0;
-}
-
-.contato .fale-conosco button{
-    font-size: 27px;
-    font-family: 'Public Sans';
-    color: azure;
-    background-color: #5850FE;
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.356);
-    padding: 17px 50px;
-    border-radius: 15px;
-    border: 2px solid#4842ca;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-
-.fale-conosco a{
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.fale-conosco button:hover{
-    background-color: #5850FE;
-    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.295);
-    transform: scale(0.97);
-}
-
-.boxes a{
-    text-decoration: none;
-    color: rgb(73, 73, 73);
-}
-
-@media (max-width:1000px){
-
-    .contato .box{
-        margin-bottom: 90px;
-        padding: 20px;
-        width: 420px;
-        height:190px;
-    }
-
-
-    .contato .box .icon{
-        font-size: 40px;
-    }
-    
-    .contato .box .texto1{
-        font-size: 23px;
-    }
-    
-    .contato .box .texto2{
-        font-size: 17px;
-        
-    }
-    
-    .contato .fale-conosco button{
-        font-size: 24px;
-    }
-
-    .contato .box .texto1{
-        margin-top: -20px;
-    }
-    
-}
-
-
-@media (max-width:460px){
-
-    .contato .box{
-        margin: 0 5% 50px 5% ;
-        margin-bottom: 90px;
-        padding: 20px;
-        width: 300px;
-        height:130px;
-    }
-
-    .contato .boxes {
-        padding: 2% 0 0% 0;
-        grid-gap: 5%;
-        gap: 5%;
-    }
-
-
-    .contato .box .icon{
-        font-size: 20px;
-    }
-    
-    .contato .box .texto1{
-        font-size: 15px;
-        margin-top: -10px;
-        justify-content: flex-start;
-    }
-    
-    .contato .box .texto2{
-        font-size: 10px;
-        
-    }
-    
-    .contato .fale-conosco button{
-        font-size: 13px;
-    }
-
-    .contato .box .texto1{
-        margin-top: -10px;
-    }
-    .contato .box .texto1 h3{
-        font-size: 2.2rem;
-    }
-    
-    .contato .box .texto2 h2{
-    
-        font-size: 2rem;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

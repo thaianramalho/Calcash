@@ -1,81 +1,347 @@
-
-
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 
-
-#principal{
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    text-align: justify;
-    background-image: url('/svgs/Rectangle-7.svg');
-   background-position: center bottom;
-   background-repeat: none;
-   background-size: cover;
-   z-index: -100;
-   transition: 0.2s;
-} 
-
-.textos{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: justify;
-    padding-bottom: 50px;
-    margin: 0 50px;
+#principal {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  background-image: url("/svgs/Rectangle-7.svg");
+  background-position: center bottom;
+  background-repeat: none;
+  background-size: cover;
+  z-index: -100;
+  transition: 0.2s;
 }
 
-#blue{
-    margin:90px 0;
+.textos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: justify;
+  padding-bottom: 50px;
+  margin: 0 50px;
 }
 
-#title{
-    
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-size: 161px;
-    line-height: 150px;
-    margin-left: 15%;
-    width: 550px;
+#blue {
+  margin: 90px 0;
 }
 
-#textoComum{
-    width: 700px;
+#title {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-size: 161px;
+  line-height: 150px;
+  margin-left: 15%;
+  width: 550px;
 }
 
-#textoComum p{
-    line-height: 30px;
-    font-size: 23px;
-    margin-left: 10%;
-
+#textoComum {
+  width: 700px;
 }
 
+#textoComum p {
+  line-height: 30px;
+  font-size: 23px;
+  margin-left: 10%;
+}
 
 #calculator,
-#sack{
-    font-size: 100px;
-    padding-bottom: 13px;
+#sack {
+  font-size: 100px;
+  padding-bottom: 13px;
+  margin-left: -20px;
+}
+
+#green {
+  color: #38ae59;
+}
+
+#blue {
+  color: #5850fe;
+}
+
+#miniIcone {
+  width: auto;
+}
+
+#textoComum {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: justify;
+  margin-left: 10%;
+  margin-top: -100px;
+
+  color: #898989;
+}
+
+.calcu {
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-top: 10%;
+  width: 100%;
+  height: 100%;
+}
+
+.calcu img {
+  width: 320px;
+  margin-top: 5%;
+  transform: skew(15deg);
+  padding-top: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 300px;
+}
+
+.calcu-som {
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-top: 10%;
+  z-index: -4;
+}
+
+.calcu-som img {
+  width: 320px;
+  margin-top: 5%;
+  transform: skew(15deg);
+  padding-top: 5%;
+  position: absolute;
+  bottom: 170px;
+  right: 380px;
+  opacity: 0.05;
+  filter: blur(3px);
+}
+
+#desenhosvg {
+  position: absolute;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -3;
+}
+
+/* 1550px "maior" */
+/* 1550px "maior" */
+/* 1550px "maior" */
+/* 1550px "maior" */
+/* 1550px "maior" */
+/* 1550px "maior" */
+
+@media (max-width: 1550px) {
+  #title {
+    font-size: 110px;
+    margin-left: 15%;
+  }
+
+  #calculator,
+  #sack {
+    font-size: 75px;
+    padding-bottom: 9px;
     margin-left: -20px;
+  }
+
+  #textoComum {
+    width: 550px;
+  }
+
+  #textoComum p {
+    font-size: 20px;
+    width: 500px;
+  }
+
+  .calcu {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-top: 10%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .calcu img {
+    margin-top: 5%;
+    transform: skew(15deg);
+    padding-top: 5%;
+    position: absolute;
+    bottom: 0;
+    right: 300px;
+  }
+
+  .calcu-som {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-top: 10%;
+    z-index: -4;
+  }
+
+  .calcu-som img {
+    margin-top: 5%;
+    transform: skew(15deg);
+    padding-top: 5%;
+    position: absolute;
+    bottom: 170px;
+    right: 380px;
+    opacity: 0.05;
+    filter: blur(3px);
+  }
 }
 
-#green{
-    color: #38AE59;
+/* altura da calculadora png */
+/* altura da calculadora png */
+/* altura da calculadora png */
+
+@media (max-height: 823px) {
+  .calcu img {
+    width: 300px;
+  }
+
+  .calcu-som img {
+    width: 300px;
+  }
 }
 
-#blue{
-    color: #5850FE;
+@media (max-height: 770px) {
+  .calcu img {
+    width: 280px;
+  }
+
+  .calcu-som img {
+    width: 280px;
+  }
 }
 
-#miniIcone{
-    width: auto;
-    
+@media (max-height: 730px) {
+  .calcu img {
+    width: 240px;
+  }
+
+  .calcu-som img {
+    width: 240px;
+  }
 }
 
-#textoComum{
-    font-family: 'Public Sans';
+@media (max-height: 500px) {
+  .calcu img {
+    width: 140px;
+  }
+
+  .calcu-som img {
+    width: 140px;
+  }
+}
+
+/* 1373
+posicao calc  */
+/* 1373
+posicao calc  */
+/* 1373
+posicao calc  */
+/* 1373
+posicao calc  */
+
+@media (max-width: 1373px) {
+  .calcu img {
+    width: 220px;
+    bottom: 0px;
+    right: 230px;
+  }
+
+  .calcu-som img {
+    width: 210px;
+    bottom: 150px;
+    right: 300px;
+  }
+
+  #title {
+    margin-left: 10%;
+    line-height: 110px;
+  }
+
+  #textoComum {
+    font-size: 20px;
+    margin-left: 5%;
+  }
+
+  #textoComum p {
+    width: 390px;
+  }
+}
+
+/* 1155px  MEDIO*/
+/* 1155px  MEDIO*/
+/* 1155px  MEDIO*/
+/* 1155px  MEDIO*/
+/* 1155px  MEDIO*/
+/* 1155px  MEDIO*/
+/* 1155px  MEDIO*/
+
+@media (max-width: 1155px) {
+  #principal {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background-image: url("/svgs/svgTransparente2.svg");
+    background-position: center bottom;
+    background-size: auto;
+    background-size: cover;
+    z-index: -3;
+    transition: 0.2s;
+  }
+
+  .textos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 50px;
+    margin: 0 50px;
+  }
+
+  #title {
+    font-size: 100px;
+    margin-left: 0%;
+    margin-top: 5%;
+    width: 550px;
+    text-align: center;
+  }
+
+  #textoComum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 490px;
+    margin: 0;
+  }
+
+  #textoComum p {
+    line-height: 30px;
+    font-size: 21px;
+    margin: 0 0 0 -45px;
+    padding: 0;
+  }
+
+  #calculator,
+  #sack {
+    font-size: 75px;
+    padding-bottom: 9px;
+    margin-left: -20px;
+  }
+
+  #textoComum {
+    font-family: "Public Sans";
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -83,602 +349,261 @@ body{
     text-align: justify;
     margin-left: 10%;
     margin-top: -100px;
+    color: #898989;
+  }
 
-color: #898989;
-
-}
-
-.calcu{
-    
-    z-index: 2;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding-top: 10%;
-    width: 100%;
+  .calculadora-toda {
     height: 100%;
-}
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
-.calcu img{
-    width: 320px;
-    margin-top: 5%;
+  .calcu {
+    z-index: 1;
+    position: unset;
+    padding-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: 18%;
+  }
+
+  .calcu img {
+    margin-top: 0%;
     transform: skew(15deg);
+    padding-top: 0%;
+    position: unset;
+  }
+
+  .calcu-som {
+    display: none;
+  }
+
+  .calcu-som img {
+    display: none;
+  }
+
+  #desenhosvg {
+    margin-top: -1000px;
+    width: 100vw;
+    height: 100%;
+    z-index: -3;
+    background-image: none;
+    transition: 0.2s;
+  }
+}
+
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+
+@media (max-width: 660px) {
+  #principal {
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: url("/svgs/mobileMenor.svg");
+    background-position: center bottom;
+    background-size: auto;
+    background-size: cover;
+    transition: 0.2s;
+  }
+
+  .textos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding-bottom: 180px;
+    margin: 0;
+  }
+
+  #blue {
+    margin: 90px 0;
+  }
+
+  #title {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-size: 90px;
+    line-height: 85px;
+    margin-left: 0;
+    margin-top: 0;
     padding-top: 5%;
-    position: absolute;
-    bottom: 0; right: 300px;
-}
-
-.calcu-som{
-    z-index: -1;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding-top: 10%;
-    z-index: -4;
-}
-
-.calcu-som img{
-    width: 320px;
-    margin-top: 5%;
-    transform: skew(15deg);
-    padding-top: 5%;
-    position: absolute;
-    bottom: 170px; right: 380px;
-    opacity: 0.05;
-    filter: blur(3px);
-}
-
- #desenhosvg{
-   position: absolute;
-   right: 0; 
-   width: 100vw;
-   height: 100%;
-   z-index: -3;
-   
-} 
-
-
-/* 1550px "maior" */
-/* 1550px "maior" */
-/* 1550px "maior" */
-/* 1550px "maior" */
-/* 1550px "maior" */
-/* 1550px "maior" */
-
-
-@media (max-width:1550px){
-   
-    
-    #title{
-        font-size: 110px;
-        margin-left: 15%;
-    }
-
-    #calculator,
-#sack{
-    font-size: 75px;
-    padding-bottom: 9px;
-    margin-left: -20px;
-}
-
-#textoComum{
-    
     width: 550px;
-}
+    text-align: center;
+  }
 
-#textoComum p{
-    font-size: 20px;
-    width: 500px;
-    
-}
+  #textoComum {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: justify;
+    margin: 0;
+    margin-top: -75px;
+  }
 
-.calcu{
-    
-    z-index: 2;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding-top: 10%;
-    width: 100%;
+  #textoComum p {
+    line-height: 20px;
+    font-size: 14px;
+    margin-left: 0;
+    background-color: #f1f7fc;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  #calculator,
+  #sack {
+    font-size: 59px;
+    padding-bottom: 7px;
+    margin-left: -6px;
+  }
+
+  .calculadora-toda {
     height: 100%;
-}
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
-.calcu img{
+  .calcu {
+    z-index: 1;
+    position: unset;
+    padding-top: 0%;
+    display: flex;
+    justify-content: center;
+    margin-top: -20%;
+    margin-left: 25%;
+  }
 
-    margin-top: 5%;
+  .calcu img {
+    width: 250px;
+    margin-top: 0%;
     transform: skew(15deg);
+    padding-top: 0%;
+    position: unset;
+  }
+
+  .calcu-som {
+    display: none;
+  }
+
+  .calcu-som img {
+    display: none;
+  }
+
+  #desenhosvg {
+    margin-top: -1000px;
+    width: 100vw;
+    height: 100%;
+    z-index: -3;
+    /* background-image: none; */
+    background-image: url("/svgs/mobileMenor.svg");
+    background-position: 0% 0%;
+    background-size: auto;
+    background-size: cover;
+    transition: 0.2s;
+  }
+}
+
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+/* mobile */
+
+@media (max-width: 425px) {
+  .textos {
+    padding-bottom: 180px;
+    margin: 0;
+  }
+
+  #blue {
+    margin: 90px 0;
+  }
+
+  #title {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-size: 80px;
+    line-height: 85px;
+    margin-left: 0;
+    margin-top: 0;
     padding-top: 5%;
-    position: absolute;
-    bottom: 0; right: 300px;
-}
+    width: 550px;
+    text-align: center;
+  }
 
-.calcu-som{
-    z-index: -1;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding-top: 10%;
-        z-index: -4;
-}
+  #textoComum {
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: justify;
+    margin: 0;
+    margin-top: -75px;
+  }
 
-.calcu-som img{
-    margin-top: 5%;
+  #textoComum p {
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 0;
+    background-color: #f1f7fc;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  #calculator,
+  #sack {
+    font-size: 59px;
+    padding-bottom: 7px;
+    margin-left: -6px;
+  }
+
+  .calcu {
+    z-index: 1;
+    position: unset;
+    padding-top: 0%;
+    display: flex;
+    justify-content: center;
+    margin-top: -20%;
+    margin-left: 25%;
+  }
+
+  .calcu img {
+    width: 210px;
+    margin-top: 0%;
     transform: skew(15deg);
-    padding-top: 5%;
-    position: absolute;
-    bottom: 170px; right: 380px;
-    opacity: 0.05;
-    filter: blur(3px);
-}
-
-}
-
-/* altura da calculadora png */
-/* altura da calculadora png */
-/* altura da calculadora png */
-
-
-@media (max-height:823px){
-
-    .calcu img{
-        width: 300px;
-    }
-
-    
-    .calcu-som img{
-        width: 300px;
-    }
-
-}
-
-
-@media (max-height:770px){
-
-    .calcu img{
-        width: 280px;
-    }
-
-    
-    .calcu-som img{
-        width: 280px;
-    }
-
-}
-
-@media (max-height:730px){
-
-    .calcu img{
-        width: 240px;
-    }
-
-    
-    .calcu-som img{
-        width: 240px;
-    }
-
-}
-
-@media (max-height:500px){
-
-    .calcu img{
-        width: 140px;
-    }
-
-    
-    .calcu-som img{
-        width: 140px;
-    }
-
-}
-
-
-/* 1373
-posicao calc  */
-/* 1373
-posicao calc  */
-/* 1373
-posicao calc  */
-/* 1373
-posicao calc  */
-
-
-
-
-@media (max-width:1373px){
-
-    .calcu img{
-        width: 220px;
-        bottom:0px; right: 230px;
-    }
-
-
-    .calcu-som img{
-        width:210px; 
-        bottom: 150px; right: 300px;
-}
-
-    #title{
-    margin-left: 10%;
-    line-height: 110px;
-}
-
-    #textoComum{
-    font-size: 20px;
-    margin-left: 5%;
-}
-
-#textoComum p{
-    width: 390px;
-}
-
-}
-
-
-/* 1155px  MEDIO*/
-/* 1155px  MEDIO*/
-/* 1155px  MEDIO*/
-/* 1155px  MEDIO*/
-/* 1155px  MEDIO*/
-/* 1155px  MEDIO*/
-/* 1155px  MEDIO*/
-
-@media (max-width:1155px){
-
-    #principal{
-        display: block;
-        margin: 0;
-        padding: 0;
-        height: auto;
-        background-image: url('/svgs/svgTransparente2.svg');
-        background-position: center bottom;
-        background-size: auto;
-        background-size:cover; 
-        z-index: -3;
-        transition: 0.2s;
-    }
-    
-    .textos{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding-bottom: 50px;
-        margin: 0 50px;
-    }
-    
-    
-    #title{
-        font-size: 100px;
-        margin-left: 0%;
-        margin-top: 5%;
-        width: 550px;
-        text-align: center;
-    }
-    
-    #textoComum{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 490px;
-        margin: 0;
-    }
-    
-    #textoComum p{
-        line-height: 30px;
-        font-size: 21px;
-        margin: 0 0 0 -45px;
-        padding: 0;
-    
-    }
-    
-    
-    #calculator,
-    #sack{
-        font-size: 75px;
-        padding-bottom: 9px;
-        margin-left: -20px;
-    }
-    
-    
-    #textoComum{
-        font-family: 'Public Sans';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 20px;
-        text-align: justify;
-        margin-left: 10%;
-        margin-top: -100px;
-        color: #898989;
-    
-    }
-
-
-    .calculadora-toda{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        margin: 0 auto;
-    }
-
-    
-    .calcu{
-        z-index: 1;
-        position: unset;
-        padding-top: 0%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        margin-left: 18%;
-    }
-    
-    .calcu img{
-        margin-top: 0%;
-        transform: skew(15deg);
-        padding-top: 0%;
-        position: unset;
-        
-    }
-    
-    .calcu-som{
-        display: none;
-    }
-    
-    .calcu-som img{
-        display: none;
-    }
-
-    #desenhosvg{
-        margin-top: -1000px;
-        width: 100vw;
-        height: 100%;
-        z-index: -3;
-         background-image: none; 
-         transition: 0.2s;
-
-        
-     } 
-    
-    
-
-}
-
-/* mobile */
-/* mobile */
-/* mobile */
-/* mobile */
-/* mobile */
-
-
-
-
-/* mobile */
-/* mobile */
-/* mobile */
-/* mobile */
-/* mobile */
-
-@media (max-width:660px){
-
-    #principal{
-        justify-content: center;
-        align-items: flex-start;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        background-image: url('/svgs/mobileMenor.svg');
-        background-position: center bottom;
-        background-size: auto;
-        background-size:cover;
-        transition: 0.2s;
-
-        
-    }
-    
-    .textos{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: justify;
-        padding-bottom: 180px;
-        margin: 0 ;
-    }
-    
-    #blue{
-        margin:90px 0;
-    }
-    
-    #title{
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        font-family: 'Josefin Sans';
-        font-style: normal;
-        font-size: 90px;
-        line-height: 85px;
-        margin-left: 0;
-        margin-top: 0;
-        padding-top: 5%;
-        width: 550px;
-        text-align: center;
-    }
-    
-    #textoComum{
-        width: 350px;
-        display: flex;
-        justify-content: center;align-items: flex-start;
-        text-align: justify;
-        margin: 0;
-        margin-top: -75px;
-
-
-        
-    }
-    
-    #textoComum p{
-        line-height: 20px;
-        font-size: 14px;
-        margin-left: 0;
-        background-color: #F1F7FC;
-        border-radius: 5px;
-        padding: 5px;
-    
-    }
-    
-    
-    #calculator,
-    #sack{
-        font-size: 59px;
-        padding-bottom: 7px;
-        margin-left: -6px;
-    }
-
-      
-    .calculadora-toda{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        margin: 0 auto;
-    }
-
-    
-    .calcu{
-        z-index: 1;
-        position: unset;
-        padding-top: 0%;
-        display: flex;
-        justify-content: center;
-        margin-top: -20%;
-        margin-left: 25%;
-    }
-    
-    .calcu img{
-        width: 250px;
-        margin-top: 0%;
-        transform: skew(15deg);
-        padding-top: 0%;
-        position: unset;
-        
-    }
-    
-    .calcu-som{
-        display: none;
-    }
-    
-    .calcu-som img{
-        display: none;
-    }
-
-    #desenhosvg{
-        margin-top: -1000px;
-        width: 100vw;
-        height: 100%;
-        z-index: -3;
-        /* background-image: none; */
-        background-image: url('/svgs/mobileMenor.svg');
-        background-position: 0% 0%;
-        background-size: auto;
-        background-size:cover;
-        transition: 0.2s;
-     } 
-
-
-}
-
-
-/* mobile */
-/* mobile */
-/* mobile */
-/* mobile */
-/* mobile */
-
-
-
-
-/* mobile */
-/* mobile */
-/* mobile */
-/* mobile */
-/* mobile */
-
-
-
-@media (max-width:425px){
-
-    .textos{
-        padding-bottom: 180px;
-        margin: 0 ;
-    }
-    
-    #blue{
-        margin:90px 0;
-    }
-    
-    #title{
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        font-family: 'Josefin Sans';
-        font-style: normal;
-        font-size: 80px;
-        line-height: 85px;
-        margin-left: 0;
-        margin-top: 0;
-        padding-top: 5%;
-        width: 550px;
-        text-align: center;
-    }
-    
-    #textoComum{
-        width: 280px;
-        display: flex;
-        justify-content: center;align-items: flex-start;
-        text-align: justify;
-        margin: 0;
-        margin-top: -75px;
-    }
-    
-    #textoComum p{
-        line-height: 20px;
-        font-size: 12px;
-        margin-left: 0;
-        background-color: #F1F7FC;
-        border-radius: 5px;
-        padding: 5px;
-    
-    }
-    
-    
-    #calculator,
-    #sack{
-        font-size: 59px;
-        padding-bottom: 7px;
-        margin-left: -6px;
-    }
-
-    .calcu{
-        z-index: 1;
-        position: unset;
-        padding-top: 0%;
-        display: flex;
-        justify-content: center;
-        margin-top: -20%;
-        margin-left: 25%;
-    }
-    
-    .calcu img{
-        width: 210px;
-        margin-top: 0%;
-        transform: skew(15deg);
-        padding-top: 0%;
-        position: unset;
-        
-    }
-    
-
+    padding-top: 0%;
+    position: unset;
+  }
 }
