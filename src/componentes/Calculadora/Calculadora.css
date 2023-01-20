@@ -116,19 +116,20 @@
 .calculadora .resultados {
   display: flex;
   justify-content: space-around;
+  position: relative;
   margin: -2px auto 10px auto;
   padding: 3.2rem 0.2rem;
   width: 40%;
   background-color: #dfe2ff;
   outline: 3px solid #5850fe;
   border-radius: 0 0 20px 20px;
-  transform: translateY(-100%);
+  transform: translateY(0);
   transition: 0.2s ease-in-out;
   z-index: -2;
 }
 
 .calculadora .resultados.active {
-  transform: translateY(0);
+  transform: translateY(-103%);
 }
 
 .calculadora .resultados .res h3 {
