@@ -3,54 +3,57 @@ import "./Calculadora.css";
 import { useState } from "react";
 import Navbar2 from "../Navbar2/Navbar2";
 
-    const Calculadora = () => {
-      const [custo, setCusto] = useState('');
-      const [notaFiscal, setNotaFiscal] = useState('');
-      const [despesas, setDespesas] = useState('');
-      const [frete, setFrete] = useState('');
-      const [tarifa, setTarifa] = useState('');
-      const [margemLucro, setMargemLucro] = useState('');
-      // const [resultado, setResultado] = useState(0);
-      const [resultadoLucro, setResultadoLucro] = useState(0.0);
+const Calculadora = () => {
+  const [custo, setCusto] = useState("");
+  const [notaFiscal, setNotaFiscal] = useState("");
+  const [despesas, setDespesas] = useState("");
+  const [frete, setFrete] = useState("");
+  const [tarifa, setTarifa] = useState("");
+  const [margemLucro, setMargemLucro] = useState("");
+  const [resultado, setResultado] = useState(0.0);
+  const [resultadoLucro, setResultadoLucro] = useState(0.0);
 
-//////////////////////////////////////////////////
+  //////////////////////////////////////////////////
 
-      const [btnstate, setBtnstate] = useState('false');
+  const [btnstate, setBtnstate] = useState("false");
 
-        const click = () => {
-          setBtnstate(btnstate => !btnstate);
-        }
+  const click = () => {
+    setBtnstate((btnstate) => !btnstate);
+  };
 
-        let toggleClassCheck = btnstate ? ' active' : '';
+  let toggleClassCheck = btnstate ? " active" : "";
 
-        // if (toggleClassCheck === 'btnstate' ){
-        //   setActive(' active');
-        // } else setActive('');
+  // if (toggleClassCheck === 'btnstate' ){
+  //   setActive(' active');
+  // } else setActive('');
 
+  const calcular = (event) => {
+    event.preventDefault();
 
-      const calcular = (event) => {
+    const custoTotal =
+      100 /
+      (100 -
+        ((parseFloat(despesas) * 100) / parseFloat(custo) +
+          parseFloat(notaFiscal) +
+          parseFloat(tarifa) +
+          parseFloat(margemLucro)));
 
-        event.preventDefault();
+    const precoVenda = custoTotal * parseFloat(custo) + parseFloat(frete);
 
-        
-          const custoTotal = 100 / (100 - (parseFloat(despesas) + parseFloat(notaFiscal) + parseFloat(tarifa) + parseFloat(margemLucro)));
+    const resultadoLucro = precoVenda * (parseFloat(margemLucro) / 100);
 
-          const precoVenda = custoTotal * parseFloat(custo) + parseFloat(frete);
+    const resultado = parseFloat(precoVenda);
 
-          const resultadoLucro =  precoVenda * (parseFloat(margemLucro)/ 100); 
+    setResultado(resultado.toFixed(2));
 
-          setResultadoLucro(resultadoLucro.toFixed(2));
+    setResultadoLucro(resultadoLucro.toFixed(2));
+  };
 
-      };
-
-      const limpa = (event) => {
-
-        event.preventDefault();
-
-        setResultadoLucro(0);
-
-      }
-
+  const limpa = (event) => {
+    event.preventDefault();
+    setResultado(0);
+    setResultadoLucro(0);
+  };
 
   return (
     <>
@@ -200,36 +203,35 @@ import Navbar2 from "../Navbar2/Navbar2";
               </div>
             </div>
           </div>
-        
 
-        
-        <div className="botoes">
-          <button
-            type="submit"
-            className="btn btn-primary btn-lg"
-            onClick={click}
-          >
-            Calcular
-          </button>
-          <button 
-            type="reset" 
-            className="btn btn-secondary btn-lg"
-            onClick={limpa}>
-            Limpar
-          </button>
-        </div>
+          <div className="botoes">
+            <button
+              type="submit"
+              className="btn btn-primary btn-lg"
+              onClick={click}
+            >
+              Calcular
+            </button>
+            <button
+              type="reset"
+              className="btn btn-secondary btn-lg"
+              onClick={limpa}
+            >
+              Limpar
+            </button>
+          </div>
         </form>
 
-        <div className={`resultados${toggleClassCheck}`} >
+        <div className={`resultados${toggleClassCheck}`}>
           <div className="res" id="1">
             <h3>Preço da venda</h3>
-            <h2 className="lucroLiquido">$1234</h2>
+            <h2 className="lucroLiquido">R$ {resultado}</h2>
           </div>
 
           <div className="res">
             <h3>Lucro por venda</h3>
-            <h2 className="lucroLiquido" id="2">$
-              {resultadoLucro}
+            <h2 className="lucroLiquido" id="2">
+              R$ {resultadoLucro}
             </h2>
           </div>
         </div>
