@@ -22,7 +22,10 @@ import Navbar2 from "../Navbar2/Navbar2";
         }
 
         let toggleClassCheck = btnstate ? ' active' : '';
-        
+
+        // if (toggleClassCheck === 'btnstate' ){
+        //   setActive(' active');
+        // } else setActive('');
 
 
       const calcular = (event) => {
@@ -76,6 +79,7 @@ import Navbar2 from "../Navbar2/Navbar2";
                   id="custo"
                   value={custo}
                   onChange={(e) => setCusto(e.target.value)}
+                  required={true}
                   className="form-control"
                   placeholder="Insira o valor"
                   aria-label="Insira o valor"
@@ -97,6 +101,7 @@ import Navbar2 from "../Navbar2/Navbar2";
                   id="imposto"
                   value={notaFiscal}
                   onChange={(e) => setNotaFiscal(e.target.value)}
+                  required={true}
                   className="form-control"
                   placeholder="Insira o valor"
                   aria-label="Insira o valor"
@@ -111,7 +116,7 @@ import Navbar2 from "../Navbar2/Navbar2";
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
-                    %
+                    R$
                   </span>
                 </div>
                 <input
@@ -119,6 +124,7 @@ import Navbar2 from "../Navbar2/Navbar2";
                   id="despesas"
                   value={despesas}
                   onChange={(e) => setDespesas(e.target.value)}
+                  required={true}
                   className="form-control"
                   placeholder="Insira o valor"
                   aria-label="Insira o valor"
@@ -141,6 +147,7 @@ import Navbar2 from "../Navbar2/Navbar2";
                   id="classico"
                   value={tarifa}
                   onChange={(e) => setTarifa(e.target.value)}
+                  required={true}
                   className="form-control"
                   placeholder="Insira o valor"
                   aria-label="Insira o valor"
