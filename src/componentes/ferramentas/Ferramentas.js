@@ -77,9 +77,8 @@ function Ferramentas() {
             </a>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
-  
   );
 }
 
