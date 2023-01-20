@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {} from "@fortawesome/free-solid-svg-icons";
 
 function Ferramentas() {
-  // const navigate = useNavigate();
   return (
     <div className="ferramentas" id="ferramenta">
       <div className="titulo">
@@ -78,13 +77,9 @@ function Ferramentas() {
             </a>
           </div>
         </div>
-
-      </div> */}
+      </div> 
     </div>
-    </div>
-      </div>
-
-    </div>
+  
   );
 }
 
