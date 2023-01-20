@@ -165,16 +165,17 @@ const Lucro = (margemLucro, setMargemLucro) => {
   );
 };
 
+const calcular = (despesas, notaFiscal, tarifa, margemLucro, custo, frete) => {
+  let custoTotal = 100 / (100 - (despesas + notaFiscal + tarifa + margemLucro));
+  let precoVenda = (custo + frete) * custoTotal;
+  return console.log(precoVenda.toFixed(2));
+};
+
 const Calc2 = () => {
   let custoTotal = 0;
   let precoVenda = 0;
   let lucroPorVenda = 0;
 
-  const calcular = () => {
-    custoTotal = 100 / (100 - (despesas + notaFiscal + tarifa + margemLucro));
-    precoVenda = (custo + frete) * custoTotal;
-    return precoVenda.toFixed(2);
-  };
   const calcularLucro = () => {
     custoTotal = 100 / (100 - (despesas + notaFiscal + tarifa + margemLucro));
     precoVenda = (custo + frete) * custoTotal;
@@ -212,18 +213,17 @@ const Calc2 = () => {
         <div className="resultados">
           <div className="res" id="1">
             <h3>Preço da venda</h3>
-            <h2 className="lucroLiquido">{calcular()}</h2>
+            <h2 className="lucroLiquido"></h2>
           </div>
 
           <div className="res">
             <h3>Lucro por venda</h3>
             <h2 className="lucroLiquido" id="2">
-              {calcularLucro()}
             </h2>
           </div>
         </div>
         <div className="botoes">
-          <button type="submit" className="btn btn-primary btn-lg">
+          <button type="submit" onSubmit={calcular(despesas, notaFiscal, tarifa, margemLucro, custo, frete)} className="btn btn-primary btn-lg">
             Calcular
           </button>
           <button type="reset" className="btn btn-secondary btn-lg">

@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Pagina1 />} />
           <Route path="/Calculadora" element={<Calculadora />} />
           <Route path="/Calculadora2" element={<Calc2 />} />
+          <Route path="/Calculadora3" element={<Calc2 />} />
         </Routes>
       </Router>
     </>

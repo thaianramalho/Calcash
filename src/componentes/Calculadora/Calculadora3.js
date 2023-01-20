@@ -3,51 +3,26 @@ import "./Calculadora.css";
 import { useState } from "react";
 import Navbar2 from "../Navbar2/Navbar2";
 
-    const Calculadora = () => {
-      const [custo, setCusto] = useState('');
-      const [notaFiscal, setNotaFiscal] = useState('');
-      const [despesas, setDespesas] = useState('');
-      const [frete, setFrete] = useState('');
-      const [tarifa, setTarifa] = useState('');
-      const [margemLucro, setMargemLucro] = useState('');
-      // const [resultado, setResultado] = useState(0);
-      const [resultadoLucro, setResultadoLucro] = useState(0.0);
+const Calculadora3 = () => {
+  const [custo, setCusto] = useState(0.0);
+  const [notaFiscal, setNotaFiscal] = useState(0.0);
+  const [despesas, setDespesas] = useState(0.0);
+  const [frete, setFrete] = useState(0.0);
+  const [tarifa, setTarifa] = useState(0.0);
+  const [margemLucro, setMargemLucro] = useState(0.0);
+  const [resultado, setResultado] = useState(0.0);
+  const [resultadoLucro, setResultadoLucro] = useState(0.0);
 
-//////////////////////////////////////////////////
+  const calcular = (event) => {
+    event.preventDefault();
 
-      const [btnstate, setBtnstate] = useState('false');
+    var custoTotal = 100 / (100 - (despesas + notaFiscal + tarifa + margemLucro));
+    var precoVenda = (custo + frete) * custoTotal;
+    var resultadoLucro = (margemLucro / 100) * precoVenda;
+    setResultadoLucro(resultadoLucro.toFixed(1));
 
-        const click = () => {
-          setBtnstate(btnstate => !btnstate);
-        }
-
-        let toggleClassCheck = btnstate ? ' active' : '';
-        
-
-
-      const calcular = (event) => {
-
-        event.preventDefault();
-
-        
-          const custoTotal = 100 / (100 - (parseFloat(despesas) + parseFloat(notaFiscal) + parseFloat(tarifa) + parseFloat(margemLucro)));
-
-          const precoVenda = custoTotal * parseFloat(custo) + parseFloat(frete);
-
-          const resultadoLucro =  precoVenda * (parseFloat(margemLucro)/ 100); 
-
-          setResultadoLucro(resultadoLucro.toFixed(2));
-
-      };
-
-      const limpa = (event) => {
-
-        event.preventDefault();
-
-        setResultadoLucro(0);
-
-      }
-
+    console.log(setResultadoLucro)
+  };
 
   return (
     <>
@@ -60,6 +35,7 @@ import Navbar2 from "../Navbar2/Navbar2";
           </h2>
         </div>
 
+        
         <form className="boxbox" onSubmit={calcular}>
           <div className="box">
             <div className="inputs">
@@ -195,40 +171,34 @@ import Navbar2 from "../Navbar2/Navbar2";
           </div>
         
 
-        
-        <div className="botoes">
-          <button
-            type="submit"
-            className="btn btn-primary btn-lg"
-            onClick={click}
-          >
-            Calcular
-          </button>
-          <button 
-            type="reset" 
-            className="btn btn-secondary btn-lg"
-            onClick={limpa}>
-            Limpar
-          </button>
-        </div>
-        </form>
-
-        <div className={`resultados${toggleClassCheck}`} >
+        <div className="resultados">
           <div className="res" id="1">
-            <h3>Preço da venda</h3>
-            <h2 className="lucroLiquido">$1234</h2>
+            <h3>Preço daaa venda</h3>
+            <h2 className="lucroLiquido"></h2>
           </div>
 
           <div className="res">
             <h3>Lucro por venda</h3>
-            <h2 className="lucroLiquido" id="2">$
+            <h2 className="lucroLiquido" id="2">
               {resultadoLucro}
             </h2>
           </div>
         </div>
+        <div className="botoes">
+          <button
+            type="submit"
+            className="btn btn-primary btn-lg"
+          >
+            Calcular
+          </button>
+          <button type="reset" className="btn btn-secondary btn-lg">
+            Limpar
+          </button>
+        </div>
+        </form>
       </div>
     </>
   );
 };
 
-export default Calculadora;
+export default Calculadora3;
