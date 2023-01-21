@@ -15,10 +15,19 @@ const Calculadora = () => {
 
   //////////////////////////////////////////////////
 
+
+  
+
   const [btnstate, setBtnstate] = useState("false");
 
   const click = () => {
-    setBtnstate((btnstate) => !btnstate);
+    if(toggleClassCheck === btnstate ){
+      setBtnstate(true)
+    } else setBtnstate(false);
+
+
+
+    // setBtnstate((btnstate) => !btnstate);
   };
 
   let toggleClassCheck = btnstate ? " active" : "";
@@ -44,15 +53,39 @@ const Calculadora = () => {
 
     const resultado = parseFloat(precoVenda);
 
-    setResultado(resultado.toFixed(2));
+    
+     setResultado(resultado.toFixed(2));
 
     setResultadoLucro(resultadoLucro.toFixed(2));
+
+
+        // if(resultado >= 0){
+        //   setResultado(resultado.toFixed(2));
+        // }else setResultado(resultado.toFixed(2));
+        
   };
+
+
 
   const limpa = (event) => {
     event.preventDefault();
+    
+    setCusto('')
+    setNotaFiscal('')
+    setDespesas('')
+    setFrete('')
+    setTarifa('')
+    setMargemLucro('')
     setResultado(0);
     setResultadoLucro(0);
+  };
+
+    const textStyle = {
+      color: resultadoLucro > 0 ? "#38ae59" : "red"
+    };
+
+    const textStyle2 = {
+      color: resultado > 0 ? "#38ae59" : "red"
   };
 
   return (
@@ -69,9 +102,15 @@ const Calculadora = () => {
         <form className="boxbox" onSubmit={calcular}>
           <div className="box">
             <div className="inputs">
-              <p>Custo do produto:</p>
+              <div>
+                <span className="i" alt="Minha Figura">i</span>
+                <p className="txt">Custo real do produto em R$</p>
+              </div>
 
+              <p>Custo do produto:</p>
+              
               <div className="input-group mb-3">
+                
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
                     R$
@@ -91,6 +130,12 @@ const Calculadora = () => {
               </div>
             </div>
             <div className="inputs">
+
+            <div>
+                <span className="i" alt="Minha Figura">i</span>
+                <p className="txt">% do valor em impostos pagos de acordo com seu faturamento mensal. Impostos (%) = Valor dos impostos/Faturamento</p>
+              </div>
+
               <p>Imposto NF-E:</p>
 
               <div className="input-group mb-3">
@@ -114,6 +159,12 @@ const Calculadora = () => {
             </div>
 
             <div className="inputs">
+                          
+              <div>
+                <span className="i" alt="Minha Figura">i</span>
+                <p className="txt">% do valor em impostos pagos de acordo com seu faturamento mensal. Impostos (%) = Valor dos impostos/Faturamento"</p>
+              </div>
+
               <p>Despesas de venda:</p>
 
               <div className="input-group mb-3">
@@ -137,6 +188,13 @@ const Calculadora = () => {
             </div>
 
             <div className="inputs">
+                                        
+            <div>
+                <span className="i" alt="Minha Figura">i</span>
+                <p className="txt">% do valor em impostos pagos de acordo com seu faturamento mensal. Impostos (%) = Valor dos impostos/Faturamento"</p>
+              </div>
+
+
               <p>Tarifa do anúncio:</p>
 
               <div className="input-group mb-3">
@@ -160,6 +218,13 @@ const Calculadora = () => {
             </div>
 
             <div className="inputs">
+                                        
+            <div>
+                <span className="i" alt="Minha Figura">i</span>
+                <p className="txt">R$5,00 para valor de venda abaixo de R$79,00 e para valores maiores ou iguais a R$79,00 utilizar o valor do frete grátis informado pelo Mercado Livre.</p>
+              </div>
+ 
+
               <p>Valor do frete:</p>
 
               <div className="input-group mb-3">
@@ -182,6 +247,13 @@ const Calculadora = () => {
             </div>
 
             <div className="inputs">
+                                        
+            <div>
+                <span className="i" alt="Minha Figura">i</span>
+                <p className="txt">A margem de lucro é o valor em % que você irá receber sobre o valor total da venda. Recomendamos o valor de no mínimo 10%.</p>
+              </div>
+
+
               <p>Margem de lucro:</p>
 
               <div className="input-group mb-3">
@@ -225,12 +297,12 @@ const Calculadora = () => {
         <div className={`resultados${toggleClassCheck}`}>
           <div className="res" id="1">
             <h3>Preço da venda</h3>
-            <h2 className="lucroLiquido">R$ {resultado}</h2>
+            <h2 className="lucroLiquido" style={textStyle}>R$ {resultado}</h2>
           </div>
 
           <div className="res">
             <h3>Lucro por venda</h3>
-            <h2 className="lucroLiquido" id="2">
+            <h2 className="lucroLiquido2" id="2" style={textStyle2}>
               R$ {resultadoLucro}
             </h2>
           </div>

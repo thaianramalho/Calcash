@@ -36,6 +36,7 @@
 }
 
 .calculadora .box .inputs {
+  position: relative;
   margin: 8% 20%;
   display: flex;
   flex-direction: column;
@@ -49,6 +50,40 @@
   color: #525252;
   padding-left: 3%;
 }
+
+
+
+.calculadora .box .inputs .i{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 15px;
+  text-align: center;
+  background-color:#857ff94a;
+  border-radius: 50%;
+  outline: 1px solid#5850fe;
+}
+
+.calculadora .box .inputs .txt{
+  visibility: hidden;
+  font-size: 1.2rem;
+  padding: 7px;
+  position: absolute;
+  top: 25px;
+  width: 200px;
+  right: -170px;
+  background-color:#b4b0fed1;
+  border-radius: 5px;
+  outline: 1px solid#5850fe;
+  z-index: 20;
+  transition: 0.1s;
+}
+
+.calculadora .i:hover + .txt{
+  visibility: visible;
+}
+
+
 
 .calculadora .box .inputs input {
   font-family: Montserrat, san serif;
@@ -142,8 +177,20 @@
   text-align: center;
   color: #38ae59;
   padding-top: 1rem;
+  text-shadow: 2px 1px 3px #5252521c;
+}
+/* 
+.negative-result{
+  color: #ee2727;
 }
 
+.positive-result{
+  color: #38ae59;
+} */
+
+.calculadora .resultados .res .lucroliquido{
+  
+}
 /* .calculadora .resultados .res #1::after {
   content: "";
   width: 10px;
