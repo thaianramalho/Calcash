@@ -133,11 +133,10 @@
     transition: all 0.35s ease-in-out;
   }
 
-  .Navbar .nav-items a {
-    background: #f1f7fc;
+  
+
+  .Navbar .nav-items {
     box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.12);
-    padding: 20px;
-    margin: 8px;
   }
 
   .Navbar .nav-items a::before {

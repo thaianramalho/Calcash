@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className="Navbar">
 
       
-        <span className="nav-logo"><Link to='/'  style={{ textDecoration: 'none', color: '#5850FE' }}>Cal</Link><span className="cash"><Link style={{ textDecoration: 'none', color: '#38AE59' }} to='/'>cash</Link></span></span>
+        <span className="nav-logo"><Link  to='/'  style={{ textDecoration: 'none', color: '#5850FE' }}>Cal</Link><span className="cash"><Link style={{ textDecoration: 'none', color: '#38AE59' }} to='/'>cash</Link></span></span>
       
 
 

@@ -125,7 +125,7 @@
     flex-direction: column;
     text-align: center;
     background: #f1f7fc;
-    box-shadow: 3px 2px 9px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 3px 2px 9px rgba(0, 0, 0, 0.12); */
     left: 0;
     width: 100%;
     height: 254px;
@@ -135,10 +135,14 @@
 
   .Navbar .nav-items a {
     background: #f1f7fc;
-    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.12);
     padding: 20px;
     margin: 8px;
   }
+
+  .Navbar .nav-items .link{
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.12);
+  }
+
 
   .Navbar .nav-items a::before {
     background: transparent;
