@@ -51,37 +51,59 @@
   padding-left: 3%;
 }
 
+.calculadora .box .inputs .label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+}
 
 .calculadora .box .inputs .i{
-  position: absolute;
+  /* position: absolute;
   top: 8px;
-  right: 10px;
-  width: 15px;
+  right: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 13px;
+  height: 13px;
   text-align: center;
+  color: black;
   background-color:#857ff94a;
-  border-radius: 50%;
+  border-radius: 100%;
   outline: 1px solid#5850fe;
+}
+
+.calculadora .box .label .minor{
+  position: relative;
 }
 
 .calculadora .box .inputs .txt{
   visibility: hidden;
   font-size: 1.2rem;
-  padding: 7px;
   position: absolute;
-  top: 25px;
+  top: 15px; left: 1px;
+  padding: 7px;
   width: 200px;
-  right: -170px;
   background-color:#b4b0fed1;
   border-radius: 5px;
   outline: 1px solid#5850fe;
   z-index: 20;
-  transition: 0.1s;
+  transition: 0.1s ease-in-out;
 }
 
-.calculadora .i:hover + .txt{
+.calculadora .label .minor .i:hover + .txt{
   visibility: visible;
+  cursor: pointer;
 }
+
+.calculadora .label .minor .i:hover{
+  cursor: pointer;
+  border-radius: 100% 100% 0 0;
+}
+
 
 
 
@@ -179,25 +201,7 @@
   padding-top: 1rem;
   text-shadow: 2px 1px 3px #5252521c;
 }
-/* 
-.negative-result{
-  color: #ee2727;
-}
 
-.positive-result{
-  color: #38ae59;
-} */
-
-.calculadora .resultados .res .lucroliquido{
-  
-}
-/* .calculadora .resultados .res #1::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  color: #525252;
-  background-color: #525252;
-} */
 
 @media (max-width: 1024px) {
   .calculadora .titulo h2 {
@@ -249,6 +253,12 @@
   .calculadora .resultados .res h2 {
     font-size: 2.9rem;
   }
+
+  .calculadora .box .inputs .txt{
+    top: 14px; left: -10px;
+    padding: 7px;
+    width: 130px;
+  }
 }
 
 @media (max-width: 631px) {
@@ -296,16 +306,39 @@
   }
 
   .calculadora .resultados {
-    width: 60%;
+    width: 80%;
     padding: 1.7rem;
   }
 
   .calculadora .resultados .res h3 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .calculadora .resultados .res h2 {
-    font-size: 2.9rem;
+    font-size: 2.1rem;
     padding-top: 1rem;
   }
+
+  .calculadora .box .inputs .txt{
+    top: 14px; left: -50px;
+    width: 130px;
+  }
+
+  @media (max-width: 376px) {
+  .calculadora .resultados .res h3 {
+    font-size: 1.3rem;
+  }
+
+  .calculadora .resultados .res h2 {
+    font-size: 1.9rem;
+    padding-top: 1rem;
+  }
+
+  .calculadora .box .inputs .txt{
+    top: 14px; left: -50px;
+    width: 130px;
+  }
+
+  }
+  
 }
