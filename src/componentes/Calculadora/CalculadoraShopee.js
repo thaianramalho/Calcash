@@ -3,12 +3,12 @@ import "./Calculadora.css";
 import { useState } from "react";
 import Navbar2 from "../Navbar2/Navbar2";
 
-const Calculadora = () => {
+const CalculadoraShopee = () => {
   const [custo, setCusto] = useState("");
   const [notaFiscal, setNotaFiscal] = useState("");
   const [despesas, setDespesas] = useState("");
   const [frete, setFrete] = useState("");
-  const [tarifa, setTarifa] = useState("");
+  const [tarifa, setTarifa] = useState(14);
   const [margemLucro, setMargemLucro] = useState("");
   const [resultado, setResultado] = useState(0.0);
   const [resultadoLucro, setResultadoLucro] = useState(0.0);
@@ -88,7 +88,7 @@ const Calculadora = () => {
       <div className="calculadora">
         <div className="titulo">
           <h2>
-            Calculadora <br /> Mercado Livre
+            Calculadora <br /> Shopee
           </h2>
         </div>
 
@@ -206,9 +206,7 @@ const Calculadora = () => {
                     i
                   </span>
 
-                  <p className="txt">
-                    Tarifa para anúnciar na plataforma (Clássico ou Premium).
-                  </p>
+                  <p className="txt">Tarifa da plataforma (14% é o padrão).</p>
                 </div>
               </div>
 
@@ -235,15 +233,20 @@ const Calculadora = () => {
             <div className="inputs">
               <div className="label">
                 <p>Valor do frete:</p>
-
+                <div class="form-check form-switch">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="flexSwitchCheckDefault"
+                />
+              </div>
                 <div className="minor">
                   <span className="i" alt="Minha Figura">
                     i
                   </span>
 
                   <p className="txt">
-                    Valor do frete cobrado pela plataforma (Inserir 0 se for por
-                    conta do comprador).
+                    Ative o botão caso o anúncio participe do programa de frete grátis da plataforma. Caso contrário, deixe desativado.
                   </p>
                 </div>
               </div>
@@ -251,7 +254,7 @@ const Calculadora = () => {
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
-                    R$
+                    %
                   </span>
                 </div>
                 <input
@@ -279,8 +282,10 @@ const Calculadora = () => {
                   <p className="txt">
                     A margem de lucro é o valor em % que você irá receber sobre
                     o valor total da venda. Recomendamos o valor de no mínimo
-                    10%.<br/> 
-                    OBS: Produtos com preço de venda abaixo de R$79 reais possuem um custo fixo adicional de R$5,50.
+                    10%.
+                    <br />
+                    OBS: Produtos com preço de venda abaixo de R$79 reais
+                    possuem um custo fixo adicional de R$5,50.
                   </p>
                 </div>
               </div>
@@ -343,4 +348,4 @@ const Calculadora = () => {
   );
 };
 
-export default Calculadora;
+export default CalculadoraShopee;

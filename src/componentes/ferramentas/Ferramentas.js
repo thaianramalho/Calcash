@@ -41,7 +41,7 @@ function Ferramentas() {
           </div>
 
           <div className="boxEtexto">
-            <Link to="/calculadora2">
+            <Link to="/CalculadoraShopee">
               <a className="link" href="">
                 <div className="box">
                   <div className="bg"></div>
