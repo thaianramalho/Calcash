@@ -28,7 +28,7 @@
 
 .calculadora .boxbox {
   margin: 5px auto;
-  width: 90%;
+  width: 80%;
   background-color: #dfe2ff;
   outline: 3px solid #5850fe;
   border-radius: 20px;
@@ -201,6 +201,10 @@
 
 #flexSwitchCheckDefault {
   margin-bottom: 10px;
+}
+
+#amazonLinks {
+  
 }
 
 @media (max-width: 1024px) {

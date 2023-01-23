@@ -3,7 +3,7 @@ import "./Calculadora.css";
 import { useState } from "react";
 import Navbar2 from "../Navbar2/Navbar2";
 
-const Calculadora = () => {
+const CalculadoraAmazon = () => {
   const [custo, setCusto] = useState("");
   const [notaFiscal, setNotaFiscal] = useState("");
   const [despesas, setDespesas] = useState("");
@@ -88,7 +88,7 @@ const Calculadora = () => {
       <div className="calculadora">
         <div className="titulo">
           <h2>
-            Calculadora <br /> Mercado Livre
+            Calculadora <br /> Amazon
           </h2>
         </div>
 
@@ -206,8 +206,8 @@ const Calculadora = () => {
                     i
                   </span>
 
-                  <p className="txt">
-                    Tarifa para anúnciar na plataforma (Clássico ou Premium).
+                  <p className="txt" id="amazonLink">
+                    Tarifa para anúnciar na plataforma, na plataforma da amazon possui uma tarifa que varia para cada tipo de produto que podem ser checados no site <a href="https://venda.amazon.com.br/precos">venda.amazon.com.br/precos</a>
                   </p>
                 </div>
               </div>
@@ -343,4 +343,4 @@ const Calculadora = () => {
   );
 };
 
-export default Calculadora;
+export default CalculadoraAmazon;

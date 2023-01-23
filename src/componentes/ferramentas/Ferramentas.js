@@ -60,19 +60,21 @@ function Ferramentas() {
           </div>
 
           <div className="boxEtexto">
-            <a className="link" href="#">
-              <div className="box">
-                <div className="bg"></div>
-                <div className="img">
-                  {" "}
-                  <img src="/img/b2w.png"></img>{" "}
+            <Link to="/CalculadoraAmazon">
+              <a className="link" href="#">
+                <div className="box">
+                  <div className="bg"></div>
+                  <div className="img">
+                    {" "}
+                    <img src="/img/logoamazon.png"></img>{" "}
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </Link>
 
             <a className="link" href="">
               <div className="texto">
-                CALCULADORA <br /> B2W
+                CALCULADORA <br /> AMAZON
               </div>
             </a>
           </div>
