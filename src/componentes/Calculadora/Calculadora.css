@@ -199,6 +199,10 @@
   text-shadow: 2px 1px 3px #5252521c;
 }
 
+#flexSwitchCheckDefault {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 1024px) {
   .calculadora .titulo h2 {
     font-size: 4rem;

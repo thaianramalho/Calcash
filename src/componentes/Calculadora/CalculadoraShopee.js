@@ -7,7 +7,8 @@ const CalculadoraShopee = () => {
   const [custo, setCusto] = useState("");
   const [notaFiscal, setNotaFiscal] = useState("");
   const [despesas, setDespesas] = useState("");
-  const [frete, setFrete] = useState("");
+  const [frete, setFrete] = useState(0);
+  const [isChecked, setIsChecked] = useState(false);
   const [tarifa, setTarifa] = useState(14);
   const [margemLucro, setMargemLucro] = useState("");
   const [resultado, setResultado] = useState(0.0);
@@ -21,15 +22,17 @@ const CalculadoraShopee = () => {
     if (toggleClassCheck === btnstate) {
       setBtnstate(true);
     } else setBtnstate(false);
-
-    // setBtnstate((btnstate) => !btnstate);
   };
 
   let toggleClassCheck = btnstate ? " active" : "";
 
-  // if (toggleClassCheck === 'btnstate' ){
-  //   setActive(' active');
-  // } else setActive('');
+  const Frete = () => {
+    if (isChecked == false) {
+      setFrete(6);
+    } else {
+      setFrete(0);
+    }
+  };
 
   const calcular = (event) => {
     event.preventDefault();
@@ -40,22 +43,19 @@ const CalculadoraShopee = () => {
         ((parseFloat(despesas) * 100) / parseFloat(custo) +
           parseFloat(notaFiscal) +
           parseFloat(tarifa) +
+          parseFloat(frete) +
           parseFloat(margemLucro)));
 
-    const precoVenda = custoTotal * parseFloat(custo) + parseFloat(frete);
+    const precoVenda = custoTotal * parseFloat(custo);
 
     const resultadoLucro = precoVenda * (parseFloat(margemLucro) / 100);
 
-    let resultado2 = parseFloat(precoVenda);
+    const resultado = parseFloat(precoVenda);
 
-    if (resultado2 < 79) {
-      let resultado =
-        resultado2 + 100 / (100 - (5.5 * 100) / parseFloat(custo));
       setResultado(resultado.toFixed(2));
-    } else {
-      let resultado = resultado2;
+
       setResultado(resultado.toFixed(2));
-    }
+
 
     setResultadoLucro(resultadoLucro.toFixed(2));
   };
@@ -234,19 +234,22 @@ const CalculadoraShopee = () => {
               <div className="label">
                 <p>Valor do frete:</p>
                 <div class="form-check form-switch">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="flexSwitchCheckDefault"
-                />
-              </div>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="flexSwitchCheckDefault"
+                    checked={isChecked}
+                    onChange={() => (setIsChecked(!isChecked), Frete())}
+                  />
+                </div>
                 <div className="minor">
                   <span className="i" alt="Minha Figura">
                     i
                   </span>
 
                   <p className="txt">
-                    Ative o botão caso o anúncio participe do programa de frete grátis da plataforma. Caso contrário, deixe desativado.
+                    Ative o botão caso o anúncio participe do programa de frete
+                    grátis da plataforma. Caso contrário, deixe desativado.<br/>OBS: 6% é o valor cobrado.
                   </p>
                 </div>
               </div>
@@ -260,8 +263,8 @@ const CalculadoraShopee = () => {
                 <input
                   type="number"
                   id="frete"
+                  disabled={!isChecked}
                   value={frete}
-                  onChange={(e) => setFrete(e.target.value)}
                   className="form-control"
                   placeholder="Insira o valor"
                   aria-label="Insira o valor"
