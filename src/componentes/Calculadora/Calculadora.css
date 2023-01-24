@@ -204,7 +204,7 @@
 }
 
 #amazonLinks {
-  
+
 }
 
 @media (max-width: 1024px) {
@@ -215,6 +215,10 @@
   .calculadora .box {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .calculadora .boxbox{
+    width: 90%;
   }
 
   .calculadora .box .inputs p {
@@ -274,6 +278,10 @@
     display: grid;
     grid-template-columns: 1fr;
     padding: 20px 0;
+  }
+
+  .calculadora .boxbox{
+    width: 90%;
   }
 
   .calculadora .box .inputs {
