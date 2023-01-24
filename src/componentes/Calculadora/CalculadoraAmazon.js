@@ -207,7 +207,7 @@ const CalculadoraAmazon = () => {
                   </span>
 
                   <p className="txt" id="amazonLink">
-                    Tarifa para anúnciar na plataforma, na plataforma da amazon possui uma tarifa que varia para cada tipo de produto que podem ser checados no site <a href="https://venda.amazon.com.br/precos">venda.amazon.com.br/precos</a>
+                    Tarifa para anúnciar na plataforma, na plataforma da amazon possui uma tarifa que varia para cada tipo de produto que podem ser checados no site <a target="_blank" href="https://venda.amazon.com.br/precos">venda.amazon.com.br/precos</a>
                   </p>
                 </div>
               </div>

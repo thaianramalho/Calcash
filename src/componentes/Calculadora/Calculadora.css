@@ -203,8 +203,8 @@
   margin-bottom: 10px;
 }
 
-#amazonLinks {
-  
+#amazonLink:hover {
+  visibility: visible;
 }
 
 @media (max-width: 1024px) {
