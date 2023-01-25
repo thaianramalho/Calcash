@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {} from "@fortawesome/free-solid-svg-icons";
+import Ad from "../google ads/ads";
 
 function Ferramentas() {
   return (
