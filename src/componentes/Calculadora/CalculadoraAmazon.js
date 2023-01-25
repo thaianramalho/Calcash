@@ -7,7 +7,7 @@ const CalculadoraAmazon = () => {
   const [custo, setCusto] = useState("");
   const [notaFiscal, setNotaFiscal] = useState("");
   const [despesas, setDespesas] = useState("");
-  const [frete, setFrete] = useState("");
+  const [peso, setPeso] = useState("");
   const [tarifa, setTarifa] = useState("");
   const [margemLucro, setMargemLucro] = useState("");
   const [resultado, setResultado] = useState(0.0);
@@ -33,34 +33,34 @@ const CalculadoraAmazon = () => {
 
   const calcular = (event) => {
     event.preventDefault();
-
-    if (frete <= 0.25) {
-      setFrete(8.78);
-    } else if (frete > 0.25 && frete <= 0.5) {
-      setFrete(9.32);
-    } else if (frete > 0.5 && frete <= 1) {
-      setFrete(10.13);
-    } else if (frete > 1 && frete <= 2) {
-      setFrete(11.48);
-    } else if (frete > 2 && frete <= 3) {
-      setFrete(15.53);
-    } else if (frete > 3 && frete <= 4) {
-      setFrete(16.88);
-    } else if (frete > 4 && frete <= 5) {
-      setFrete(17.42);
-    } else if (frete > 5 && frete <= 6) {
-      setFrete(19.58);
-    } else if (frete > 6 && frete <= 7) {
-      setFrete(20.93);
-    } else if (frete > 7 && frete <= 8) {
-      setFrete(22.82);
-    } else if (frete > 8 && frete <= 9) {
-      setFrete(26.33);
-    } else if (frete > 9 && frete <= 10) {
-      setFrete(31.73);
+    var frete = 0;
+    if (peso <= 0.25) {
+      frete = 8.78;
+    } else if (peso > 0.25 && peso <= 0.5) {
+      frete = 9.32;
+    } else if (peso > 0.5 && peso <= 1) {
+      frete = 10.13;
+    } else if (peso > 1 && peso <= 2) {
+      frete = 11.48;
+    } else if (peso > 2 && peso <= 3) {
+      frete = 15.53;
+    } else if (peso > 3 && peso <= 4) {
+      frete = 16.88;
+    } else if (peso > 4 && peso <= 5) {
+      frete = 17.42;
+    } else if (peso > 5 && peso <= 6) {
+      frete = 19.58;
+    } else if (peso > 6 && peso <= 7) {
+      frete = 20.93;
+    } else if (peso > 7 && peso <= 8) {
+      frete = 22.82;
+    } else if (peso > 8 && peso <= 9) {
+      frete = 26.33;
+    } else if (peso > 9 && peso <= 10) {
+      frete = 31.73;
     } else {
-      var freteAlto = (frete - 10) * (2.03)
-      setFrete(freteAlto + 31.7)
+      var freteAlto = (peso - 10) * 2.03;
+      frete = freteAlto + 31.73;
     }
 
     const custoTotal =
@@ -95,7 +95,7 @@ const CalculadoraAmazon = () => {
     setCusto("");
     setNotaFiscal("");
     setDespesas("");
-    setFrete("");
+    setPeso("");
     setTarifa("");
     setMargemLucro("");
     setResultado(0);
@@ -279,9 +279,9 @@ const CalculadoraAmazon = () => {
                   </span>
 
                   <p className="txt">
-                    Favor inserir o peso em Kg (Exemplo: 5.5kg). <br /> OBS: O
-                    peso é utilizado para o cálculo do frete com base nos dados
-                    fornecidos pela Amazon.
+                    Favor inserir o peso exato em Kg (Exemplo: 5.53 kg). <br />{" "}
+                    OBS: O peso é utilizado para o cálculo do frete com base nos
+                    dados fornecidos pela Amazon.
                   </p>
                 </div>
               </div>
@@ -295,8 +295,8 @@ const CalculadoraAmazon = () => {
                 <input
                   type="number"
                   id="frete"
-                  value={frete}
-                  onChange={(e) => setFrete(e.target.value)}
+                  value={peso}
+                  onChange={(e) => setPeso(e.target.value)}
                   className="form-control"
                   placeholder="Insira o valor"
                   aria-label="Insira o valor"
