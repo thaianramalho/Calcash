@@ -58,8 +58,8 @@ function Contatos() {
 
 
             <div className='fale-conosco'>
-                <a href="https://thaianramalho.com">
-                    <button>Visite nosso site   </button>
+                <a href="https://thaianramalho.com" target="_blank">
+                    <button>Visite meu site</button>
                 </a>
             </div>
 

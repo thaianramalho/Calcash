@@ -203,7 +203,8 @@
   margin-bottom: 10px;
 }
 
-#amazonLinks {
+#amazonLink:hover {
+  visibility: visible;
 
 }
 
