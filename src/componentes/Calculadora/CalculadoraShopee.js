@@ -52,8 +52,6 @@ const CalculadoraShopee = () => {
 
     setResultado(resultado.toFixed(2));
 
-    setResultado(resultado.toFixed(2));
-
     setResultadoLucro(resultadoLucro.toFixed(2));
   };
 

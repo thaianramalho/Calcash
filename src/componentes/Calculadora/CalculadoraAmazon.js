@@ -67,16 +67,9 @@ const CalculadoraAmazon = () => {
 
     const resultadoLucro = precoVenda * (parseFloat(margemLucro) / 100);
 
-    let resultado2 = parseFloat(precoVenda);
+    const resultado = parseFloat(precoVenda);
 
-    if (resultado2 < 79) {
-      let resultado =
-        resultado2 + 100 / (100 - (5.5 * 100) / parseFloat(custo));
-      setResultado(resultado.toFixed(2));
-    } else {
-      let resultado = resultado2;
-      setResultado(resultado.toFixed(2));
-    }
+    setResultado(resultado.toFixed(2));
 
     setResultadoLucro(resultadoLucro.toFixed(2));
   };
