@@ -326,9 +326,9 @@
   }
 
   .calculadora .box .inputs .txt {
-    top: 14px;
-    left: -50px;
-    width: 130px;
+    top: 12px;
+    left: -80px;
+    width: 170px;
   }
 
   @media (max-width: 376px) {
@@ -342,9 +342,9 @@
     }
 
     .calculadora .box .inputs .txt {
-      top: 14px;
-      left: -50px;
-      width: 130px;
+      top: 12px;
+      left: -80px;
+      width: 170px;
     }
   }
 }
