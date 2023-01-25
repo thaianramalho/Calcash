@@ -13,23 +13,15 @@ const CalculadoraAmazon = () => {
   const [resultado, setResultado] = useState(0.0);
   const [resultadoLucro, setResultadoLucro] = useState(0.0);
 
-  //////////////////////////////////////////////////
-
   const [btnstate, setBtnstate] = useState("false");
 
   const click = () => {
     if (toggleClassCheck === btnstate) {
       setBtnstate(true);
     } else setBtnstate(false);
-
-    // setBtnstate((btnstate) => !btnstate);
   };
 
   let toggleClassCheck = btnstate ? " active" : "";
-
-  // if (toggleClassCheck === 'btnstate' ){
-  //   setActive(' active');
-  // } else setActive('');
 
   const calcular = (event) => {
     event.preventDefault();

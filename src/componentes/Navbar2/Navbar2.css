@@ -139,10 +139,9 @@
     margin: 8px;
   }
 
-  .Navbar .nav-items .link{
+  .Navbar .nav-items .link {
     box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.12);
   }
-
 
   .Navbar .nav-items a::before {
     background: transparent;

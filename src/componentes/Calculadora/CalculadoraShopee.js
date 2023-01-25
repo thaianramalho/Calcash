@@ -14,8 +14,6 @@ const CalculadoraShopee = () => {
   const [resultado, setResultado] = useState(0.0);
   const [resultadoLucro, setResultadoLucro] = useState(0.0);
 
-  //////////////////////////////////////////////////
-
   const [btnstate, setBtnstate] = useState("false");
 
   const click = () => {
@@ -52,10 +50,9 @@ const CalculadoraShopee = () => {
 
     const resultado = parseFloat(precoVenda);
 
-      setResultado(resultado.toFixed(2));
+    setResultado(resultado.toFixed(2));
 
-      setResultado(resultado.toFixed(2));
-
+    setResultado(resultado.toFixed(2));
 
     setResultadoLucro(resultadoLucro.toFixed(2));
   };
@@ -249,7 +246,9 @@ const CalculadoraShopee = () => {
 
                   <p className="txt">
                     Ative o botão caso o anúncio participe do programa de frete
-                    grátis da plataforma. Caso contrário, deixe desativado.<br/>OBS: 6% é o valor cobrado.
+                    grátis da plataforma. Caso contrário, deixe desativado.
+                    <br />
+                    OBS: 6% é o valor cobrado.
                   </p>
                 </div>
               </div>

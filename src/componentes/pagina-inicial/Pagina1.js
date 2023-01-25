@@ -1,6 +1,4 @@
 import React from "react";
-// import { Link as LinkR } from 'react-router'
-
 import Contatos from "../contatos/Contatos";
 import Ferramentas from "../ferramentas/Ferramentas";
 import Inicio from "../inicio/Inicio";

@@ -36,7 +36,7 @@ const Navbar = () => {
           </a>
         </Link>
 
-        <Link  className="link" to="/">
+        <Link className="link" to="/">
           <a href="#contatos">
             CONT<span>ATO</span>
           </a>

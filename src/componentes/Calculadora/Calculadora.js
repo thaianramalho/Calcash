@@ -13,23 +13,15 @@ const Calculadora = () => {
   const [resultado, setResultado] = useState(0.0);
   const [resultadoLucro, setResultadoLucro] = useState(0.0);
 
-  //////////////////////////////////////////////////
-
   const [btnstate, setBtnstate] = useState("false");
 
   const click = () => {
     if (toggleClassCheck === btnstate) {
       setBtnstate(true);
     } else setBtnstate(false);
-
-    // setBtnstate((btnstate) => !btnstate);
   };
 
   let toggleClassCheck = btnstate ? " active" : "";
-
-  // if (toggleClassCheck === 'btnstate' ){
-  //   setActive(' active');
-  // } else setActive('');
 
   const calcular = (event) => {
     event.preventDefault();
@@ -279,8 +271,10 @@ const Calculadora = () => {
                   <p className="txt">
                     A margem de lucro é o valor em % que você irá receber sobre
                     o valor total da venda. Recomendamos o valor de no mínimo
-                    10%.<br/> 
-                    OBS: Produtos com preço de venda abaixo de R$79 reais possuem um custo fixo adicional de R$5,50.
+                    10%.
+                    <br />
+                    OBS: Produtos com preço de venda abaixo de R$79 reais
+                    possuem um custo fixo adicional de R$5,50.
                   </p>
                 </div>
               </div>
