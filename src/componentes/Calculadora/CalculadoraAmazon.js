@@ -135,6 +135,7 @@ const CalculadoraAmazon = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="custo"
                   value={custo}
@@ -169,6 +170,7 @@ const CalculadoraAmazon = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="imposto"
                   value={notaFiscal}
@@ -205,6 +207,7 @@ const CalculadoraAmazon = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="despesas"
                   value={despesas}
@@ -248,6 +251,7 @@ const CalculadoraAmazon = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="classico"
                   value={tarifa}
@@ -285,6 +289,7 @@ const CalculadoraAmazon = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="frete"
                   value={peso}
@@ -324,6 +329,7 @@ const CalculadoraAmazon = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="margemLucro"
                   value={margemLucro}

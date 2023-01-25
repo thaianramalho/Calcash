@@ -30,6 +30,7 @@
   background-color: #dfe2ff;
   outline: 3px solid #5850fe;
   border-radius: 20px;
+  position: relative;
   z-index: 2;
 }
 

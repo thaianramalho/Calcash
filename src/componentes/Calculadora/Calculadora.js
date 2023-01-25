@@ -106,6 +106,7 @@ const Calculadora = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="custo"
                   value={custo}
@@ -140,6 +141,7 @@ const Calculadora = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="imposto"
                   value={notaFiscal}
@@ -176,6 +178,7 @@ const Calculadora = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="despesas"
                   value={despesas}
@@ -211,6 +214,7 @@ const Calculadora = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="classico"
                   value={tarifa}
@@ -247,6 +251,7 @@ const Calculadora = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="frete"
                   value={frete}
@@ -286,6 +291,7 @@ const Calculadora = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="margemLucro"
                   value={margemLucro}

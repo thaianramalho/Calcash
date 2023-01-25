@@ -111,6 +111,7 @@ const CalculadoraShopee = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="custo"
                   value={custo}
@@ -145,6 +146,7 @@ const CalculadoraShopee = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="imposto"
                   value={notaFiscal}
@@ -181,6 +183,7 @@ const CalculadoraShopee = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="despesas"
                   value={despesas}
@@ -214,6 +217,7 @@ const CalculadoraShopee = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="classico"
                   value={tarifa}
@@ -260,6 +264,7 @@ const CalculadoraShopee = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="frete"
                   disabled={!isChecked}
@@ -299,6 +304,7 @@ const CalculadoraShopee = () => {
                   </span>
                 </div>
                 <input
+                  pattern="[0-9]*"
                   type="number"
                   id="margemLucro"
                   value={margemLucro}
