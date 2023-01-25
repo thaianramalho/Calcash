@@ -34,6 +34,35 @@ const CalculadoraAmazon = () => {
   const calcular = (event) => {
     event.preventDefault();
 
+    if (frete <= 0.25) {
+      setFrete(8.78);
+    } else if (frete > 0.25 && frete <= 0.5) {
+      setFrete(9.32);
+    } else if (frete > 0.5 && frete <= 1) {
+      setFrete(10.13);
+    } else if (frete > 1 && frete <= 2) {
+      setFrete(11.48);
+    } else if (frete > 2 && frete <= 3) {
+      setFrete(15.53);
+    } else if (frete > 3 && frete <= 4) {
+      setFrete(16.88);
+    } else if (frete > 4 && frete <= 5) {
+      setFrete(17.42);
+    } else if (frete > 5 && frete <= 6) {
+      setFrete(19.58);
+    } else if (frete > 6 && frete <= 7) {
+      setFrete(20.93);
+    } else if (frete > 7 && frete <= 8) {
+      setFrete(22.82);
+    } else if (frete > 8 && frete <= 9) {
+      setFrete(26.33);
+    } else if (frete > 9 && frete <= 10) {
+      setFrete(31.73);
+    } else {
+      var freteAlto = (frete - 10) * (2.03)
+      setFrete(freteAlto + 31.7)
+    }
+
     const custoTotal =
       100 /
       (100 -
@@ -207,7 +236,15 @@ const CalculadoraAmazon = () => {
                   </span>
 
                   <p className="txt" id="amazonLink">
-                    Tarifa para anúnciar na plataforma, na plataforma da amazon possui uma tarifa que varia para cada tipo de produto que podem ser checados no site <a target="_blank" href="https://venda.amazon.com.br/precos">venda.amazon.com.br/precos</a>
+                    Tarifa para anúnciar na plataforma, na plataforma da amazon
+                    possui uma tarifa que varia para cada tipo de produto que
+                    podem ser checados no site{" "}
+                    <a
+                      target="_blank"
+                      href="https://venda.amazon.com.br/precos"
+                    >
+                      venda.amazon.com.br/precos
+                    </a>
                   </p>
                 </div>
               </div>
@@ -234,7 +271,7 @@ const CalculadoraAmazon = () => {
 
             <div className="inputs">
               <div className="label">
-                <p>Valor do frete:</p>
+                <p>Peso do produto:</p>
 
                 <div className="minor">
                   <span className="i" alt="Minha Figura">
@@ -242,8 +279,9 @@ const CalculadoraAmazon = () => {
                   </span>
 
                   <p className="txt">
-                    Valor do frete cobrado pela plataforma (Inserir 0 se for por
-                    conta do comprador).
+                    Favor inserir o peso em Kg (Exemplo: 5.5kg). <br /> OBS: O
+                    peso é utilizado para o cálculo do frete com base nos dados
+                    fornecidos pela Amazon.
                   </p>
                 </div>
               </div>
@@ -251,7 +289,7 @@ const CalculadoraAmazon = () => {
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
-                    R$
+                    kg
                   </span>
                 </div>
                 <input
@@ -279,8 +317,10 @@ const CalculadoraAmazon = () => {
                   <p className="txt">
                     A margem de lucro é o valor em % que você irá receber sobre
                     o valor total da venda. Recomendamos o valor de no mínimo
-                    10%.<br/> 
-                    OBS: Produtos com preço de venda abaixo de R$79 reais possuem um custo fixo adicional de R$5,50.
+                    10%.
+                    <br />
+                    OBS: Produtos com preço de venda abaixo de R$79 reais
+                    possuem um custo fixo adicional de R$5,50.
                   </p>
                 </div>
               </div>
