@@ -25,24 +25,31 @@ const CalculadoraAmazon = () => {
 
   const calcular = (event) => {
     event.preventDefault();
-    const tabelaFrete = {
-      0.25: 8.78,
-      0.5: 9.32,
-      1: 10.13,
-      2: 11.48,
-      3: 15.53,
-      4: 16.88,
-      5: 17.42,
-      6: 19.58,
-      7: 20.93,
-      8: 22.82,
-      9: 26.33,
-      10: 31.73,
-    };
-
     var frete = 0;
-    if (peso <= 10) {
-      frete = tabelaFrete[peso];
+    if (peso <= 0.25) {
+      frete = 8.78;
+    } else if (peso > 0.25 && peso <= 0.5) {
+      frete = 9.32;
+    } else if (peso > 0.5 && peso <= 1) {
+      frete = 10.13;
+    } else if (peso > 1 && peso <= 2) {
+      frete = 11.48;
+    } else if (peso > 2 && peso <= 3) {
+      frete = 15.53;
+    } else if (peso > 3 && peso <= 4) {
+      frete = 16.88;
+    } else if (peso > 4 && peso <= 5) {
+      frete = 17.42;
+    } else if (peso > 5 && peso <= 6) {
+      frete = 19.58;
+    } else if (peso > 6 && peso <= 7) {
+      frete = 20.93;
+    } else if (peso > 7 && peso <= 8) {
+      frete = 22.82;
+    } else if (peso > 8 && peso <= 9) {
+      frete = 26.33;
+    } else if (peso > 9 && peso <= 10) {
+      frete = 31.73;
     } else {
       var freteAlto = (peso - 10) * 2.03;
       frete = freteAlto + 31.73;
