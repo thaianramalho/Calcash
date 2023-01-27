@@ -35,26 +35,28 @@ const CalculadoraShopee = () => {
   const calcular = (event) => {
     event.preventDefault();
 
+    const despesasParsed = parseFloat(despesas);
+    const custoParsed = parseFloat(custo);
+    const notaFiscalParsed = parseFloat(notaFiscal);
+    const tarifaParsed = parseFloat(tarifa);
+    const freteParsed = parseFloat(frete);
+    const margemLucroParsed = parseFloat(margemLucro);
+
     const custoTotal =
       100 /
       (100 -
-        ((parseFloat(despesas) * 100) / parseFloat(custo) +
-          parseFloat(notaFiscal) +
-          parseFloat(tarifa) +
-          parseFloat(frete) +
-          parseFloat(margemLucro)));
+        ((despesasParsed * 100) / custoParsed +
+          notaFiscalParsed +
+          tarifaParsed +
+          freteParsed +
+          margemLucroParsed));
 
-    const precoVenda = custoTotal * parseFloat(custo);
+    const precoVenda = custoTotal * custoParsed;
+    const resultadoLucro = precoVenda * (margemLucroParsed / 100);
 
-    const resultadoLucro = precoVenda * (parseFloat(margemLucro) / 100);
-
-    const resultado = parseFloat(precoVenda);
-
-    setResultado(resultado.toFixed(2));
-
+    setResultado(precoVenda.toFixed(2));
     setResultadoLucro(resultadoLucro.toFixed(2));
   };
-
   const limpa = (event) => {
     event.preventDefault();
 
