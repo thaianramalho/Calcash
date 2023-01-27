@@ -25,11 +25,7 @@ const CalculadoraShopee = () => {
   let toggleClassCheck = btnstate ? " active" : "";
 
   const Frete = () => {
-    if (isChecked == false) {
-      setFrete(6);
-    } else {
-      setFrete(0);
-    }
+    setFrete(isChecked ? 0 : 6);
   };
 
   const calcular = (event) => {

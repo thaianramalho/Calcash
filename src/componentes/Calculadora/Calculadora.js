@@ -47,14 +47,11 @@ const Calculadora = () => {
 
     let resultado2 = precoVenda;
 
-    if (resultado2 < 79) {
-      let resultado = resultado2 + 100 / (100 - (5.5 * 100) / custoParsed);
-      setResultado(resultado.toFixed(2));
-    } else {
-      let resultado = resultado2;
-      setResultado(resultado.toFixed(2));
-    }
-
+    const resultado =
+      resultado2 < 79
+        ? resultado2 + 100 / (100 - (5.5 * 100) / custoParsed)
+        : resultado2;
+    setResultado(resultado.toFixed(2));
     setResultadoLucro(resultadoLucro.toFixed(2));
   };
 
