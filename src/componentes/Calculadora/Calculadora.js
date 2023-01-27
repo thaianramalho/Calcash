@@ -26,23 +26,29 @@ const Calculadora = () => {
   const calcular = (event) => {
     event.preventDefault();
 
+    const despesasParsed = parseFloat(despesas);
+    const custoParsed = parseFloat(custo);
+    const notaFiscalParsed = parseFloat(notaFiscal);
+    const tarifaParsed = parseFloat(tarifa);
+    const freteParsed = parseFloat(frete);
+    const margemLucroParsed = parseFloat(margemLucro);
+
     const custoTotal =
       100 /
       (100 -
-        ((parseFloat(despesas) * 100) / parseFloat(custo) +
-          parseFloat(notaFiscal) +
-          parseFloat(tarifa) +
-          parseFloat(margemLucro)));
+        ((despesasParsed * 100) / custoParsed +
+          notaFiscalParsed +
+          tarifaParsed +
+          margemLucroParsed));
 
-    const precoVenda = custoTotal * parseFloat(custo) + parseFloat(frete);
+    const precoVenda = custoTotal * custoParsed + freteParsed;
 
-    const resultadoLucro = precoVenda * (parseFloat(margemLucro) / 100);
+    const resultadoLucro = precoVenda * (margemLucroParsed / 100);
 
-    let resultado2 = parseFloat(precoVenda);
+    let resultado2 = precoVenda;
 
     if (resultado2 < 79) {
-      let resultado =
-        resultado2 + 100 / (100 - (5.5 * 100) / parseFloat(custo));
+      let resultado = resultado2 + 100 / (100 - (5.5 * 100) / custoParsed);
       setResultado(resultado.toFixed(2));
     } else {
       let resultado = resultado2;
