@@ -29,10 +29,16 @@ function Inicio() {
 
       <div className="calculadora-toda">
         <div className="calcu-som">
-          <img src="/img/sombra300.png" />
+          <img
+            src="/img/sombra300.png"
+            alt="Calculadora de lucro liquido para lojas virtuais e marketplaces"
+          />
         </div>
         <div className="calcu">
-          <img src="/img/menorCalc.png" />
+          <img
+            src="/img/menorCalc.png"
+            alt="Calculadora de lucro liquido para lojas virtuais e marketplaces"
+          />
         </div>
       </div>
 

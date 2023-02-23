@@ -17,11 +17,43 @@ body {
   .titulo h2 span {
     color: #38ae59;
   }
+
+  .cardHelp{
+    max-width: 700px;
+    margin: 0 auto 1% auto;
+    padding: 2%;
+
+  }
+
+  .cardContent{
+    
+    outline: 3px solid #5850fe;
+  }
+
+  :where(.css-dev-only-do-not-override-1km3mtt).ant-card .ant-card-head-title{
+    text-align: center;
+    font-size: 2rem;
+    font-family: Montserrat;
+  }
+  :where(.css-dev-only-do-not-override-1km3mtt).ant-card .ant-card-head{
+    background-color: #dfe2ff;
+    border-bottom: 2px solid #dfe2ff;
+  }
+  :where(.css-dev-only-do-not-override-1km3mtt).ant-card .ant-card-body{
+    background-color: #dfe2ff;
+    font-family: Montserrat;
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
   
   @media (max-width: 660px) {
     .titulo h2 {
       font-size: 4rem;
     }
+    :where(.css-dev-only-do-not-override-1km3mtt).ant-card .ant-card-head-title{
+        text-align: center;
+        font-size: 90%;
+      }
   }
   
   @media (max-width: 425px) {
