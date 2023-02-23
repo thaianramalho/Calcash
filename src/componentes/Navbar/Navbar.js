@@ -12,7 +12,7 @@ let barra = <FontAwesomeIcon id="faBars" icon={faBars} />;
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="Navbar">
+    <nav className="Navbar">
       <span className="nav-logo">
         <Link to="/" style={{ textDecoration: "none", color: "#5850FE" }}>
           Cal
@@ -44,7 +44,7 @@ const Navbar = () => {
       >
         <div className="bar"></div>
       </div>
-    </div>
+    </nav>
   );
 };
 

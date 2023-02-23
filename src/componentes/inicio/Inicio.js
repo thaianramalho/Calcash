@@ -9,7 +9,7 @@ function Inicio() {
   return (
     <div id="principal">
       <div className="textos">
-        <div id="title">
+        <nav id="title">
           <p id="blue">
             Calc <FontAwesomeIcon id="calculator" icon={faCalculator} />
             <br></br>
@@ -17,13 +17,13 @@ function Inicio() {
               Cash <FontAwesomeIcon id="sack" icon={faSackDollar} />
             </span>
           </p>
-        </div>
+        </nav>
         <div id="textoComum">
-          <p>
+          <h2>
             Possuímos ferramentas que irão te auxiliar nos cálculos de lucro por
             venda em sua Loja Virtual do{" "}
             <span id="green">Mercado Livre, Shopee e Amazon!</span>
-          </p>
+          </h2>
         </div>
       </div>
 
