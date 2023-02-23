@@ -15,8 +15,8 @@ function Contatos() {
             <div className='titulo'>
                 <h2>
                     Cont<span>atos</span>
-                </h2>
-            </div>
+               </h2>
+            </div> 
 
             {/* whatsapp */}
 

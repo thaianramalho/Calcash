@@ -36,6 +36,9 @@ const Navbar = () => {
         <a href="#contatos">
           CONT<span>ATO</span>
         </a>
+        <a href="#ajuda">
+          AJU<span>DA</span>
+        </a>
       </div>
 
       <div

@@ -20,9 +20,9 @@ function Inicio() {
         </div>
         <div id="textoComum">
           <p>
-            Possuímos ferramentas que irão facilitar seu dia a dia nos cálculos
-            de lucro por venda em sua Loja Virtual do{" "}
-            <span id="green">Mercado Livre, Shopee, Amazon, entre outros!</span>
+            Possuímos ferramentas que irão te auxiliar nos cálculos de lucro por
+            venda em sua Loja Virtual do{" "}
+            <span id="green">Mercado Livre, Shopee e Amazon!</span>
           </p>
         </div>
       </div>
