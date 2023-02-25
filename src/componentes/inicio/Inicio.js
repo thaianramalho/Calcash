@@ -21,7 +21,7 @@ function Inicio() {
         <div id="textoComum">
           <h2>
             Possuímos ferramentas que irão te auxiliar nos cálculos de lucro por
-            venda em sua Loja Virtual do{" "}
+            venda em sua Loja Virtual do
             <span id="green">Mercado Livre, Shopee e Amazon!</span>
           </h2>
         </div>
