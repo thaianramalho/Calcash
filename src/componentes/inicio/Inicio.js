@@ -21,7 +21,7 @@ function Inicio() {
         <div id="textoComum">
           <h2>
             Possuímos ferramentas que irão te auxiliar nos cálculos de lucro por
-            venda em sua Loja Virtual do
+            venda em sua Loja Virtual do{" "}
             <span id="green">Mercado Livre, Shopee e Amazon!</span>
           </h2>
         </div>
@@ -29,15 +29,12 @@ function Inicio() {
 
       <div className="calculadora-toda">
         <div className="calcu-som">
-          <img
-            src="/img/sombra300.png"
-            alt="Calculadora de lucro liquido para lojas virtuais e marketplaces"
-          />
+          <img src="/img/sombra300.png" alt="Sombra da calculadora" />
         </div>
         <div className="calcu">
           <img
             src="/img/menorCalc.png"
-            alt="Calculadora de lucro liquido para lojas virtuais e marketplaces"
+            alt="Calcash Calculadora de lucro liquido para lojas virtuais e marketplaces"
           />
         </div>
       </div>
