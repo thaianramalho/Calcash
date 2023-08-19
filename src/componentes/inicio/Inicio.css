@@ -8,7 +8,7 @@ body {
   display: flex;
   align-items: center;
   text-align: justify;
-  background-image: url("/svgs/Rectangle-7.svg");
+  background-image: url("/public/svgs/Rectangle-7.svg");
   background-position: center bottom;
   background-repeat: none;
   background-size: cover;
@@ -293,7 +293,7 @@ posicao calc  */
     margin: 0;
     padding: 0;
     height: auto;
-    background-image: url("/svgs/svgTransparente2.svg");
+    background-image: url("/public/svgs/svgTransparente2.svg");
     background-position: center bottom;
     background-size: auto;
     background-size: cover;
@@ -416,7 +416,7 @@ posicao calc  */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-image: url("/svgs/mobileMenor.svg");
+    background-image: url("/public/svgs/mobileMenor.svg");
     background-position: center bottom;
     background-size: auto;
     background-size: cover;
@@ -518,7 +518,7 @@ posicao calc  */
     height: 100%;
     z-index: -3;
     /* background-image: none; */
-    background-image: url("/svgs/mobileMenor.svg");
+    background-image: url("/public/svgs/mobileMenor.svg");
     background-position: 0% 0%;
     background-size: auto;
     background-size: cover;
