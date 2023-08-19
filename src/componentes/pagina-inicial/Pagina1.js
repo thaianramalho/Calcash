@@ -1,5 +1,5 @@
 import React from "react";
-import Ajuda from "../../ajuda/ajuda";
+import Ajuda from "../ajuda/ajuda";
 import Contatos from "../contatos/Contatos";
 import Ferramentas from "../ferramentas/Ferramentas";
 import Inicio from "../inicio/Inicio";
