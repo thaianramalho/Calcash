@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MercadoLivreAPI from "../API/MercadoLivreApi";
+import Navbar from "../Navbar2/Navbar2";
 
 function App() {
   const [product, setProduct] = useState(null);
@@ -37,6 +38,13 @@ function App() {
 
   return (
     <div>
+      <Navbar></Navbar>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <h1>Produto no Mercado Livre</h1>
       <div>
         <label htmlFor="mlbCode">Insira o Código MLB:</label>
@@ -83,10 +91,10 @@ function App() {
             </a>
           </h3>
           <h3>ID da Thumbnail: {product.thumbnail_id}</h3>
-          <h3>
+          {/* <h3>
             URL da Thumbnail:{" "}
             <img src={product.thumbnail} alt="Thumbnail do Produto" />
-          </h3>
+          </h3> */}
           <h3>
             URL da Thumbnail Segura:{" "}
             <img
