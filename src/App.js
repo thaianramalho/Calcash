@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./componentes/ScrollToTop/ScrollToTop";
 import CalculadoraShopee from "./componentes/Calculadora/CalculadoraShopee";
 import CalculadoraAmazon from "./componentes/Calculadora/CalculadoraAmazon";
+import BuscaAnuncio from "./componentes/buscaAnuncio/BuscaAnuncio";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/Calculadora" element={<Calculadora />} />
             <Route path="/CalculadoraShopee" element={<CalculadoraShopee />} />
             <Route path="/CalculadoraAmazon" element={<CalculadoraAmazon />} />
+            <Route path="/BuscarAnuncio" element={<BuscaAnuncio />} />
           </Routes>
         </ScrollToTop>
       </Router>
