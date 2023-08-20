@@ -36,6 +36,27 @@ function Ferramentas() {
           </div>
 
           <div className="boxEtexto">
+            <Link to="/BuscarAnuncio">
+              <a className="link">
+                <div className="box">
+                  <div className="bg"></div>
+                  <div className="img">
+                    {" "}
+                    <img src="/img/mercadoLivre.png"></img>{" "}
+                  </div>
+                </div>
+              </a>
+            </Link>
+
+            <a className="link" href="">
+              <div className="texto">
+                BUSCAR ANÚNCIO
+                <br /> MERCADO LIVRE
+              </div>
+            </a>
+          </div>
+
+          <div className="boxEtexto">
             <Link to="/CalculadoraShopee">
               <a className="link" href="">
                 <div className="box">
