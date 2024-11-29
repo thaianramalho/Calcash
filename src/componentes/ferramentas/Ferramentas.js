@@ -35,7 +35,7 @@ function Ferramentas() {
             </a>
           </div>
 
-          <div className="boxEtexto">
+          {/* <div className="boxEtexto">
             <Link to="/BuscarAnuncio">
               <a className="link">
                 <div className="box">
@@ -54,7 +54,7 @@ function Ferramentas() {
                 <br /> MERCADO LIVRE
               </div>
             </a>
-          </div>
+          </div> */}
 
           <div className="boxEtexto">
             <Link to="/CalculadoraShopee">
