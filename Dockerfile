@@ -16,14 +16,8 @@ COPY . .
 # Construir a aplicação
 RUN npm run build
 
-# Etapa 2: Servir a aplicação
-FROM nginx:alpine
-
-# Copiar os arquivos construídos para o diretório padrão do nginx
-COPY --from=build /app/build /usr/share/nginx/html
-
 # Expor a porta 80
-EXPOSE 80
+EXPOSE 3000
 
 # Comando para iniciar o nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
