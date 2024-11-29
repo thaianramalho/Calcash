@@ -17,19 +17,13 @@ COPY . .
 RUN npm run build
 
 # Etapa 2: Servir a aplicação
-FROM node:16
+FROM nginx:alpine
 
-# Definir o diretório de trabalho
-WORKDIR /app
+# Copiar os arquivos construídos para o diretório padrão do nginx
+COPY --from=build /app/build /usr/share/nginx/html
 
-# Copiar os arquivos construídos da etapa anterior
-COPY --from=build /app/build /app/build
+# Expor a porta 80
+EXPOSE 80
 
-# Instalar um servidor HTTP simples para servir a aplicação
-RUN npm install -g serve
-
-# Expor a porta 3000
-EXPOSE 3000
-
-# Comando para iniciar o servidor
-CMD ["serve", "-s", "build"]
+# Comando para iniciar o nginx
+CMD ["nginx", "-g", "daemon off;"]
