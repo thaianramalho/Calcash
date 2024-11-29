@@ -47,8 +47,8 @@ function Contatos() {
                         <h3>E-mail</h3>
                     </div>
                     <div className='texto2'>
-                        <a href="mailto:contact@thaianramalho.com">
-                            <h2>contact@thaianramalho.com</h2>
+                        <a href="mailto:thaianramalho9@gmail.com">
+                            <h2>thaianramalho9@gmail.com</h2>
                         </a>
                     </div>
 
