@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Calcash — Design Tokens (dark)
+   Fonte da verdade: .claude/skills/frontend-design/SKILL.md
+   ========================================================================== */
+
+:root {
+  /* --- Marca --- */
+  --brand: #5850fe;
+  --brand-strong: #6f68ff;
+  --brand-soft: #a9a4ff;
+  --accent: #38ae59;
+  --accent-strong: #43c96a;
+
+  /* Aliases legados (mantêm compatibilidade com CSS antigo) */
+  --azul: var(--brand);
+  --verde: var(--accent);
+  --branco: var(--text);
+
+  /* --- Neutros (dark) --- */
+  --bg: #07080d;
+  --surface-1: #0d0f17;
+  --surface-2: #141726;
+  --surface-3: #1c2033;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* --- Texto --- */
+  --text: #f3f5fb;
+  --text-muted: #a7adc2;
+  --text-dim: #6b7186;
+
+  /* --- Estado --- */
+  --danger: #ff5c6a;
+  --warning: #ffb020;
+
+  /* --- Gradiente de marca --- */
+  --grad-brand: linear-gradient(135deg, #5850fe 0%, #38ae59 100%);
+  --grad-brand-soft: linear-gradient(
+    135deg,
+    rgba(88, 80, 254, 0.16) 0%,
+    rgba(56, 174, 89, 0.16) 100%
+  );
+
+  /* --- Tipografia --- */
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-2xl: 2.75rem;
+  --fs-3xl: clamp(2.75rem, 6vw, 4.5rem);
+
+  /* --- Espaçamento (grid 8px) --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-10: 64px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  /* --- Raio --- */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+
+  /* --- Layout --- */
+  --maxw: 1200px;
+  --nav-h: 72px;
+
+  /* --- Sombra (usar com moderação) --- */
+  --shadow-glow: 0 0 0 1px var(--border-strong),
+    0 20px 60px -20px rgba(88, 80, 254, 0.45);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- Reset / base utilitária compartilhada ---------- */
+
+.section {
+  padding-block: var(--space-16);
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-soft);
+}
+
+.kicker::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--brand-soft);
+  opacity: 0.6;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-size: var(--fs-2xl);
+  color: var(--text);
+  margin-top: var(--space-4);
+}
+
+.section-lead {
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 58ch;
+  margin-top: var(--space-4);
+}
+
+.grad-text {
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Botões base */
+.btn {
+  --_pad-y: 14px;
+  --_pad-x: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  line-height: 1;
+  padding: var(--_pad-y) var(--_pad-x);
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.btn-primary {
+  background: var(--grad-brand);
+  color: #fff;
+  box-shadow: 0 10px 30px -12px rgba(88, 80, 254, 0.7);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.btn-ghost:hover {
+  background: var(--surface-2);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --nav-h: 64px;
+  }
+  .section {
+    padding-block: var(--space-10);
+  }
+  .section-title {
+    font-size: var(--fs-xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

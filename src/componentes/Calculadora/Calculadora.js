@@ -26,32 +26,39 @@ const Calculadora = () => {
   const calcular = (event) => {
     event.preventDefault();
 
-    const despesasParsed = parseFloat(despesas);
-    const custoParsed = parseFloat(custo);
-    const notaFiscalParsed = parseFloat(notaFiscal);
-    const tarifaParsed = parseFloat(tarifa);
-    const freteParsed = parseFloat(frete);
-    const margemLucroParsed = parseFloat(margemLucro);
+    const C = parseFloat(custo) || 0; // custo do produto
+    const D = parseFloat(despesas) || 0; // despesas de venda (R$)
+    const NF = parseFloat(notaFiscal) || 0; // imposto NF-e (%)
+    const COM = parseFloat(tarifa) || 0; // comissão da categoria (Clássico/Premium)
+    const FRETE = parseFloat(frete) || 0; // frete pago pelo vendedor (R$)
+    const M = parseFloat(margemLucro) || 0; // margem de lucro desejada (%)
 
-    const custoTotal =
-      100 /
-      (100 -
-        ((despesasParsed * 100) / custoParsed +
-          notaFiscalParsed +
-          tarifaParsed +
-          margemLucroParsed));
+    // Preço de venda = (custos fixos) / (1 - somatório das porcentagens)
+    const denom = 1 - (NF + COM + M) / 100;
+    if (denom <= 0) {
+      setResultado("0.00");
+      setResultadoLucro("0.00");
+      return;
+    }
 
-    const precoVenda = custoTotal * custoParsed + freteParsed;
+    // Custo fixo do Mercado Livre para itens de baixo valor. Desde 02/03/2026 é
+    // variável (peso, dimensões e faixa de preço); usamos ~R$ 6,75 para itens
+    // com preço abaixo de R$ 79 como aproximação. O valor fixo é somado ao custo
+    // e "elevado" pelo divisor para preservar a margem.
+    let fixo = 0;
+    let precoVenda = (C + D + FRETE) / denom;
+    for (let i = 0; i < 4; i++) {
+      fixo = precoVenda < 79 ? 6.75 : 0;
+      const novo = (C + D + FRETE + fixo) / denom;
+      if (Math.abs(novo - precoVenda) < 0.01) {
+        precoVenda = novo;
+        break;
+      }
+      precoVenda = novo;
+    }
 
-    const resultadoLucro = precoVenda * (margemLucroParsed / 100);
-
-    let resultado2 = precoVenda;
-
-    const resultado =
-      resultado2 < 79
-        ? resultado2 + 100 / (100 - (5.5 * 100) / custoParsed)
-        : resultado2;
-    setResultado(resultado.toFixed(2));
+    const resultadoLucro = precoVenda * (M / 100);
+    setResultado(precoVenda.toFixed(2));
     setResultadoLucro(resultadoLucro.toFixed(2));
   };
 
@@ -281,8 +288,10 @@ const Calculadora = () => {
                     o valor total da venda. Recomendamos o valor de no mínimo
                     10%.
                     <br />
-                    OBS: Produtos com preço de venda abaixo de R$79 reais
-                    possuem um custo fixo adicional de R$5,50.
+                    OBS: itens com preço abaixo de R$79 têm um custo fixo por
+                    unidade (usamos ~R$6,75 como aproximação). Desde 03/2026 esse
+                    valor varia por peso e dimensões — confira o exato no
+                    Simulador de Custos do seu painel do Mercado Livre.
                   </p>
                 </div>
               </div>
@@ -341,6 +350,13 @@ const Calculadora = () => {
             </h2>
           </div>
         </div>
+
+        <p className="calc-disclaimer">
+          Valores estimados. A tarifa por vender varia por categoria
+          (Clássico/Premium) e o custo por unidade varia por peso e dimensões
+          desde 03/2026 — confira o valor exato no Simulador de Custos do seu
+          painel de vendedor do Mercado Livre.
+        </p>
       </div>
     </>
   );

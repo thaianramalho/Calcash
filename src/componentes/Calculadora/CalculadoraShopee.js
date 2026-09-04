@@ -3,16 +3,26 @@ import "./Calculadora.css";
 import { useState } from "react";
 import Navbar2 from "../Navbar2/Navbar2";
 
+// Tabela de comissão da Shopee Brasil — vigente desde março/2026.
+// Comissão (%) + taxa fixa por item variam conforme a faixa de preço de venda.
+// Sem teto de comissão; programa de frete grátis obrigatório (já embutido).
+// Fonte: Centro de Educação do Vendedor Shopee / seller.shopee.com.br (2026).
+const FAIXAS_SHOPEE = [
+  { min: 0, max: 7.99, com: 50, fixo: 0 },
+  { min: 8, max: 79.99, com: 20, fixo: 4 },
+  { min: 80, max: 99.99, com: 14, fixo: 16 },
+  { min: 100, max: 199.99, com: 14, fixo: 20 },
+  { min: 200, max: Infinity, com: 14, fixo: 26 },
+];
+
 const CalculadoraShopee = () => {
   const [custo, setCusto] = useState("");
   const [notaFiscal, setNotaFiscal] = useState("");
   const [despesas, setDespesas] = useState("");
-  const [frete, setFrete] = useState(0);
-  const [isChecked, setIsChecked] = useState(false);
-  const [tarifa, setTarifa] = useState(14);
   const [margemLucro, setMargemLucro] = useState("");
   const [resultado, setResultado] = useState(0.0);
   const [resultadoLucro, setResultadoLucro] = useState(0.0);
+  const [taxaAplicada, setTaxaAplicada] = useState("");
 
   const [btnstate, setBtnstate] = useState("false");
 
@@ -24,46 +34,58 @@ const CalculadoraShopee = () => {
 
   let toggleClassCheck = btnstate ? " active" : "";
 
-  const Frete = () => {
-    setFrete(isChecked ? 0 : 6);
-  };
-
   const calcular = (event) => {
     event.preventDefault();
 
-    const despesasParsed = parseFloat(despesas);
-    const custoParsed = parseFloat(custo);
-    const notaFiscalParsed = parseFloat(notaFiscal);
-    const tarifaParsed = parseFloat(tarifa);
-    const freteParsed = parseFloat(frete);
-    const margemLucroParsed = parseFloat(margemLucro);
+    const C = parseFloat(custo) || 0;
+    const D = parseFloat(despesas) || 0;
+    const NF = parseFloat(notaFiscal) || 0;
+    const M = parseFloat(margemLucro) || 0;
 
-    const custoTotal =
-      100 /
-      (100 -
-        ((despesasParsed * 100) / custoParsed +
-          notaFiscalParsed +
-          tarifaParsed +
-          freteParsed +
-          margemLucroParsed));
+    // A faixa de comissão depende do preço de venda, que por sua vez depende da
+    // faixa. Escolhemos a faixa auto-consistente (aquela cujo preço calculado cai
+    // dentro da própria faixa); em bordas, a de menor distância.
+    let melhor = null;
+    let menorDist = Infinity;
+    for (const f of FAIXAS_SHOPEE) {
+      const denom = 1 - (NF + f.com + M) / 100;
+      if (denom <= 0) continue;
+      const P = (C + D + f.fixo) / denom;
+      const dist = P < f.min ? f.min - P : P > f.max ? P - f.max : 0;
+      if (dist < menorDist) {
+        menorDist = dist;
+        melhor = { ...f, P };
+      }
+    }
 
-    const precoVenda = custoTotal * custoParsed;
-    const resultadoLucro = precoVenda * (margemLucroParsed / 100);
+    if (!melhor) {
+      setResultado("0.00");
+      setResultadoLucro("0.00");
+      setTaxaAplicada("Some as porcentagens: elas não podem chegar a 100%.");
+      return;
+    }
 
+    const precoVenda = melhor.P;
+    const lucro = precoVenda * (M / 100);
     setResultado(precoVenda.toFixed(2));
-    setResultadoLucro(resultadoLucro.toFixed(2));
+    setResultadoLucro(lucro.toFixed(2));
+    setTaxaAplicada(
+      `Comissão Shopee aplicada: ${melhor.com}% + R$ ${melhor.fixo
+        .toFixed(2)
+        .replace(".", ",")} de taxa fixa por item.`
+    );
   };
+
   const limpa = (event) => {
     event.preventDefault();
 
     setCusto("");
     setNotaFiscal("");
     setDespesas("");
-    setFrete("");
-    setTarifa("");
     setMargemLucro("");
     setResultado(0);
     setResultadoLucro(0);
+    setTaxaAplicada("");
   };
 
   const textStyle = {
@@ -195,86 +217,6 @@ const CalculadoraShopee = () => {
 
             <div className="inputs">
               <div className="label">
-                <p>Tarifa do anúncio:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">Tarifa da plataforma (14% é o padrão).</p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    %
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="classico"
-                  value={tarifa}
-                  onChange={(e) => setTarifa(e.target.value)}
-                  required={true}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div className="inputs">
-              <div className="label">
-                <p>Valor do frete:</p>
-                <div class="form-check form-switch">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="flexSwitchCheckDefault"
-                    checked={isChecked}
-                    onChange={() => (setIsChecked(!isChecked), Frete())}
-                  />
-                </div>
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">
-                    Ative o botão caso o anúncio participe do programa de frete
-                    grátis da plataforma. Caso contrário, deixe desativado.
-                    <br />
-                    OBS: 6% é o valor cobrado.
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    %
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="frete"
-                  disabled={!isChecked}
-                  value={frete}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div className="inputs">
-              <div className="label">
                 <p>Margem de lucro:</p>
 
                 <div className="minor">
@@ -287,8 +229,8 @@ const CalculadoraShopee = () => {
                     o valor total da venda. Recomendamos o valor de no mínimo
                     10%.
                     <br />
-                    OBS: Produtos com preço de venda abaixo de R$79 reais
-                    possuem um custo fixo adicional de R$5,50.
+                    OBS: A comissão da Shopee (% + taxa fixa por item) é aplicada
+                    automaticamente conforme a faixa de preço de venda.
                   </p>
                 </div>
               </div>
@@ -347,6 +289,21 @@ const CalculadoraShopee = () => {
             </h2>
           </div>
         </div>
+
+        {taxaAplicada && <p className="calc-nota">{taxaAplicada}</p>}
+
+        <p className="calc-disclaimer">
+          Valores estimados com base na tabela de comissões vigente (2026).
+          Confira sempre as tarifas oficiais atualizadas no{" "}
+          <a
+            href="https://seller.shopee.com.br/edu/article/26839"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Centro do Vendedor Shopee
+          </a>
+          .
+        </p>
       </div>
     </>
   );

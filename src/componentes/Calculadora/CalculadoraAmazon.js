@@ -23,55 +23,54 @@ const CalculadoraAmazon = () => {
 
   let toggleClassCheck = btnstate ? " active" : "";
 
+  // Estimativa da tarifa de envio (DBA) da Amazon Brasil — 2026.
+  // Itens de baixo valor pagam tarifa fixa por faixa de preço; a partir de R$79
+  // vale o DBA por peso (estimativa — o valor real varia por estado de origem).
+  const freteAmazon = (precoVenda, pesoKg) => {
+    if (precoVenda < 30) return 4.5;
+    if (precoVenda < 79) return 6.75;
+    const p = pesoKg || 0;
+    if (p <= 0.5) return 20;
+    if (p <= 1) return 21;
+    if (p <= 2) return 23;
+    if (p <= 3) return 26;
+    if (p <= 4) return 29;
+    if (p <= 5) return 32;
+    if (p <= 10) return 40;
+    return 40 + (p - 10) * 2.5;
+  };
+
   const calcular = (event) => {
     event.preventDefault();
-    var frete = 0;
-    if (peso <= 0.25) {
-      frete = 8.78;
-    } else if (peso > 0.25 && peso <= 0.5) {
-      frete = 9.32;
-    } else if (peso > 0.5 && peso <= 1) {
-      frete = 10.13;
-    } else if (peso > 1 && peso <= 2) {
-      frete = 11.48;
-    } else if (peso > 2 && peso <= 3) {
-      frete = 15.53;
-    } else if (peso > 3 && peso <= 4) {
-      frete = 16.88;
-    } else if (peso > 4 && peso <= 5) {
-      frete = 17.42;
-    } else if (peso > 5 && peso <= 6) {
-      frete = 19.58;
-    } else if (peso > 6 && peso <= 7) {
-      frete = 20.93;
-    } else if (peso > 7 && peso <= 8) {
-      frete = 22.82;
-    } else if (peso > 8 && peso <= 9) {
-      frete = 26.33;
-    } else if (peso > 9 && peso <= 10) {
-      frete = 31.73;
-    } else {
-      var freteAlto = (peso - 10) * 2.03;
-      frete = freteAlto + 31.73;
+
+    const C = parseFloat(custo) || 0;
+    const D = parseFloat(despesas) || 0;
+    const NF = parseFloat(notaFiscal) || 0;
+    const COM = parseFloat(tarifa) || 0; // comissão por categoria (10%–15%)
+    const PESO = parseFloat(peso) || 0;
+    const M = parseFloat(margemLucro) || 0;
+
+    const denom = 1 - (NF + COM + M) / 100;
+    if (denom <= 0) {
+      setResultado("0.00");
+      setResultadoLucro("0.00");
+      return;
     }
 
-    const despesasParsed = parseFloat(despesas);
-    const custoParsed = parseFloat(custo);
-    const notaFiscalParsed = parseFloat(notaFiscal);
-    const tarifaParsed = parseFloat(tarifa);
-    const freteParsed = parseFloat(frete);
-    const margemLucroParsed = parseFloat(margemLucro);
+    // O frete depende da faixa de preço/peso, que depende do preço — iteramos.
+    let frete = 0;
+    let precoVenda = (C + D) / denom;
+    for (let i = 0; i < 5; i++) {
+      frete = freteAmazon(precoVenda, PESO);
+      const novo = (C + D + frete) / denom;
+      if (Math.abs(novo - precoVenda) < 0.01) {
+        precoVenda = novo;
+        break;
+      }
+      precoVenda = novo;
+    }
 
-    const custoTotal =
-      100 /
-      (100 -
-        ((despesasParsed * 100) / custoParsed +
-          notaFiscalParsed +
-          tarifaParsed +
-          margemLucroParsed));
-    const precoVenda = custoTotal * custoParsed + freteParsed;
-    const resultadoLucro = precoVenda * (margemLucroParsed / 100);
-
+    const resultadoLucro = precoVenda * (M / 100);
     setResultado(precoVenda.toFixed(2));
     setResultadoLucro(resultadoLucro.toFixed(2));
   };
@@ -231,6 +230,7 @@ const CalculadoraAmazon = () => {
                     podem ser checados no site{" "}
                     <a
                       target="_blank"
+                      rel="noopener noreferrer"
                       href="https://venda.amazon.com.br/precos"
                     >
                       venda.amazon.com.br/precos
@@ -311,8 +311,9 @@ const CalculadoraAmazon = () => {
                     o valor total da venda. Recomendamos o valor de no mínimo
                     10%.
                     <br />
-                    OBS: Produtos com preço de venda abaixo de R$79 reais
-                    possuem um custo fixo adicional de R$5,50.
+                    OBS: itens abaixo de R$79 pagam uma tarifa fixa por unidade
+                    (~R$4,50 a R$6,75). A partir de R$79, o frete DBA é estimado
+                    pelo peso — o valor real varia conforme o estado de origem.
                   </p>
                 </div>
               </div>
@@ -371,6 +372,19 @@ const CalculadoraAmazon = () => {
             </h2>
           </div>
         </div>
+
+        <p className="calc-disclaimer">
+          Frete e comissão são estimados — o DBA varia por peso e estado de
+          origem. Confira as tarifas oficiais por categoria em{" "}
+          <a
+            href="https://venda.amazon.com.br/precos"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            venda.amazon.com.br/precos
+          </a>
+          .
+        </p>
       </div>
     </>
   );
