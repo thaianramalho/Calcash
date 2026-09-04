@@ -19,7 +19,7 @@ const Calculadora = () => {
     if (toggleClassCheck === btnstate) {
       setBtnstate(true);
     } else setBtnstate(false);
-  };
+  }; //teste
 
   let toggleClassCheck = btnstate ? " active" : "";
 
