@@ -245,8 +245,9 @@
   .hero__lead {
     max-width: 46ch;
   }
+  /* No mobile a headline vem primeiro; a calculadora fica abaixo. */
   .hero__visual {
-    order: -1;
+    order: 0;
   }
   .hero__mock {
     max-width: 360px;
@@ -258,8 +259,39 @@
     min-height: auto;
     padding-top: calc(var(--nav-h) + var(--space-8));
   }
+  .hero__grid {
+    gap: var(--space-6);
+  }
   .hero__trust {
     flex-direction: column;
     gap: var(--space-3);
+  }
+  /* Card compacto no celular (evita ocupar a tela inteira) */
+  .hero__mock {
+    max-width: 320px;
+    padding: var(--space-5);
+  }
+  .hero__mock .hmock__head {
+    margin-bottom: var(--space-3);
+  }
+  .hero__mock .hmock__field {
+    padding: 11px 14px;
+    margin-bottom: var(--space-2);
+  }
+  .hero__mock .hmock__label {
+    font-size: var(--fs-sm);
+  }
+  .hero__mock .hmock__value {
+    font-size: var(--fs-base);
+  }
+  .hero__mock .hmock__result {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+  }
+  .hero__mock .hmock__res-row + .hmock__res-row {
+    margin-top: var(--space-3);
+  }
+  .hero__mock .hmock__res-row strong {
+    font-size: var(--fs-lg);
   }
 }
