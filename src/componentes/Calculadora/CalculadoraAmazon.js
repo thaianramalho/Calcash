@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Calculadora.css";
-import { useState } from "react";
 import Navbar2 from "../Navbar2/Navbar2";
+import { useI18n } from "../../i18n";
+import { CalcField, CalcTitle, CalcActions, CalcResults } from "./CalcParts";
+
+const AMAZON_FEES_URL = "https://venda.amazon.com.br/precos";
+const AMAZON_FEES_LABEL = "venda.amazon.com.br/precos";
+
+// Estimativa da tarifa de envio (DBA) da Amazon Brasil — 2026.
+// Itens de baixo valor pagam tarifa fixa por faixa de preço; a partir de R$79
+// vale o DBA por peso (estimativa — o valor real varia por estado de origem).
+const freteAmazon = (precoVenda, pesoKg) => {
+  if (precoVenda < 30) return 4.5;
+  if (precoVenda < 79) return 6.75;
+  const p = pesoKg || 0;
+  if (p <= 0.5) return 20;
+  if (p <= 1) return 21;
+  if (p <= 2) return 23;
+  if (p <= 3) return 26;
+  if (p <= 4) return 29;
+  if (p <= 5) return 32;
+  if (p <= 10) return 40;
+  return 40 + (p - 10) * 2.5;
+};
+
+const FeesLink = () => (
+  <a target="_blank" rel="noopener noreferrer" href={AMAZON_FEES_URL}>
+    {AMAZON_FEES_LABEL}
+  </a>
+);
 
 const CalculadoraAmazon = () => {
+  const { t } = useI18n();
+  const c = t.calc;
+
   const [custo, setCusto] = useState("");
   const [notaFiscal, setNotaFiscal] = useState("");
   const [despesas, setDespesas] = useState("");
@@ -12,33 +42,6 @@ const CalculadoraAmazon = () => {
   const [margemLucro, setMargemLucro] = useState("");
   const [resultado, setResultado] = useState(0.0);
   const [resultadoLucro, setResultadoLucro] = useState(0.0);
-
-  const [btnstate, setBtnstate] = useState("false");
-
-  const click = () => {
-    if (toggleClassCheck === btnstate) {
-      setBtnstate(true);
-    } else setBtnstate(false);
-  };
-
-  let toggleClassCheck = btnstate ? " active" : "";
-
-  // Estimativa da tarifa de envio (DBA) da Amazon Brasil — 2026.
-  // Itens de baixo valor pagam tarifa fixa por faixa de preço; a partir de R$79
-  // vale o DBA por peso (estimativa — o valor real varia por estado de origem).
-  const freteAmazon = (precoVenda, pesoKg) => {
-    if (precoVenda < 30) return 4.5;
-    if (precoVenda < 79) return 6.75;
-    const p = pesoKg || 0;
-    if (p <= 0.5) return 20;
-    if (p <= 1) return 21;
-    if (p <= 2) return 23;
-    if (p <= 3) return 26;
-    if (p <= 4) return 29;
-    if (p <= 5) return 32;
-    if (p <= 10) return 40;
-    return 40 + (p - 10) * 2.5;
-  };
 
   const calcular = (event) => {
     event.preventDefault();
@@ -70,9 +73,9 @@ const CalculadoraAmazon = () => {
       precoVenda = novo;
     }
 
-    const resultadoLucro = precoVenda * (M / 100);
+    const lucro = precoVenda * (M / 100);
     setResultado(precoVenda.toFixed(2));
-    setResultadoLucro(resultadoLucro.toFixed(2));
+    setResultadoLucro(lucro.toFixed(2));
   };
 
   const limpa = (event) => {
@@ -88,302 +91,66 @@ const CalculadoraAmazon = () => {
     setResultadoLucro(0);
   };
 
-  const textStyle = {
-    color: resultadoLucro > 0 ? "#38ae59" : "red",
-  };
-
-  const textStyle2 = {
-    color: resultado > 0 ? "#38ae59" : "red",
-  };
-
   return (
     <>
-      <Navbar2></Navbar2>
+      <Navbar2 />
 
       <div className="calculadora">
-        <div className="titulo">
-          <h2>
-            Calculadora <br /> Amazon
-          </h2>
-        </div>
+        <CalcTitle name={c.amazon.name} />
 
         <form className="boxbox" onSubmit={calcular}>
           <div className="box">
-            <div className="inputs">
-              <div className="label">
-                <p>Custo do produto:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">Custo do produto em R$.</p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    R$
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="custo"
-                  value={custo}
-                  onChange={(e) => setCusto(e.target.value)}
-                  required={true}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-            <div className="inputs">
-              <div className="label">
-                <p>Imposto NF-E:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">
-                    Porcentagem de imposto pago na Nota Fiscal.
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    %
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="imposto"
-                  value={notaFiscal}
-                  onChange={(e) => setNotaFiscal(e.target.value)}
-                  required={true}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div className="inputs">
-              <div className="label">
-                <p>Despesas de venda:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">
-                    Valor gasto com caixas, fitas, plásticos, transporte, entre
-                    outros.
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    R$
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="despesas"
-                  value={despesas}
-                  onChange={(e) => setDespesas(e.target.value)}
-                  required={true}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div className="inputs">
-              <div className="label">
-                <p>Tarifa do anúncio:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt" id="amazonLink">
-                    Tarifa para anúnciar na plataforma, na plataforma da amazon
-                    possui uma tarifa que varia para cada tipo de produto que
-                    podem ser checados no site{" "}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://venda.amazon.com.br/precos"
-                    >
-                      venda.amazon.com.br/precos
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    %
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="classico"
-                  value={tarifa}
-                  onChange={(e) => setTarifa(e.target.value)}
-                  required={true}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div className="inputs">
-              <div className="label">
-                <p>Peso do produto:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">
-                    Favor inserir o peso exato em Kg (Exemplo: 5.53 kg). <br />{" "}
-                    OBS: O peso é utilizado para o cálculo do frete com base nos
-                    dados fornecidos pela Amazon.
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    kg
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="frete"
-                  value={peso}
-                  onChange={(e) => setPeso(e.target.value)}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div className="inputs">
-              <div className="label">
-                <p>Margem de lucro:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">
-                    A margem de lucro é o valor em % que você irá receber sobre
-                    o valor total da venda. Recomendamos o valor de no mínimo
-                    10%.
-                    <br />
-                    OBS: itens abaixo de R$79 pagam uma tarifa fixa por unidade
-                    (~R$4,50 a R$6,75). A partir de R$79, o frete DBA é estimado
-                    pelo peso — o valor real varia conforme o estado de origem.
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    %
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="margemLucro"
-                  value={margemLucro}
-                  onChange={(e) => setMargemLucro(e.target.value)}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
+            <CalcField id="custo" label={c.cost} tip={c.costTip} prefix="R$" value={custo} onChange={setCusto} required />
+            <CalcField id="imposto" label={c.tax} tip={c.taxTip} prefix="%" value={notaFiscal} onChange={setNotaFiscal} required />
+            <CalcField id="despesas" label={c.expenses} tip={c.expensesTip} prefix="R$" value={despesas} onChange={setDespesas} required />
+            <CalcField
+              id="classico"
+              label={c.listingFee}
+              tip={
+                <>
+                  {c.amazon.listingFeeTipA} <FeesLink />
+                </>
+              }
+              prefix="%"
+              value={tarifa}
+              onChange={setTarifa}
+              required
+            />
+            <CalcField
+              id="peso"
+              label={c.amazon.weight}
+              tip={
+                <>
+                  {c.amazon.weightTip} <br /> {c.amazon.weightNote}
+                </>
+              }
+              prefix="kg"
+              value={peso}
+              onChange={setPeso}
+            />
+            <CalcField
+              id="margemLucro"
+              label={c.margin}
+              tip={
+                <>
+                  {c.marginTip}
+                  <br />
+                  {c.amazon.marginNote}
+                </>
+              }
+              prefix="%"
+              value={margemLucro}
+              onChange={setMargemLucro}
+            />
           </div>
 
-          <div className="botoes">
-            <button
-              type="submit"
-              className="btn btn-primary btn-lg"
-              onClick={click}
-            >
-              Calcular
-            </button>
-            <button
-              type="reset"
-              className="btn btn-secondary btn-lg"
-              onClick={limpa}
-            >
-              Limpar
-            </button>
-          </div>
+          <CalcActions onClear={limpa} />
         </form>
 
-        <div className={`resultados${toggleClassCheck}`}>
-          <div className="res" id="1">
-            <h3>Preço da venda</h3>
-            <h2 className="lucroLiquido" style={textStyle}>
-              R$ {resultado}
-            </h2>
-          </div>
-
-          <div className="res">
-            <h3>Lucro por venda</h3>
-            <h2 className="lucroLiquido2" id="2" style={textStyle2}>
-              R$ {resultadoLucro}
-            </h2>
-          </div>
-        </div>
+        <CalcResults price={resultado} profit={resultadoLucro} />
 
         <p className="calc-disclaimer">
-          Frete e comissão são estimados — o DBA varia por peso e estado de
-          origem. Confira as tarifas oficiais por categoria em{" "}
-          <a
-            href="https://venda.amazon.com.br/precos"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            venda.amazon.com.br/precos
-          </a>
-          .
+          {c.amazon.disclaimerA} <FeesLink />.
         </p>
       </div>
     </>

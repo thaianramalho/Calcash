@@ -2,6 +2,7 @@ import "./Inicio.css";
 import React from "react";
 import { motion } from "framer-motion";
 import { EASE } from "../../lib/motion";
+import { useI18n } from "../../i18n";
 
 const MARKETPLACES = [
   { src: "/img/mercadoLivre.png", alt: "Mercado Livre" },
@@ -19,6 +20,9 @@ const up = {
 };
 
 function Inicio() {
+  const { t } = useI18n();
+  const m = t.hero.mock;
+
   return (
     <header id="inicio" className="hero">
       <div className="hero__glow" aria-hidden="true" />
@@ -31,32 +35,32 @@ function Inicio() {
           animate="show"
         >
           <motion.span className="kicker" variants={up}>
-            Calculadora gratuita para marketplaces
+            {t.hero.kicker}
           </motion.span>
 
           <motion.h1 className="hero__title" variants={up}>
-            Saiba o <span className="grad-text">lucro líquido</span> de cada
-            venda antes de anunciar.
+            {t.hero.titleA}
+            <span className="grad-text">{t.hero.titleHi}</span>
+            {t.hero.titleB}
           </motion.h1>
 
           <motion.p className="hero__lead" variants={up}>
-            Ferramenta 100% gratuita para vendedores: calcula automaticamente
-            taxas, impostos e frete do{" "}
-            <strong>Mercado Livre, Shopee e Amazon</strong> e mostra o preço
-            ideal para você bater a margem que quiser.
+            {t.hero.leadA}
+            <strong>{t.hero.leadStrong}</strong>
+            {t.hero.leadB}
           </motion.p>
 
           <motion.div className="hero__actions" variants={up}>
             <a href="#ferramentas" className="btn btn-primary">
-              Calcular agora
+              {t.hero.cta}
             </a>
             <a href="#faq" className="btn btn-ghost">
-              Como funciona
+              {t.hero.how}
             </a>
           </motion.div>
 
           <motion.div className="hero__trust" variants={up}>
-            <span>Compatível com</span>
+            <span>{t.hero.compatible}</span>
             <div className="hero__logos">
               {MARKETPLACES.map((m) => (
                 <img key={m.alt} src={m.src} alt={m.alt} loading="lazy" />
@@ -76,40 +80,42 @@ function Inicio() {
           <div className="hero__mock" aria-hidden="true">
             <div className="hmock__head">
               <span className="hmock__brand">
-                Calc<span>cash</span>
+                Cal<span>cash</span>
               </span>
-              <span className="hmock__tag">exemplo</span>
+              <span className="hmock__tag">{m.tag}</span>
             </div>
 
             <div className="hmock__field">
-              <span className="hmock__label">Custo do produto</span>
-              <span className="hmock__value">R$ 50,00</span>
+              <span className="hmock__label">{m.cost}</span>
+              <span className="hmock__value">{m.costValue}</span>
             </div>
             <div className="hmock__field">
-              <span className="hmock__label">Imposto (NF-e)</span>
+              <span className="hmock__label">{m.tax}</span>
               <span className="hmock__value">8%</span>
             </div>
             <div className="hmock__field">
-              <span className="hmock__label">Taxa do marketplace</span>
+              <span className="hmock__label">{m.fee}</span>
               <span className="hmock__value">20%</span>
             </div>
             <div className="hmock__field">
-              <span className="hmock__label">Frete</span>
-              <span className="hmock__value hmock__value--free">Grátis</span>
+              <span className="hmock__label">{m.shipping}</span>
+              <span className="hmock__value hmock__value--free">
+                {m.shippingValue}
+              </span>
             </div>
             <div className="hmock__field">
-              <span className="hmock__label">Margem de lucro</span>
+              <span className="hmock__label">{m.margin}</span>
               <span className="hmock__value">15%</span>
             </div>
 
             <div className="hmock__result">
               <div className="hmock__res-row">
-                <span>Preço de venda</span>
-                <strong>R$ 87,72</strong>
+                <span>{m.price}</span>
+                <strong>{m.priceValue}</strong>
               </div>
               <div className="hmock__res-row hmock__res-row--profit">
-                <span>Lucro por venda</span>
-                <strong>R$ 13,16</strong>
+                <span>{m.profit}</span>
+                <strong>{m.profitValue}</strong>
               </div>
             </div>
           </div>

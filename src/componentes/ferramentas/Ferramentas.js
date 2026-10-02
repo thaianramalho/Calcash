@@ -4,56 +4,43 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { tapHover } from "../../lib/motion";
 import { Reveal, RevealGroup } from "../../lib/Reveal";
+import { useI18n } from "../../i18n";
 
 const TOOLS = [
-  {
-    to: "/Calculadora",
-    logo: "/img/mercadoLivre.png",
-    name: "Mercado Livre",
-    desc: "Tarifa Clássico/Premium, imposto NF-e, frete grátis e o custo fixo de itens abaixo de R$79 — tudo no cálculo.",
-  },
-  {
-    to: "/CalculadoraShopee",
-    logo: "/img/shoope.png",
-    name: "Shopee",
-    desc: "Comissão da plataforma, taxa por item e cupons considerados para você achar o preço que mantém a margem.",
-  },
-  {
-    to: "/CalculadoraAmazon",
-    logo: "/img/logoamazon.png",
-    name: "Amazon",
-    desc: "Comissão por categoria e custos de envio no cálculo, com o lucro líquido por venda em tempo real.",
-  },
+  { key: "ml", to: "/Calculadora", logo: "/img/mercadoLivre.png", name: "Mercado Livre" },
+  { key: "shopee", to: "/CalculadoraShopee", logo: "/img/shoope.png", name: "Shopee" },
+  { key: "amazon", to: "/CalculadoraAmazon", logo: "/img/logoamazon.png", name: "Amazon" },
 ];
 
 function Ferramentas() {
+  const { t } = useI18n();
+
   return (
     <section className="features section" id="ferramentas">
       <div className="container">
         <Reveal className="features__head">
-          <span className="kicker">Ferramentas gratuitas</span>
+          <span className="kicker">{t.tools.kicker}</span>
           <h2 className="section-title">
-            Uma calculadora dedicada para cada{" "}
-            <span className="grad-text">marketplace</span>
+            {t.tools.titleA}
+            <span className="grad-text">{t.tools.titleHi}</span>
           </h2>
           <p className="section-lead">
-            Cada plataforma tem regras próprias de taxa. Escolha a sua, informe
-            os dados e calcule quantas vezes quiser — de graça.
+            {t.tools.lead}
           </p>
         </Reveal>
 
         <RevealGroup className="features__grid">
-          {TOOLS.map((t) => (
-            <motion.div key={t.name} {...tapHover} className="fcard-motion">
-              <Link to={t.to} className="fcard">
+          {TOOLS.map((tool) => (
+            <motion.div key={tool.name} {...tapHover} className="fcard-motion">
+              <Link to={tool.to} className="fcard">
                 <span className="fcard__glow" aria-hidden="true" />
                 <span className="fcard__logo">
-                  <img src={t.logo} alt={t.name} loading="lazy" />
+                  <img src={tool.logo} alt={tool.name} loading="lazy" />
                 </span>
-                <h3 className="fcard__title">{t.name}</h3>
-                <p className="fcard__desc">{t.desc}</p>
+                <h3 className="fcard__title">{tool.name}</h3>
+                <p className="fcard__desc">{t.tools[tool.key]}</p>
                 <span className="fcard__cta">
-                  Abrir calculadora
+                  {t.tools.open}
                   <svg
                     width="18"
                     height="18"

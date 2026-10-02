@@ -3,29 +3,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { EASE } from "../../lib/motion";
 import { Reveal } from "../../lib/Reveal";
-
-const FAQS = [
-  {
-    q: "O que é o Calcash?",
-    a: "O Calcash é uma calculadora de lucro para vendedores de Mercado Livre, Shopee e Amazon. A partir do custo do produto, impostos, taxas e frete, ele mostra o preço de venda ideal e o lucro líquido de cada venda — ajudando você a precificar sem sair no prejuízo.",
-  },
-  {
-    q: "Como uso as calculadoras?",
-    a: "Escolha a calculadora do marketplace desejado na seção Ferramentas, preencha os campos nas unidades indicadas (R$, % ou UN) e informe a margem de lucro que quer obter. Ao calcular, você vê à esquerda o preço para cadastrar na plataforma e à direita o valor que vai receber por venda. Em caso de dúvida, passe o mouse no ícone (i) de cada campo.",
-  },
-  {
-    q: "É gratuito de verdade?",
-    a: "Sim, 100%. As três calculadoras são totalmente gratuitas e ilimitadas, sem cadastro, sem login e sem cobrança. O Calcash é uma ferramenta livre para ajudar vendedores a precificar melhor.",
-  },
-  {
-    q: "O cálculo considera as taxas de cada plataforma?",
-    a: "Considera. Cada calculadora aplica as regras da sua plataforma — tarifa Clássico/Premium e o custo fixo de itens abaixo de R$79 no Mercado Livre, comissões da Shopee e da Amazon — além de imposto de nota fiscal, despesas de venda e frete que você informar.",
-  },
-  {
-    q: "Os valores substituem uma contabilidade?",
-    a: "O Calcash é uma ferramenta de apoio à precificação e estimativa de lucro. Ele é ótimo para decidir preços no dia a dia, mas não substitui a orientação de um contador para questões fiscais do seu negócio.",
-  },
-];
+import { useI18n } from "../../i18n";
 
 function FaqItem({ item, isOpen, onToggle, index }) {
   return (
@@ -65,23 +43,25 @@ function FaqItem({ item, isOpen, onToggle, index }) {
 }
 
 const Ajuda = () => {
+  const { t } = useI18n();
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <section className="faq section" id="faq">
       <div className="container faq__container">
         <Reveal className="faq__head">
-          <span className="kicker">Ajuda</span>
+          <span className="kicker">{t.faq.kicker}</span>
           <h2 className="section-title">
-            Perguntas <span className="grad-text">frequentes</span>
+            {t.faq.titleA}
+            <span className="grad-text">{t.faq.titleHi}</span>
           </h2>
           <p className="section-lead">
-            Tudo o que você precisa saber antes de calcular sua primeira venda.
+            {t.faq.lead}
           </p>
         </Reveal>
 
         <Reveal className="faq__list">
-          {FAQS.map((f, i) => (
+          {t.faq.items.map((f, i) => (
             <FaqItem
               key={f.q}
               item={f}

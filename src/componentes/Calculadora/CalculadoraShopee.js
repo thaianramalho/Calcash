@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Calculadora.css";
-import { useState } from "react";
 import Navbar2 from "../Navbar2/Navbar2";
+import { useI18n } from "../../i18n";
+import { CalcField, CalcTitle, CalcActions, CalcResults } from "./CalcParts";
 
 // Tabela de comissão da Shopee Brasil — vigente desde março/2026.
 // Comissão (%) + taxa fixa por item variam conforme a faixa de preço de venda.
@@ -16,23 +17,18 @@ const FAIXAS_SHOPEE = [
 ];
 
 const CalculadoraShopee = () => {
+  const { t } = useI18n();
+  const c = t.calc;
+
   const [custo, setCusto] = useState("");
   const [notaFiscal, setNotaFiscal] = useState("");
   const [despesas, setDespesas] = useState("");
   const [margemLucro, setMargemLucro] = useState("");
   const [resultado, setResultado] = useState(0.0);
   const [resultadoLucro, setResultadoLucro] = useState(0.0);
-  const [taxaAplicada, setTaxaAplicada] = useState("");
-
-  const [btnstate, setBtnstate] = useState("false");
-
-  const click = () => {
-    if (toggleClassCheck === btnstate) {
-      setBtnstate(true);
-    } else setBtnstate(false);
-  };
-
-  let toggleClassCheck = btnstate ? " active" : "";
+  // Guardamos a faixa aplicada (e não o texto) para a nota acompanhar o idioma.
+  const [faixa, setFaixa] = useState(null);
+  const [erroPercentual, setErroPercentual] = useState(false);
 
   const calcular = (event) => {
     event.preventDefault();
@@ -61,7 +57,8 @@ const CalculadoraShopee = () => {
     if (!melhor) {
       setResultado("0.00");
       setResultadoLucro("0.00");
-      setTaxaAplicada("Some as porcentagens: elas não podem chegar a 100%.");
+      setFaixa(null);
+      setErroPercentual(true);
       return;
     }
 
@@ -69,11 +66,8 @@ const CalculadoraShopee = () => {
     const lucro = precoVenda * (M / 100);
     setResultado(precoVenda.toFixed(2));
     setResultadoLucro(lucro.toFixed(2));
-    setTaxaAplicada(
-      `Comissão Shopee aplicada: ${melhor.com}% + R$ ${melhor.fixo
-        .toFixed(2)
-        .replace(".", ",")} de taxa fixa por item.`
-    );
+    setFaixa({ com: melhor.com, fixo: melhor.fixo });
+    setErroPercentual(false);
   };
 
   const limpa = (event) => {
@@ -85,222 +79,57 @@ const CalculadoraShopee = () => {
     setMargemLucro("");
     setResultado(0);
     setResultadoLucro(0);
-    setTaxaAplicada("");
+    setFaixa(null);
+    setErroPercentual(false);
   };
 
-  const textStyle = {
-    color: resultadoLucro > 0 ? "#38ae59" : "red",
-  };
-
-  const textStyle2 = {
-    color: resultado > 0 ? "#38ae59" : "red",
-  };
+  const nota = erroPercentual
+    ? c.shopee.percentError
+    : faixa && c.shopee.applied(faixa.com, faixa.fixo);
 
   return (
     <>
-      <Navbar2></Navbar2>
+      <Navbar2 />
 
       <div className="calculadora">
-        <div className="titulo">
-          <h2>
-            Calculadora <br /> Shopee
-          </h2>
-        </div>
+        <CalcTitle name={c.shopee.name} />
 
         <form className="boxbox" onSubmit={calcular}>
           <div className="box">
-            <div className="inputs">
-              <div className="label">
-                <p>Custo do produto:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">Custo do produto em R$.</p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    R$
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="custo"
-                  value={custo}
-                  onChange={(e) => setCusto(e.target.value)}
-                  required={true}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-            <div className="inputs">
-              <div className="label">
-                <p>Imposto NF-E:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">
-                    Porcentagem de imposto pago na Nota Fiscal.
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    %
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="imposto"
-                  value={notaFiscal}
-                  onChange={(e) => setNotaFiscal(e.target.value)}
-                  required={true}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div className="inputs">
-              <div className="label">
-                <p>Despesas de venda:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">
-                    Valor gasto com caixas, fitas, plásticos, transporte, entre
-                    outros.
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    R$
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="despesas"
-                  value={despesas}
-                  onChange={(e) => setDespesas(e.target.value)}
-                  required={true}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
-
-            <div className="inputs">
-              <div className="label">
-                <p>Margem de lucro:</p>
-
-                <div className="minor">
-                  <span className="i" alt="Minha Figura">
-                    i
-                  </span>
-
-                  <p className="txt">
-                    A margem de lucro é o valor em % que você irá receber sobre
-                    o valor total da venda. Recomendamos o valor de no mínimo
-                    10%.
-                    <br />
-                    OBS: A comissão da Shopee (% + taxa fixa por item) é aplicada
-                    automaticamente conforme a faixa de preço de venda.
-                  </p>
-                </div>
-              </div>
-
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">
-                    %
-                  </span>
-                </div>
-                <input
-                  pattern="[0-9]*"
-                  type="number"
-                  id="margemLucro"
-                  value={margemLucro}
-                  onChange={(e) => setMargemLucro(e.target.value)}
-                  className="form-control"
-                  placeholder="Insira o valor"
-                  aria-label="Insira o valor"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </div>
+            <CalcField id="custo" label={c.cost} tip={c.costTip} prefix="R$" value={custo} onChange={setCusto} required />
+            <CalcField id="imposto" label={c.tax} tip={c.taxTip} prefix="%" value={notaFiscal} onChange={setNotaFiscal} required />
+            <CalcField id="despesas" label={c.expenses} tip={c.expensesTip} prefix="R$" value={despesas} onChange={setDespesas} required />
+            <CalcField
+              id="margemLucro"
+              label={c.margin}
+              tip={
+                <>
+                  {c.marginTip}
+                  <br />
+                  {c.shopee.marginNote}
+                </>
+              }
+              prefix="%"
+              value={margemLucro}
+              onChange={setMargemLucro}
+            />
           </div>
 
-          <div className="botoes">
-            <button
-              type="submit"
-              className="btn btn-primary btn-lg"
-              onClick={click}
-            >
-              Calcular
-            </button>
-            <button
-              type="reset"
-              className="btn btn-secondary btn-lg"
-              onClick={limpa}
-            >
-              Limpar
-            </button>
-          </div>
+          <CalcActions onClear={limpa} />
         </form>
 
-        <div className={`resultados${toggleClassCheck}`}>
-          <div className="res" id="1">
-            <h3>Preço da venda</h3>
-            <h2 className="lucroLiquido" style={textStyle}>
-              R$ {resultado}
-            </h2>
-          </div>
+        <CalcResults price={resultado} profit={resultadoLucro} />
 
-          <div className="res">
-            <h3>Lucro por venda</h3>
-            <h2 className="lucroLiquido2" id="2" style={textStyle2}>
-              R$ {resultadoLucro}
-            </h2>
-          </div>
-        </div>
-
-        {taxaAplicada && <p className="calc-nota">{taxaAplicada}</p>}
+        {nota && <p className="calc-nota">{nota}</p>}
 
         <p className="calc-disclaimer">
-          Valores estimados com base na tabela de comissões vigente (2026).
-          Confira sempre as tarifas oficiais atualizadas no{" "}
+          {c.shopee.disclaimer}{" "}
           <a
             href="https://seller.shopee.com.br/edu/article/26839"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Centro do Vendedor Shopee
+            {c.shopee.disclaimerLink}
           </a>
           .
         </p>

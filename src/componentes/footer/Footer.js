@@ -6,47 +6,51 @@ import { FaWhatsapp } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { tapHover } from "../../lib/motion";
 import { Reveal } from "../../lib/Reveal";
+import { useI18n } from "../../i18n";
 
 function Footer() {
+  const { t } = useI18n();
+  const f = t.footer;
+
   return (
     <footer className="footer" id="footer">
       <div className="container">
         <Reveal className="footer__cta">
           <div>
             <h2 className="footer__cta-title">
-              Pronto para parar de vender{" "}
-              <span className="grad-text">no prejuízo?</span>
+              {f.ctaA}
+              <span className="grad-text">{f.ctaHi}</span>
             </h2>
             <p className="footer__cta-lead">
-              Calcule o preço certo da sua próxima venda em menos de um minuto —
-              de graça.
+              {f.ctaLead}
             </p>
           </div>
           <motion.a href="#ferramentas" {...tapHover} className="btn btn-primary">
-            Calcular agora
+            {f.cta}
           </motion.a>
         </Reveal>
 
         <div className="footer__grid">
           <div className="footer__brand">
             <Link to="/" className="footer__logo">
-              Calc<span>cash</span>
+              Cal<span>cash</span>
             </Link>
             <p>
-              Calculadora de lucro líquido <strong>gratuita</strong> para
-              vendedores de Mercado Livre, Shopee e Amazon.
+              {f.brandA}
+              <strong>{f.brandStrong}</strong>
+              {f.brandB}
             </p>
           </div>
 
-          <nav className="footer__col" aria-label="Navegação do rodapé">
-            <h3>Navegação</h3>
-            <a href="#inicio">Início</a>
-            <a href="#ferramentas">Ferramentas</a>
-            <a href="#faq">FAQ</a>
+          <nav className="footer__col" aria-label={f.navLabel}>
+            <h3>{f.navTitle}</h3>
+            <a href="#inicio">{t.nav.home}</a>
+            <a href="#ferramentas">{t.nav.tools}</a>
+            <a href="#faq">{t.nav.faq}</a>
           </nav>
 
           <div className="footer__col">
-            <h3>Contato</h3>
+            <h3>{f.contactTitle}</h3>
             <a
               href="https://api.whatsapp.com/send?phone=5532985148692"
               target="_blank"
@@ -64,8 +68,8 @@ function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <span>© {new Date().getFullYear()} Calcash. Todos os direitos reservados.</span>
-          <span>Feito para quem vive de margem.</span>
+          <span>© {new Date().getFullYear()} Calcash. {f.rights}</span>
+          <span>{f.tagline}</span>
         </div>
       </div>
     </footer>

@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-
-const LINKS = [
-  { href: "#inicio", label: "Início" },
-  { href: "#ferramentas", label: "Ferramentas" },
-  { href: "#faq", label: "FAQ" },
-];
+import { useI18n } from "../../i18n";
+import LangSwitch from "../../i18n/LangSwitch";
 
 const Navbar = () => {
+  const { t } = useI18n();
+  const LINKS = [
+    { href: "#inicio", label: t.nav.home },
+    { href: "#ferramentas", label: t.nav.tools },
+    { href: "#faq", label: t.nav.faq },
+  ];
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
@@ -35,7 +37,7 @@ const Navbar = () => {
     >
       <div className="nav__inner container">
         <Link to="/" className="nav__logo" onClick={close}>
-          Calc<span>cash</span>
+          Cal<span>cash</span>
         </Link>
 
         <ul className="nav__links">
@@ -47,13 +49,14 @@ const Navbar = () => {
         </ul>
 
         <div className="nav__actions">
+          <LangSwitch />
           <a href="#ferramentas" className="btn btn-primary nav__cta">
-            Calcular agora
+            {t.nav.cta}
           </a>
           <button
             className={`nav__burger ${open ? "is-open" : ""}`}
             onClick={() => setOpen((v) => !v)}
-            aria-label="Abrir menu"
+            aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
             aria-expanded={open}
           >
             <span />
@@ -78,7 +81,7 @@ const Navbar = () => {
               </a>
             ))}
             <a href="#ferramentas" className="btn btn-primary" onClick={close}>
-              Calcular agora
+              {t.nav.cta}
             </a>
           </motion.div>
         )}

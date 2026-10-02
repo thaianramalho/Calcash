@@ -7,10 +7,11 @@ import ScrollToTop from "./componentes/ScrollToTop/ScrollToTop";
 import CalculadoraShopee from "./componentes/Calculadora/CalculadoraShopee";
 import CalculadoraAmazon from "./componentes/Calculadora/CalculadoraAmazon";
 import BuscaAnuncio from "./componentes/buscaAnuncio/BuscaAnuncio";
+import { I18nProvider } from "./i18n";
 
 function App() {
   return (
-    <>
+    <I18nProvider>
       <Router>
         <ScrollToTop>
           <Routes>
@@ -22,7 +23,7 @@ function App() {
           </Routes>
         </ScrollToTop>
       </Router>
-    </>
+    </I18nProvider>
   );
 }
 
